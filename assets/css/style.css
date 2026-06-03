@@ -652,67 +652,128 @@ img, svg { display: block; max-width: 100%; }
    Performance page
    ============================================================ */
 
-/* Summary table */
-.summary-table-wrap {
-  overflow-x: auto;
+/* Compare grid (design-system style summary) */
+.compare-grid {
+  background: var(--ct-white);
+  border-radius: var(--ct-radius-card);
+  box-shadow: var(--ct-shadow-2);
+  padding: 8px 0;
   margin-bottom: 20px;
 }
-.summary-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 15px;
+.compare-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  padding: 16px 24px 12px;
+  border-bottom: 2px solid var(--ct-grey-3);
 }
-.summary-table thead tr:first-child th {
+.compare-col-model {
+  font-family: var(--ct-font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ct-grey-2);
+}
+.compare-col-task {
   font-family: var(--ct-font-display);
   font-weight: 700;
   font-size: 14px;
   color: var(--ct-navy);
-  text-align: left;
-  padding: 14px 14px 6px;
-  border-bottom: none;
-}
-.summary-table thead tr:first-child th:not(:first-child) {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
-.summary-table .sub-header th {
-  font-family: var(--ct-font-mono);
-  font-weight: 500;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ct-grey-2);
-  text-align: center;
-  padding: 0 14px 12px;
-  border-bottom: 2px solid var(--ct-grey-3);
+.compare-col-task i {
+  font-size: 16px;
+  color: var(--ct-red);
 }
-.summary-table .sub-header th:first-child {
-  border-bottom: 2px solid var(--ct-grey-3);
-}
-.summary-table td {
-  padding: 11px 14px;
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  padding: 10px 24px;
   border-bottom: 1px solid var(--ct-surface-2);
-  vertical-align: middle;
+  align-items: center;
+  transition: background var(--ct-dur) var(--ct-ease);
 }
-.summary-table td:not(:first-child) {
-  text-align: center;
-  font-family: var(--ct-font-mono);
-  font-size: 14px;
-  white-space: nowrap;
-  color: var(--ct-ink);
-}
-.summary-table td:first-child {
-  white-space: nowrap;
-}
-.summary-table tbody tr:hover {
+.compare-row:hover {
   background: var(--ct-surface);
 }
-.summary-table .fail-row td {
+.compare-model {
+  display: flex;
+  align-items: center;
+}
+.compare-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--ct-font-mono);
+  font-size: 14px;
+  color: var(--ct-ink);
+}
+.compare-stats.cs-na {
+  color: var(--ct-grey-3);
+  font-size: 16px;
+}
+.cs-time {
+  color: var(--ct-grey-1);
+  min-width: 48px;
+  text-align: right;
+}
+.cs-cost {
+  color: var(--ct-navy);
+  font-weight: 500;
+  min-width: 56px;
+  text-align: right;
+}
+.cs-byok {
+  color: var(--ct-grey-2);
+  font-style: italic;
+  font-weight: 400;
+}
+.compare-divider {
+  height: 1px;
+  background: var(--ct-grey-3);
+  margin: 4px 24px;
+}
+.compare-fail {
+  opacity: 0.5;
+}
+.compare-fail .compare-stats {
   color: var(--ct-grey-2);
   font-style: italic;
 }
-/* Highlight cheapest/fastest with subtle color */
-.summary-table thead tr:first-child th[colspan] {
-  border-bottom: none;
+
+@media (max-width: 640px) {
+  .compare-header,
+  .compare-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 12px 18px;
+  }
+  .compare-col-task {
+    justify-content: flex-start;
+    font-size: 12px;
+  }
+  .compare-stats {
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .compare-stats::before {
+    font-family: var(--ct-font-sans);
+    font-size: 11px;
+    color: var(--ct-grey-2);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    min-width: 60px;
+  }
+  .compare-row .compare-stats:nth-child(2)::before { content: "Write: "; }
+  .compare-row .compare-stats:nth-child(3)::before { content: "Explain: "; }
 }
 
 /* Prompt card */

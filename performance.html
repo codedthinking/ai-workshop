@@ -14,111 +14,113 @@ description: "The same Stata prompt sent to 11 models simultaneously via OpenRou
 <section class="page-content">
   <div class="container">
 
-    <!-- Summary table -->
-    <div class="summary-table-wrap">
-      <table class="summary-table">
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th colspan="2">Write code</th>
-            <th colspan="2">Explain code</th>
-          </tr>
-          <tr class="sub-header">
-            <th></th>
-            <th>Time</th>
-            <th>Cost</th>
-            <th>Time</th>
-            <th>Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="model-slug anthropic">anthropic/claude-opus-4.8</span></td>
-            <td>1.0s</td><td>0.43&cent;</td>
-            <td>5.3s</td><td>1.06&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug anthropic">anthropic/claude-sonnet-4.5</span></td>
-            <td>0.7s</td><td>0.19&cent;</td>
-            <td>&mdash;</td><td>&mdash;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug google">google/gemini-3.1-pro</span></td>
-            <td>0.6s</td><td>0.70&cent;</td>
-            <td>3.1s</td><td>1.02&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug google">google/gemini-3.5-flash</span></td>
-            <td>2.5s</td><td>0.91&cent;</td>
-            <td>&mdash;</td><td>&mdash;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug xai">x-ai/grok-4.20</span></td>
-            <td>16.3s</td><td>0.60&cent;</td>
-            <td>&mdash;</td><td>&mdash;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug openai">openai/gpt-5.5</span></td>
-            <td>2.6s</td><td>BYOK</td>
-            <td>3.7s</td><td>BYOK</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">minimax/minimax-m3</span></td>
-            <td>2.2s</td><td>0.03&cent;</td>
-            <td>3.8s</td><td>0.04&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug qwen">qwen/qwen3.7-plus</span></td>
-            <td>16.7s</td><td>0.16&cent;</td>
-            <td>23.2s</td><td>0.22&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">inception/mercury-2</span></td>
-            <td>0.4s</td><td>0.03&cent;</td>
-            <td>0.3s</td><td>0.02&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">mistralai/mistral-small-4</span></td>
-            <td>0.4s</td><td>0.009&cent;</td>
-            <td>0.7s</td><td>0.01&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug deepseek">deepseek/deepseek-v4-flash</span></td>
-            <td>4.3s</td><td>0.01&cent;</td>
-            <td>2.0s</td><td>0.006&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug google">google/gemma-4-26b-a4b-it</span></td>
-            <td>1.5s</td><td>0.005&cent;</td>
-            <td>&mdash;</td><td>&mdash;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">moonshotai/kimi-k2.6</span></td>
-            <td>55.6s</td><td>1.01&cent;</td>
-            <td>21.1s</td><td>0.33&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">z-ai/glm-5.1</span></td>
-            <td>24.8s</td><td>0.50&cent;</td>
-            <td>12.2s</td><td>0.37&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">xiaomi/mimo-v2.5</span></td>
-            <td>&mdash;</td><td>&mdash;</td>
-            <td>3.6s</td><td>0.01&cent;</td>
-          </tr>
-          <tr>
-            <td><span class="model-slug other">stepfun/step-3.7-flash</span></td>
-            <td>&mdash;</td><td>&mdash;</td>
-            <td>6.8s</td><td>0.12&cent;</td>
-          </tr>
-          <tr class="fail-row">
-            <td><span class="model-slug free">liquid/lfm-2.5-1.2b-instruct:free</span></td>
-            <td colspan="2">Failed</td>
-            <td>&mdash;</td><td>&mdash;</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Summary: model comparison cards -->
+    <div class="compare-grid">
+
+      <!-- Header row -->
+      <div class="compare-header">
+        <div class="compare-col-model">Model</div>
+        <div class="compare-col-task">
+          <i class="ti ti-code"></i> Write code
+        </div>
+        <div class="compare-col-task">
+          <i class="ti ti-book"></i> Explain code
+        </div>
+      </div>
+
+      <!-- Rows -->
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug anthropic">claude-opus-4.8</span></div>
+        <div class="compare-stats"><span class="cs-time">1.0s</span><span class="cs-cost">0.43&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">5.3s</span><span class="cs-cost">1.06&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug anthropic">claude-sonnet-4.5</span></div>
+        <div class="compare-stats"><span class="cs-time">0.7s</span><span class="cs-cost">0.19&cent;</span></div>
+        <div class="compare-stats cs-na">&mdash;</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug google">gemini-3.1-pro</span></div>
+        <div class="compare-stats"><span class="cs-time">0.6s</span><span class="cs-cost">0.70&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">3.1s</span><span class="cs-cost">1.02&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug google">gemini-3.5-flash</span></div>
+        <div class="compare-stats"><span class="cs-time">2.5s</span><span class="cs-cost">0.91&cent;</span></div>
+        <div class="compare-stats cs-na">&mdash;</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug xai">grok-4.20</span></div>
+        <div class="compare-stats"><span class="cs-time">16.3s</span><span class="cs-cost">0.60&cent;</span></div>
+        <div class="compare-stats cs-na">&mdash;</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug openai">gpt-5.5</span></div>
+        <div class="compare-stats"><span class="cs-time">2.6s</span><span class="cs-cost cs-byok">BYOK</span></div>
+        <div class="compare-stats"><span class="cs-time">3.7s</span><span class="cs-cost cs-byok">BYOK</span></div>
+      </div>
+
+      <div class="compare-divider"></div>
+
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">minimax-m3</span></div>
+        <div class="compare-stats"><span class="cs-time">2.2s</span><span class="cs-cost">0.03&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">3.8s</span><span class="cs-cost">0.04&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug qwen">qwen3.7-plus</span></div>
+        <div class="compare-stats"><span class="cs-time">16.7s</span><span class="cs-cost">0.16&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">23.2s</span><span class="cs-cost">0.22&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">mercury-2</span></div>
+        <div class="compare-stats"><span class="cs-time">0.4s</span><span class="cs-cost">0.03&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">0.3s</span><span class="cs-cost">0.02&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">mistral-small-4</span></div>
+        <div class="compare-stats"><span class="cs-time">0.4s</span><span class="cs-cost">0.009&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">0.7s</span><span class="cs-cost">0.01&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug deepseek">deepseek-v4-flash</span></div>
+        <div class="compare-stats"><span class="cs-time">4.3s</span><span class="cs-cost">0.01&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">2.0s</span><span class="cs-cost">0.006&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug google">gemma-4-26b</span></div>
+        <div class="compare-stats"><span class="cs-time">1.5s</span><span class="cs-cost">0.005&cent;</span></div>
+        <div class="compare-stats cs-na">&mdash;</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">kimi-k2.6</span></div>
+        <div class="compare-stats"><span class="cs-time">55.6s</span><span class="cs-cost">1.01&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">21.1s</span><span class="cs-cost">0.33&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">glm-5.1</span></div>
+        <div class="compare-stats"><span class="cs-time">24.8s</span><span class="cs-cost">0.50&cent;</span></div>
+        <div class="compare-stats"><span class="cs-time">12.2s</span><span class="cs-cost">0.37&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">mimo-v2.5</span></div>
+        <div class="compare-stats cs-na">&mdash;</div>
+        <div class="compare-stats"><span class="cs-time">3.6s</span><span class="cs-cost">0.01&cent;</span></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-model"><span class="model-slug other">step-3.7-flash</span></div>
+        <div class="compare-stats cs-na">&mdash;</div>
+        <div class="compare-stats"><span class="cs-time">6.8s</span><span class="cs-cost">0.12&cent;</span></div>
+      </div>
+
+      <div class="compare-divider"></div>
+
+      <div class="compare-row compare-fail">
+        <div class="compare-model"><span class="model-slug free">lfm-1.2b (free)</span></div>
+        <div class="compare-stats">Failed</div>
+        <div class="compare-stats cs-na">&mdash;</div>
+      </div>
+
     </div>
 
     <h2 class="section-break" id="write" style="margin-top:40px">Task 1: write Stata code</h2>
