@@ -49,7 +49,7 @@ description: "Real-world examples of agentic coding sessions with token counts, 
               <span class="chat-text">The merge on firm_id in code/create/02_merge_spells.do drops 3,200 obs. firm_id is not unique in the master because firms have multiple spells. Fix the merge so all spells are preserved.</span>
             </div>
             <div class="chat-msg assistant">
-              <span class="chat-role">Claude</span>
+              <span class="chat-role">Sonnet</span>
               <span class="chat-text">The issue is the <code>merge 1:1</code> on line 34 &mdash; it should be <code>merge m:1</code> since the master has multiple spells per firm. I also added an <code>assert _merge == 3</code> on line 37 to catch future mismatches. Diff:</span>
             </div>
             <div class="chat-diff">
@@ -102,7 +102,7 @@ description: "Real-world examples of agentic coding sessions with token counts, 
               <span class="chat-text">Create a .gitignore for this project. We use Stata, Julia, bead, and Make. Input/ and temp/ are managed by bead.</span>
             </div>
             <div class="chat-msg assistant">
-              <span class="chat-role">Claude</span>
+              <span class="chat-role">Haiku</span>
               <span class="chat-text">Created <code>.gitignore</code> with sections for bead (<code>input/</code>, <code>temp/</code>), Stata (<code>*.log</code>, <code>*.smcl</code>), Julia (<code>Manifest.toml</code>, <code>.julia/</code>), and system files.</span>
             </div>
           </div>
@@ -160,7 +160,7 @@ description: "Real-world examples of agentic coding sessions with token counts, 
               <span class="chat-text">Read every .do file in code/create/ and code/analysis/. Figure out which datasets each one reads and writes. Create a Makefile that runs them in the correct order. Use temp/ for intermediates and output/ for final tables.</span>
             </div>
             <div class="chat-msg assistant">
-              <span class="chat-role">Claude</span>
+              <span class="chat-role">Opus</span>
               <span class="chat-text">I read 14 .do files and traced the dependency graph. There are 3 independent entry points (<code>01_import_*.do</code>) that can run in parallel, a merge step, and 4 analysis scripts that depend on the merged dataset. Created <code>Makefile</code> with phony targets <code>all</code>, <code>clean</code>, <code>data</code>, and <code>tables</code>.</span>
             </div>
             <div class="chat-diff">
@@ -222,7 +222,7 @@ temp/merged_panel.dta: code/create/03_merge.do \
               <span class="chat-text">Convert code/create/02_clean_registry.do to a dodo pipeline. Keep every step. Add assert statements after each merge and reshape to verify observation counts. Output to temp/registry_clean.parquet.</span>
             </div>
             <div class="chat-msg assistant">
-              <span class="chat-role">Claude</span>
+              <span class="chat-role">Sonnet</span>
               <span class="chat-text">Converted to <code>code/create/02_clean_registry.do</code> (dodo syntax). 6 pipeline steps, 4 assertions. Key change: the original <code>reshape wide</code> silently dropped firms with missing years &mdash; I added <code>assert nobs &gt;= 142000</code> after the reshape to catch this. Use <code>show sql</code> to verify the generated SQL.</span>
             </div>
           </div>
@@ -280,7 +280,7 @@ temp/merged_panel.dta: code/create/03_merge.do \
               <span class="chat-text">Create a gh repo codedthinking/ai-workshop for a Jekyll website. Fetch this design file, read its readme, and implement the relevant aspects of the design. We will use the koren.dev subbrand.</span>
             </div>
             <div class="chat-msg assistant">
-              <span class="chat-role">Claude</span>
+              <span class="chat-role">Opus</span>
               <span class="chat-text">Created the repo, fetched and extracted the design system tarball, read the README/CSS/components, built a complete Jekyll site with self-hosted Brockmann fonts, brand tokens, scattered-squares motif, full schedule, responsive layout. Committed, pushed, enabled GitHub Pages, added CI workflow. Site is live.</span>
             </div>
           </div>
