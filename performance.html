@@ -14,6 +14,115 @@ description: "The same Stata prompt sent to 11 models simultaneously via OpenRou
 <section class="page-content">
   <div class="container">
 
+    <!-- Summary table -->
+    <div class="summary-table-wrap">
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th colspan="2">Write code</th>
+            <th colspan="2">Explain code</th>
+          </tr>
+          <tr class="sub-header">
+            <th></th>
+            <th>Time</th>
+            <th>Cost</th>
+            <th>Time</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="model-slug anthropic">anthropic/claude-opus-4.8</span></td>
+            <td>1.0s</td><td>0.43&cent;</td>
+            <td>5.3s</td><td>1.06&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug anthropic">anthropic/claude-sonnet-4.5</span></td>
+            <td>0.7s</td><td>0.19&cent;</td>
+            <td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug google">google/gemini-3.1-pro</span></td>
+            <td>0.6s</td><td>0.70&cent;</td>
+            <td>3.1s</td><td>1.02&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug google">google/gemini-3.5-flash</span></td>
+            <td>2.5s</td><td>0.91&cent;</td>
+            <td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug xai">x-ai/grok-4.20</span></td>
+            <td>16.3s</td><td>0.60&cent;</td>
+            <td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug openai">openai/gpt-5.5</span></td>
+            <td>2.6s</td><td>BYOK</td>
+            <td>3.7s</td><td>BYOK</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">minimax/minimax-m3</span></td>
+            <td>2.2s</td><td>0.03&cent;</td>
+            <td>3.8s</td><td>0.04&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug qwen">qwen/qwen3.7-plus</span></td>
+            <td>16.7s</td><td>0.16&cent;</td>
+            <td>23.2s</td><td>0.22&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">inception/mercury-2</span></td>
+            <td>0.4s</td><td>0.03&cent;</td>
+            <td>0.3s</td><td>0.02&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">mistralai/mistral-small-4</span></td>
+            <td>0.4s</td><td>0.009&cent;</td>
+            <td>0.7s</td><td>0.01&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug deepseek">deepseek/deepseek-v4-flash</span></td>
+            <td>4.3s</td><td>0.01&cent;</td>
+            <td>2.0s</td><td>0.006&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug google">google/gemma-4-26b-a4b-it</span></td>
+            <td>1.5s</td><td>0.005&cent;</td>
+            <td>&mdash;</td><td>&mdash;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">moonshotai/kimi-k2.6</span></td>
+            <td>55.6s</td><td>1.01&cent;</td>
+            <td>21.1s</td><td>0.33&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">z-ai/glm-5.1</span></td>
+            <td>24.8s</td><td>0.50&cent;</td>
+            <td>12.2s</td><td>0.37&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">xiaomi/mimo-v2.5</span></td>
+            <td>&mdash;</td><td>&mdash;</td>
+            <td>3.6s</td><td>0.01&cent;</td>
+          </tr>
+          <tr>
+            <td><span class="model-slug other">stepfun/step-3.7-flash</span></td>
+            <td>&mdash;</td><td>&mdash;</td>
+            <td>6.8s</td><td>0.12&cent;</td>
+          </tr>
+          <tr class="fail-row">
+            <td><span class="model-slug free">liquid/lfm-2.5-1.2b-instruct:free</span></td>
+            <td colspan="2">Failed</td>
+            <td>&mdash;</td><td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section-break" id="write" style="margin-top:40px">Task 1: write Stata code</h2>
+
     <!-- The prompt -->
     <div class="prompt-card">
       <div class="prompt-label"><i class="ti ti-message"></i> Prompt</div>

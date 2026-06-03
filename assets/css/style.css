@@ -652,6 +652,69 @@ img, svg { display: block; max-width: 100%; }
    Performance page
    ============================================================ */
 
+/* Summary table */
+.summary-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.summary-table thead tr:first-child th {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ct-navy);
+  text-align: left;
+  padding: 14px 14px 6px;
+  border-bottom: none;
+}
+.summary-table thead tr:first-child th:not(:first-child) {
+  text-align: center;
+}
+.summary-table .sub-header th {
+  font-family: var(--ct-font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ct-grey-2);
+  text-align: center;
+  padding: 0 14px 12px;
+  border-bottom: 2px solid var(--ct-grey-3);
+}
+.summary-table .sub-header th:first-child {
+  border-bottom: 2px solid var(--ct-grey-3);
+}
+.summary-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--ct-surface-2);
+  vertical-align: middle;
+}
+.summary-table td:not(:first-child) {
+  text-align: center;
+  font-family: var(--ct-font-mono);
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--ct-ink);
+}
+.summary-table td:first-child {
+  white-space: nowrap;
+}
+.summary-table tbody tr:hover {
+  background: var(--ct-surface);
+}
+.summary-table .fail-row td {
+  color: var(--ct-grey-2);
+  font-style: italic;
+}
+/* Highlight cheapest/fastest with subtle color */
+.summary-table thead tr:first-child th[colspan] {
+  border-bottom: none;
+}
+
 /* Prompt card */
 .prompt-card {
   background: var(--ct-surface);
