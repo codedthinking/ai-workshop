@@ -1,0 +1,400 @@
+/* ============================================================
+   AI Workshop — koren.dev subbrand stylesheet
+   Built on Coded Thinking design system tokens
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* ---- Brockmann (self-hosted) ---- */
+@font-face { font-family:'Brockmann'; font-weight:400; font-style:normal;
+  src:url('../fonts/brockmann-regular-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:400; font-style:italic;
+  src:url('../fonts/brockmann-regularitalic-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:500; font-style:normal;
+  src:url('../fonts/brockmann-medium-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:500; font-style:italic;
+  src:url('../fonts/brockmann-mediumitalic-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:600; font-style:normal;
+  src:url('../fonts/brockmann-semibold-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:600; font-style:italic;
+  src:url('../fonts/brockmann-semibolditalic-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:700; font-style:normal;
+  src:url('../fonts/brockmann-bold-webfont.woff2') format('woff2'); font-display:swap; }
+@font-face { font-family:'Brockmann'; font-weight:700; font-style:italic;
+  src:url('../fonts/brockmann-bolditalic-webfont.woff2') format('woff2'); font-display:swap; }
+
+/* ---- Big Caslon (serif accent) ---- */
+@font-face { font-family:'Big Caslon'; font-weight:400; font-style:normal;
+  src:url('../fonts/bigcaslon-regular.woff2') format('woff2'); font-display:swap; }
+
+/* ---- Design tokens ---- */
+:root {
+  --ct-red:        #E61E25;
+  --ct-red-press:  #C41A20;
+  --ct-ink:        #232324;
+  --ct-navy:       #1D1D40;
+  --ct-grey-1:     #5D5A88;
+  --ct-grey-2:     #9795B5;
+  --ct-grey-3:     #D4D2E3;
+  --ct-surface:    #F9F9FF;
+  --ct-surface-2:  #F2F1FA;
+  --ct-white:      #FFFFFF;
+
+  --ct-font-sans:    'Brockmann', 'Helvetica Neue', Arial, sans-serif;
+  --ct-font-display: 'Brockmann', 'Helvetica Neue', Arial, sans-serif;
+  --ct-font-serif:   'Big Caslon', Georgia, serif;
+  --ct-font-mono:    'DM Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --ct-radius-pill:  40px;
+  --ct-radius-card:  5px;
+  --ct-shadow-2: 4px 10px 35px 0px rgba(151,149,181,0.30);
+  --ct-ease:     cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ct-dur:      180ms;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--ct-font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ct-ink);
+  background: var(--ct-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--ct-red); text-decoration: none; }
+a:hover { opacity: 0.8; }
+
+img, svg { display: block; max-width: 100%; }
+
+/* ---- Layout ---- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* ---- Header ---- */
+.site-header {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--ct-grey-3);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-header .logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+.site-header .logo-link svg {
+  height: 36px;
+  width: auto;
+}
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.site-header nav a {
+  font-family: var(--ct-font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ct-grey-1);
+  transition: color var(--ct-dur) var(--ct-ease);
+}
+.site-header nav a:hover {
+  color: var(--ct-navy);
+  opacity: 1;
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  padding: 100px 0 80px;
+  overflow: hidden;
+  background: var(--ct-white);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+.hero h1 {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1.15;
+  color: var(--ct-navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+.hero .subtitle {
+  font-size: 20px;
+  color: var(--ct-grey-1);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.hero .meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 16px;
+  color: var(--ct-grey-2);
+}
+.hero .meta-line span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Scattered pixel squares */
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.confetti .px {
+  position: absolute;
+  display: block;
+  border-radius: 1px;
+}
+.px-red   { background: var(--ct-red); }
+.px-grey  { background: var(--ct-grey-3); }
+.px-white { background: var(--ct-white); border: 1px solid var(--ct-grey-3); }
+.px-ink   { background: var(--ct-ink); }
+
+/* ---- Thesis callout ---- */
+.thesis {
+  background: var(--ct-surface-2);
+  border-left: 4px solid var(--ct-red);
+  border-radius: 0 var(--ct-radius-card) var(--ct-radius-card) 0;
+  padding: 30px 35px;
+  margin: 0 0 70px;
+}
+.thesis h2 {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--ct-navy);
+  margin-bottom: 16px;
+}
+.thesis ol {
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.thesis li {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ct-ink);
+}
+
+/* ---- Schedule ---- */
+.schedule-section {
+  padding: 0 0 100px;
+}
+.schedule-section > .container > h2 {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--ct-navy);
+  margin-bottom: 50px;
+}
+
+/* Act group */
+.act {
+  margin-bottom: 70px;
+}
+.act:last-child {
+  margin-bottom: 0;
+}
+.act-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ct-grey-3);
+}
+.act-number {
+  font-family: var(--ct-font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ct-grey-2);
+}
+.act-title {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ct-navy);
+}
+
+/* Session block */
+.session {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0 30px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--ct-surface-2);
+}
+.session:last-child {
+  border-bottom: none;
+}
+.session-time {
+  font-family: var(--ct-font-mono);
+  font-size: 15px;
+  color: var(--ct-grey-1);
+  padding-top: 3px;
+}
+.session-duration {
+  font-family: var(--ct-font-mono);
+  font-size: 13px;
+  color: var(--ct-grey-2);
+}
+.session-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.session-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.session-title {
+  font-family: var(--ct-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ct-navy);
+}
+.session-desc {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ct-grey-1);
+}
+.session-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* Type tags */
+.type-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ct-font-sans);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.type-tag.talk       { background: #E6F1FB; color: #0C447C; }
+.type-tag.demo       { background: #EAF3DE; color: #27500A; }
+.type-tag.exercise   { background: #EEEDFE; color: #3C3489; }
+.type-tag.break      { background: #F1EFE8; color: #5F5E5A; }
+.type-tag.discussion { background: #FAEEDA; color: #633806; }
+
+/* Topic pills */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ct-font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ct-grey-1);
+  background: var(--ct-surface-2);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  border-top: 1px solid var(--ct-grey-3);
+  padding: 40px 0;
+  background: var(--ct-surface);
+}
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-footer .logo-link svg {
+  height: 28px;
+  width: auto;
+  opacity: 0.5;
+}
+.site-footer .copyright {
+  font-size: 14px;
+  color: var(--ct-grey-2);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 0 50px;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+  }
+  .session {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .session-time {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .act-title {
+    font-size: 19px;
+  }
+  .thesis {
+    padding: 22px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero {
+    padding: 50px 0 40px;
+  }
+  .container {
+    padding: 0 18px;
+  }
+  .site-header nav {
+    gap: 16px;
+  }
+  .site-header nav a {
+    font-size: 14px;
+  }
+  .site-footer .container {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  .schedule-section > .container > h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}

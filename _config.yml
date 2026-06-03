@@ -1,0 +1,13 @@
+title: "Agentic AI for Researchers"
+description: "One-Day Workshop — Economists & social scientists"
+url: "https://codedthinking.github.io"
+baseurl: "/ai-workshop"
+permalink: pretty
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
