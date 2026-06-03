@@ -7,7 +7,7 @@ description: "The same Stata prompt sent to 11 models simultaneously via OpenRou
 <section class="page-hero">
   <div class="container">
     <h1>Model performance</h1>
-    <p class="subtitle">One prompt, fourteen models, simultaneous. All data from OpenRouter on 3 June 2026.</p>
+    <p class="subtitle">One prompt, fifteen models, simultaneous. All data from OpenRouter on 3 June 2026.</p>
   </div>
 </section>
 
@@ -227,6 +227,33 @@ list</code></div>
           <span><i class="ti ti-currency-dollar"></i> 0.01¢</span>
         </div>
         <div class="mcard-note">Cheapest response. Missing quotes around filename. <code>set more off</code> unnecessary in modern Stata.</div>
+      </div>
+
+      <!-- Mistral Small 4 -->
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">mistralai/mistral-small-4</span>
+        </div>
+        <div class="mcard-code"><code>* Compute average revenue by year
+
+preserve
+
+collapse (mean) avg_revenue=revenue, by(year)
+
+save "avg_revenue_by_year.dta", replace
+
+restore
+
+display as result "Average revenue by year saved to 'avg_revenue_by_year.dta'"
+
+exit</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 64</span>
+          <span><i class="ti ti-clock"></i> 0.4s</span>
+          <span><i class="ti ti-bolt"></i> 156 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.009¢</span>
+        </div>
+        <div class="mcard-note">Fastest cheap model (0.4s, $0.15/M input). Used <code>preserve</code>/<code>restore</code>, saved output to .dta, added <code>display</code> confirmation. No <code>use</code> &mdash; assumes data in memory. Added <code>exit</code>. Comment despite "no commentary."</div>
       </div>
 
       <!-- Gemma 4 -->
