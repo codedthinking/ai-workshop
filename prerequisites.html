@@ -14,117 +14,122 @@ description: "What to install and set up before the workshop."
 <section class="page-content">
   <div class="container">
 
-    <div class="prereq-group">
+    <div class="tool-section">
       <h2>Required</h2>
+      <div class="tool-grid cols-3">
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>A laptop with a terminal</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-device-laptop"></i></div>
           <span class="type-tag talk">All participants</span>
+          <h3>A laptop with a terminal</h3>
+          <p>macOS, Linux, or Windows with WSL. You need a working terminal where you can run shell commands. On Windows, install <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener">WSL 2</a> first.</p>
         </div>
-        <p>macOS, Linux, or Windows with WSL. You need a working terminal where you can run shell commands. On macOS, the built-in Terminal.app or iTerm2 works. On Windows, install <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener">WSL 2</a> first.</p>
-      </div>
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>Git</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-git-branch"></i></div>
           <span class="type-tag talk">Version control</span>
-        </div>
-        <p>We will use git throughout the workshop. Install it if you do not have it already.</p>
-        <div class="code-block">
-          <code><span class="code-comment"># macOS (comes with Xcode Command Line Tools)</span>
+          <h3>Git</h3>
+          <p>We use git throughout the workshop. Install it if you do not have it already.</p>
+          <div class="code-block">
+            <code><span class="code-comment"># macOS</span>
 xcode-select --install
 
 <span class="code-comment"># Ubuntu / Debian</span>
 sudo apt install git
 
-<span class="code-comment"># Check your installation</span>
+<span class="code-comment"># Check</span>
 git --version</code>
+          </div>
         </div>
-      </div>
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>An API key from a model provider</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-key"></i></div>
           <span class="type-tag exercise">Hands-on</span>
+          <h3>An API key</h3>
+          <p>You need access to at least one LLM. We recommend <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> (one key, many models). Or get a key from <a href="https://console.anthropic.com" target="_blank" rel="noopener">Anthropic</a> or <a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI</a> directly.</p>
+          <p>Budget about $5&ndash;10 of credit.</p>
         </div>
-        <p>You need access to at least one LLM. We recommend setting up an <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> account, which gives you access to many models through a single API key. Alternatively, get an API key from <a href="https://console.anthropic.com" target="_blank" rel="noopener">Anthropic</a> (Claude) or <a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI</a> directly.</p>
-        <p>Budget about $5&ndash;10 of credit for the workshop day.</p>
+
       </div>
     </div>
 
-    <div class="prereq-group">
+    <div class="tool-section">
       <h2>Install one coding agent</h2>
-      <p class="group-intro">Pick at least one. Both are terminal-based AI coding agents. We will primarily demo with Claude Code, but OpenCode is a strong open-source alternative that works with any provider.</p>
+      <p class="section-intro">Pick at least one. We demo with Claude Code, but OpenCode is a strong open-source alternative that works with any provider.</p>
+      <div class="tool-grid">
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>Claude Code</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-terminal-2"></i></div>
           <span class="type-tag demo">Recommended</span>
-        </div>
-        <p>Anthropic's agentic coding tool. Requires Node.js 18+ and an Anthropic API key (or a Claude Pro/Max subscription).</p>
-        <div class="code-block">
-          <code><span class="code-comment"># Install via npm</span>
+          <h3>Claude Code</h3>
+          <p>Anthropic's agentic coding tool. Requires Node.js 18+ and an Anthropic API key (or a Claude Pro/Max subscription).</p>
+          <div class="code-block">
+            <code><span class="code-comment"># Install via npm</span>
 npm install -g @anthropic-ai/claude-code
 
 <span class="code-comment"># Verify</span>
 claude --version</code>
+          </div>
+          <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener" class="tcard-btn">
+            Docs <i class="ti ti-arrow-right"></i>
+          </a>
         </div>
-        <p>Documentation: <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">docs.anthropic.com/en/docs/claude-code</a></p>
-      </div>
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>OpenCode</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-code"></i></div>
           <span class="type-tag talk">Open source</span>
-        </div>
-        <p>Open-source AI coding agent. Works with any LLM provider (OpenRouter, Anthropic, OpenAI, local models).</p>
-        <div class="code-block">
-          <code><span class="code-comment"># Install</span>
+          <h3>OpenCode</h3>
+          <p>Open-source AI coding agent. Works with any LLM provider &mdash; OpenRouter, Anthropic, OpenAI, or local models.</p>
+          <div class="code-block">
+            <code><span class="code-comment"># Install</span>
 curl -fsSL https://opencode.ai/install | bash
 
 <span class="code-comment"># Verify</span>
 opencode --version</code>
+          </div>
+          <a href="https://opencode.ai" target="_blank" rel="noopener" class="tcard-btn outline">
+            Docs <i class="ti ti-arrow-right"></i>
+          </a>
         </div>
-        <p>Documentation: <a href="https://opencode.ai" target="_blank" rel="noopener">opencode.ai</a></p>
+
       </div>
     </div>
 
-    <div class="prereq-group">
+    <div class="tool-section">
       <h2>Optional but useful</h2>
+      <div class="tool-grid cols-3">
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>DuckDB</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-database"></i></div>
           <span class="type-tag exercise">Act 3 exercises</span>
+          <h3>DuckDB</h3>
+          <p>We use DuckDB in the dodo demo and exercise. Install it to follow along hands-on in Act 3.</p>
+          <div class="code-block">
+            <code><span class="code-comment"># macOS</span>
+brew install duckdb</code>
+          </div>
+          <a href="https://duckdb.org/docs/installation" target="_blank" rel="noopener" class="tcard-btn outline">
+            Install guide <i class="ti ti-arrow-right"></i>
+          </a>
         </div>
-        <p>We use DuckDB in the dodo demo and exercise. Install it if you want to follow along hands-on in Act 3.</p>
-        <div class="code-block">
-          <code><span class="code-comment"># macOS</span>
-brew install duckdb
 
-<span class="code-comment"># Or download from</span>
-<span class="code-comment"># https://duckdb.org/docs/installation</span></code>
-        </div>
-      </div>
-
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>Make</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-settings-automation"></i></div>
           <span class="type-tag break">Likely pre-installed</span>
+          <h3>Make</h3>
+          <p>GNU Make for running pipelines. Already installed on most macOS and Linux systems.</p>
+          <div class="code-block">
+            <code>make --version</code>
+          </div>
         </div>
-        <p>GNU Make for running pipelines. Already installed on most macOS and Linux systems.</p>
-        <div class="code-block">
-          <code>make --version</code>
-        </div>
-      </div>
 
-      <div class="prereq-card">
-        <div class="prereq-header">
-          <h3>A project to work on</h3>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-folder-code"></i></div>
           <span class="type-tag discussion">Bring your own</span>
+          <h3>A project to work on</h3>
+          <p>The exercises work best with a real research project &mdash; ideally a git repo with data-wrangling scripts (.do, .py, .R, or .jl). We provide a sample dataset if you do not have one.</p>
         </div>
-        <p>The exercises work best if you have a real research project &mdash; ideally a git repo with some data-wrangling scripts (.do, .py, .R, or .jl). If you do not have one ready, we provide a sample dataset.</p>
+
       </div>
     </div>
 

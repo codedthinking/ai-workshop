@@ -524,6 +524,15 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.tool-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.section-intro {
+  font-size: 16px;
+  color: var(--ct-grey-1);
+  line-height: 1.55;
+  margin: -14px 0 24px;
+}
 
 /* Tool cards — design system ct-card with shadow */
 .tcard {
@@ -552,6 +561,9 @@ img, svg { display: block; max-width: 100%; }
   color: var(--ct-red);
   font-size: 24px;
 }
+.tcard .type-tag {
+  align-self: flex-start;
+}
 .tcard h3 {
   font-family: var(--ct-font-display);
   font-weight: 700;
@@ -562,7 +574,13 @@ img, svg { display: block; max-width: 100%; }
   font-size: 16px;
   line-height: 1.55;
   color: var(--ct-grey-1);
-  flex: 1;
+}
+.tcard p:last-child,
+.tcard .code-block + .tcard-btn {
+  margin-top: auto;
+}
+.tcard .code-block {
+  margin: 4px 0;
 }
 
 /* Pill buttons inside tool cards */
@@ -618,7 +636,8 @@ img, svg { display: block; max-width: 100%; }
   .page-hero h1 {
     font-size: 32px;
   }
-  .tool-grid {
+  .tool-grid,
+  .tool-grid.cols-3 {
     grid-template-columns: 1fr;
   }
 }
