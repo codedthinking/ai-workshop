@@ -647,3 +647,249 @@ img, svg { display: block; max-width: 100%; }
     font-size: 28px;
   }
 }
+
+/* ============================================================
+   Performance page
+   ============================================================ */
+
+/* Legend */
+.perf-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 50px;
+  padding: 16px 24px;
+  background: var(--ct-surface-2);
+  border-radius: var(--ct-radius-card);
+  font-size: 14px;
+  color: var(--ct-grey-1);
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-item i {
+  color: var(--ct-grey-2);
+  font-size: 16px;
+}
+
+/* Performance grid */
+.perf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.perf-grid.single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+}
+
+/* Performance card */
+.perf-card {
+  background: var(--ct-white);
+  border-radius: var(--ct-radius-card);
+  box-shadow: var(--ct-shadow-2);
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.perf-card h3 {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--ct-navy);
+}
+.perf-task {
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ct-grey-1);
+}
+
+/* Model badges */
+.model-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--ct-font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.model-badge.opus     { background: #EEEDFE; color: #3C3489; }
+.model-badge.sonnet   { background: #E6F1FB; color: #0C447C; }
+.model-badge.haiku    { background: #EAF3DE; color: #27500A; }
+.model-badge.deepseek { background: #E0F5F5; color: #0A4A4A; }
+.model-badge.qwen     { background: #F1EFE8; color: #5F5E5A; }
+.model-badge.gemini   { background: #FAEEDA; color: #633806; }
+
+/* Chat transcript */
+.perf-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--ct-surface);
+  border-radius: var(--ct-radius-card);
+}
+.chat-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chat-role {
+  font-family: var(--ct-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.chat-msg.user .chat-role { color: var(--ct-navy); }
+.chat-msg.assistant .chat-role { color: var(--ct-red); }
+.chat-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ct-ink);
+}
+.chat-text code {
+  font-family: var(--ct-font-mono);
+  font-size: 13px;
+  background: var(--ct-surface-2);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* Diff block inside chat */
+.chat-diff {
+  background: var(--ct-ink);
+  border-radius: var(--ct-radius-card);
+  padding: 12px 16px;
+  overflow-x: auto;
+}
+.chat-diff code {
+  font-family: var(--ct-font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #C9C9D6;
+  white-space: pre;
+  display: block;
+}
+
+/* Stats row */
+.perf-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--ct-grey-3);
+  padding-top: 16px;
+}
+.stat {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stat i {
+  color: var(--ct-grey-2);
+  font-size: 16px;
+}
+.stat-val {
+  font-family: var(--ct-font-mono);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--ct-navy);
+  display: block;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--ct-grey-2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+/* Price table */
+.price-table-wrap {
+  overflow-x: auto;
+}
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.price-table th {
+  font-family: var(--ct-font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ct-grey-2);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--ct-grey-3);
+}
+.price-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ct-surface-2);
+  color: var(--ct-ink);
+  vertical-align: middle;
+}
+.price-table td:nth-child(2),
+.price-table td:nth-child(3),
+.price-table td:nth-child(4) {
+  font-family: var(--ct-font-mono);
+  font-size: 14px;
+  white-space: nowrap;
+}
+.price-table td:last-child {
+  color: var(--ct-grey-1);
+  font-size: 14px;
+}
+.price-table tbody tr:hover {
+  background: var(--ct-surface);
+}
+
+/* Session note (for schedule page) */
+.session-note {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ct-grey-2);
+  margin-top: 4px;
+}
+
+/* Act duration label */
+.act-duration {
+  font-family: var(--ct-font-mono);
+  font-size: 13px;
+  color: var(--ct-grey-2);
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .perf-grid,
+  .perf-grid.single {
+    grid-template-columns: 1fr;
+  }
+  .perf-stats {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .stat {
+    flex: 0 0 calc(50% - 6px);
+  }
+  .perf-legend {
+    gap: 12px;
+  }
+  .price-table {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .stat {
+    flex: 0 0 100%;
+  }
+}

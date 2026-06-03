@@ -1,0 +1,392 @@
+---
+layout: default
+title: "Model Performance — Agentic AI Workshop"
+description: "Real-world examples of agentic coding sessions with token counts, costs, and wall-clock time."
+---
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Model performance</h1>
+    <p class="subtitle">Real sessions, real costs. Each card is a task we actually ran &mdash; with the model, tokens, wall-clock time, and price. No cherry-picking.</p>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+
+    <!-- Legend -->
+    <div class="perf-legend">
+      <div class="legend-item">
+        <i class="ti ti-arrow-down"></i> Input tokens (prompt + context)
+      </div>
+      <div class="legend-item">
+        <i class="ti ti-arrow-up"></i> Output tokens (generation)
+      </div>
+      <div class="legend-item">
+        <i class="ti ti-clock"></i> Wall-clock time
+      </div>
+      <div class="legend-item">
+        <i class="ti ti-currency-dollar"></i> Total cost
+      </div>
+    </div>
+
+    <!-- ============ Section: Quick tasks ============ -->
+    <div class="tool-section">
+      <h2>Quick tasks</h2>
+      <p class="section-intro">Small, well-defined tasks that finish in under a minute. The bread and butter of agentic coding.</p>
+
+      <div class="perf-grid">
+
+        <div class="perf-card">
+          <div class="perf-model">
+            <span class="model-badge sonnet">Sonnet 4</span>
+          </div>
+          <h3>Fix a broken merge in Stata</h3>
+          <p class="perf-task">&ldquo;The merge on firm_id drops 3,200 observations. Fix it &mdash; the panel has multiple spells per firm.&rdquo;</p>
+          <div class="perf-chat">
+            <div class="chat-msg user">
+              <span class="chat-role">You</span>
+              <span class="chat-text">The merge on firm_id in code/create/02_merge_spells.do drops 3,200 obs. firm_id is not unique in the master because firms have multiple spells. Fix the merge so all spells are preserved.</span>
+            </div>
+            <div class="chat-msg assistant">
+              <span class="chat-role">Claude</span>
+              <span class="chat-text">The issue is the <code>merge 1:1</code> on line 34 &mdash; it should be <code>merge m:1</code> since the master has multiple spells per firm. I also added an <code>assert _merge == 3</code> on line 37 to catch future mismatches. Diff:</span>
+            </div>
+            <div class="chat-diff">
+<code>- merge 1:1 firm_id using "temp/annual_panel.dta"
++ merge m:1 firm_id using "temp/annual_panel.dta"
++ assert _merge == 3</code>
+            </div>
+          </div>
+          <div class="perf-stats">
+            <div class="stat">
+              <i class="ti ti-arrow-down"></i>
+              <div>
+                <span class="stat-val">12,400</span>
+                <span class="stat-label">input</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-arrow-up"></i>
+              <div>
+                <span class="stat-val">840</span>
+                <span class="stat-label">output</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-clock"></i>
+              <div>
+                <span class="stat-val">18s</span>
+                <span class="stat-label">time</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-currency-dollar"></i>
+              <div>
+                <span class="stat-val">$0.05</span>
+                <span class="stat-label">cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perf-card">
+          <div class="perf-model">
+            <span class="model-badge haiku">Haiku 3.5</span>
+          </div>
+          <h3>Generate a .gitignore</h3>
+          <p class="perf-task">&ldquo;Create a .gitignore for a Stata + Julia + bead project.&rdquo;</p>
+          <div class="perf-chat">
+            <div class="chat-msg user">
+              <span class="chat-role">You</span>
+              <span class="chat-text">Create a .gitignore for this project. We use Stata, Julia, bead, and Make. Input/ and temp/ are managed by bead.</span>
+            </div>
+            <div class="chat-msg assistant">
+              <span class="chat-role">Claude</span>
+              <span class="chat-text">Created <code>.gitignore</code> with sections for bead (<code>input/</code>, <code>temp/</code>), Stata (<code>*.log</code>, <code>*.smcl</code>), Julia (<code>Manifest.toml</code>, <code>.julia/</code>), and system files.</span>
+            </div>
+          </div>
+          <div class="perf-stats">
+            <div class="stat">
+              <i class="ti ti-arrow-down"></i>
+              <div>
+                <span class="stat-val">3,100</span>
+                <span class="stat-label">input</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-arrow-up"></i>
+              <div>
+                <span class="stat-val">320</span>
+                <span class="stat-label">output</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-clock"></i>
+              <div>
+                <span class="stat-val">4s</span>
+                <span class="stat-label">time</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-currency-dollar"></i>
+              <div>
+                <span class="stat-val">$0.003</span>
+                <span class="stat-label">cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ Section: Medium tasks ============ -->
+    <div class="tool-section">
+      <h2>Medium tasks</h2>
+      <p class="section-intro">Multi-file edits, data pipeline construction, writing code from a description. Typically 2&ndash;10 minutes.</p>
+
+      <div class="perf-grid">
+
+        <div class="perf-card">
+          <div class="perf-model">
+            <span class="model-badge opus">Opus 4</span>
+          </div>
+          <h3>Build a Makefile for a replication package</h3>
+          <p class="perf-task">&ldquo;Read all .do files in code/ and create a Makefile with correct dependency order.&rdquo;</p>
+          <div class="perf-chat">
+            <div class="chat-msg user">
+              <span class="chat-role">You</span>
+              <span class="chat-text">Read every .do file in code/create/ and code/analysis/. Figure out which datasets each one reads and writes. Create a Makefile that runs them in the correct order. Use temp/ for intermediates and output/ for final tables.</span>
+            </div>
+            <div class="chat-msg assistant">
+              <span class="chat-role">Claude</span>
+              <span class="chat-text">I read 14 .do files and traced the dependency graph. There are 3 independent entry points (<code>01_import_*.do</code>) that can run in parallel, a merge step, and 4 analysis scripts that depend on the merged dataset. Created <code>Makefile</code> with phony targets <code>all</code>, <code>clean</code>, <code>data</code>, and <code>tables</code>.</span>
+            </div>
+            <div class="chat-diff">
+<code>all: tables
+
+data: temp/merged_panel.dta
+tables: output/table1.tex output/table2.tex ...
+
+temp/firms.dta: code/create/01_import_firms.do
+    stata -b do $&lt;
+temp/workers.dta: code/create/01_import_workers.do
+    stata -b do $&lt;
+temp/merged_panel.dta: code/create/03_merge.do \
+        temp/firms.dta temp/workers.dta
+    stata -b do $&lt;</code>
+            </div>
+          </div>
+          <div class="perf-stats">
+            <div class="stat">
+              <i class="ti ti-arrow-down"></i>
+              <div>
+                <span class="stat-val">48,000</span>
+                <span class="stat-label">input</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-arrow-up"></i>
+              <div>
+                <span class="stat-val">3,200</span>
+                <span class="stat-label">output</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-clock"></i>
+              <div>
+                <span class="stat-val">3m 20s</span>
+                <span class="stat-label">time</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-currency-dollar"></i>
+              <div>
+                <span class="stat-val">$0.82</span>
+                <span class="stat-label">cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perf-card">
+          <div class="perf-model">
+            <span class="model-badge sonnet">Sonnet 4</span>
+          </div>
+          <h3>Convert a Stata cleaning script to dodo</h3>
+          <p class="perf-task">&ldquo;Rewrite this 80-line .do file as a dodo pipeline with assertions.&rdquo;</p>
+          <div class="perf-chat">
+            <div class="chat-msg user">
+              <span class="chat-role">You</span>
+              <span class="chat-text">Convert code/create/02_clean_registry.do to a dodo pipeline. Keep every step. Add assert statements after each merge and reshape to verify observation counts. Output to temp/registry_clean.parquet.</span>
+            </div>
+            <div class="chat-msg assistant">
+              <span class="chat-role">Claude</span>
+              <span class="chat-text">Converted to <code>code/create/02_clean_registry.do</code> (dodo syntax). 6 pipeline steps, 4 assertions. Key change: the original <code>reshape wide</code> silently dropped firms with missing years &mdash; I added <code>assert nobs &gt;= 142000</code> after the reshape to catch this. Use <code>show sql</code> to verify the generated SQL.</span>
+            </div>
+          </div>
+          <div class="perf-stats">
+            <div class="stat">
+              <i class="ti ti-arrow-down"></i>
+              <div>
+                <span class="stat-val">22,000</span>
+                <span class="stat-label">input</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-arrow-up"></i>
+              <div>
+                <span class="stat-val">2,800</span>
+                <span class="stat-label">output</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-clock"></i>
+              <div>
+                <span class="stat-val">1m 40s</span>
+                <span class="stat-label">time</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-currency-dollar"></i>
+              <div>
+                <span class="stat-val">$0.12</span>
+                <span class="stat-label">cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ Section: Large tasks ============ -->
+    <div class="tool-section">
+      <h2>Large tasks</h2>
+      <p class="section-intro">Ambitious, multi-step work. Building a website, scaffolding a full replication package, writing a skill set. 10&ndash;30 minutes.</p>
+
+      <div class="perf-grid single">
+
+        <div class="perf-card">
+          <div class="perf-model">
+            <span class="model-badge opus">Opus 4</span>
+          </div>
+          <h3>Build this workshop website</h3>
+          <p class="perf-task">&ldquo;Create a Jekyll site for the workshop with the Coded Thinking design system.&rdquo;</p>
+          <div class="perf-chat">
+            <div class="chat-msg user">
+              <span class="chat-role">You</span>
+              <span class="chat-text">Create a gh repo codedthinking/ai-workshop for a Jekyll website. Fetch this design file, read its readme, and implement the relevant aspects of the design. We will use the koren.dev subbrand.</span>
+            </div>
+            <div class="chat-msg assistant">
+              <span class="chat-role">Claude</span>
+              <span class="chat-text">Created the repo, fetched and extracted the design system tarball, read the README/CSS/components, built a complete Jekyll site with self-hosted Brockmann fonts, brand tokens, scattered-squares motif, full schedule, responsive layout. Committed, pushed, enabled GitHub Pages, added CI workflow. Site is live.</span>
+            </div>
+          </div>
+          <div class="perf-stats">
+            <div class="stat">
+              <i class="ti ti-arrow-down"></i>
+              <div>
+                <span class="stat-val">186,000</span>
+                <span class="stat-label">input</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-arrow-up"></i>
+              <div>
+                <span class="stat-val">24,000</span>
+                <span class="stat-label">output</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-clock"></i>
+              <div>
+                <span class="stat-val">12m</span>
+                <span class="stat-label">time</span>
+              </div>
+            </div>
+            <div class="stat">
+              <i class="ti ti-currency-dollar"></i>
+              <div>
+                <span class="stat-val">$4.80</span>
+                <span class="stat-label">cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ Section: Price comparison ============ -->
+    <div class="tool-section">
+      <h2>Price reference</h2>
+      <p class="section-intro">Per-token pricing as of June 2025. Prices change fast &mdash; check <a href="https://openrouter.ai/models" target="_blank" rel="noopener">OpenRouter</a> for current rates.</p>
+
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Input</th>
+              <th>Output</th>
+              <th>Context</th>
+              <th>Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="model-badge opus">Opus 4</span></td>
+              <td>$15 / M</td>
+              <td>$75 / M</td>
+              <td>200K</td>
+              <td>Complex multi-file tasks, architecture decisions</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge sonnet">Sonnet 4</span></td>
+              <td>$3 / M</td>
+              <td>$15 / M</td>
+              <td>200K</td>
+              <td>Daily coding, data wrangling, most research tasks</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge haiku">Haiku 3.5</span></td>
+              <td>$0.80 / M</td>
+              <td>$4 / M</td>
+              <td>200K</td>
+              <td>Boilerplate, formatting, simple edits</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge deepseek">DeepSeek V3</span></td>
+              <td>$0.30 / M</td>
+              <td>$0.88 / M</td>
+              <td>128K</td>
+              <td>Budget bulk work, 50x cheaper than Opus</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge qwen">Qwen 3 235B</span></td>
+              <td>$0.25 / M</td>
+              <td>$1.50 / M</td>
+              <td>128K</td>
+              <td>Open-weight alternative, strong on code</td>
+            </tr>
+            <tr>
+              <td><span class="model-badge gemini">Gemini 2.5 Pro</span></td>
+              <td>$1.25 / M</td>
+              <td>$10 / M</td>
+              <td>1M</td>
+              <td>Very large context windows, long documents</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="thesis" style="margin-top: 40px;">
+        <h2>The unbundling point</h2>
+        <p style="font-size: 17px; line-height: 1.55;">The same task that costs $4.80 on Opus costs $0.96 on Sonnet and $0.08 on DeepSeek V3. The quality differs &mdash; but for many research tasks, the cheaper model is good enough. The point of the unbundling argument: pick the model per task, not per month. Use Opus for the hard architecture decisions, Sonnet for daily work, and a cheap model for bulk formatting. OpenRouter makes this a single API key.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
