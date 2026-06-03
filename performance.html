@@ -295,14 +295,228 @@ list</code></div>
 
     </div>
 
+    <!-- ============ Section 2: Reverse task ============ -->
+    <h2 class="section-break" id="reverse">Reverse task: explain this code</h2>
+    <p class="section-intro">The same models, but now reading code instead of writing it. A comprehension task tests different capabilities.</p>
+
+    <div class="prompt-card">
+      <div class="prompt-label"><i class="ti ti-message"></i> Prompt</div>
+      <p>What does this Stata code do? Explain in at most 100 words.</p>
+      <div class="code-block" style="margin:12px 0">
+        <code>* Benchmark: collapse on 10M rows
+* Tests: CSV read, filter, generate, collapse with by()
+use "test/data/large.csv", clear
+keep if year >= 2020
+generate profit = revenue - cost
+collapse (mean) avg_revenue = revenue avg_profit = profit ///
+    (sum) total_revenue = revenue (count) n = id, by(sector year)
+sort sector year</code>
+      </div>
+    </div>
+
+    <div class="perf-legend" style="margin-bottom:24px">
+      <div class="legend-item"><i class="ti ti-hash"></i> Output tokens</div>
+      <div class="legend-item"><i class="ti ti-clock"></i> Wall-clock time</div>
+      <div class="legend-item"><i class="ti ti-bolt"></i> Tokens/sec</div>
+      <div class="legend-item"><i class="ti ti-currency-dollar"></i> Total cost</div>
+    </div>
+
+    <div class="model-grid">
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug anthropic">anthropic/claude-opus-4.8</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Loads data, filters to year &ge; 2020, creates profit variable, aggregates by sector and year (mean revenue/profit, sum revenue, count), then sorts.
+
+<strong>Note:</strong> <code>use</code> expects a .dta file; reading an actual .csv would require <code>import delimited</code>.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 344</span>
+          <span><i class="ti ti-clock"></i> 5.3s</span>
+          <span><i class="ti ti-bolt"></i> 65 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 1.06&cent;</span>
+        </div>
+        <div class="mcard-note">The only model that caught the bug: <code>use</code> cannot read .csv files. This is the kind of domain knowledge that justifies a frontier model.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug google">google/gemini-3.1-pro</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Loads a large dataset. Filters to year &ge; 2020. Calculates profit. Aggregates by sector and year &mdash; computing average revenue/profit, total revenue, and count. Sorts the result.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 803</span>
+          <span><i class="ti ti-clock"></i> 3.1s</span>
+          <span><i class="ti ti-bolt"></i> 258 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 1.02&cent;</span>
+        </div>
+        <div class="mcard-note">Correct, verbose. Did not catch the .csv bug. Most tokens spent on reasoning.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug openai">openai/gpt-5.5</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Loads large.csv, keeps year &ge; 2020, creates profit as revenue &minus; cost, aggregates by sector and year. Computes mean revenue/profit, total revenue, counts nonmissing id. Sorts result. Comments indicate it benchmarks these operations on 10M rows.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 126</span>
+          <span><i class="ti ti-clock"></i> 3.7s</span>
+          <span><i class="ti ti-bolt"></i> 34 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.00&cent;</span>
+        </div>
+        <div class="mcard-note">Clean, concise, correct. Mentioned the benchmark context from the comments. Did not catch .csv bug. BYOK.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">mistralai/mistral-small-4</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Loads CSV with 10M rows. Keeps year &ge; 2020. Generates profit = revenue &minus; cost. Collapses by sector and year: mean revenue/profit, sum revenue, count of observations. Sorts by sector and year. Output: aggregated dataset with summary stats per sector-year.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 159</span>
+          <span><i class="ti ti-clock"></i> 0.7s</span>
+          <span><i class="ti ti-bolt"></i> 228 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.01&cent;</span>
+        </div>
+        <div class="mcard-note">Fast, cheap, correct. Mentioned "output is aggregated dataset" &mdash; good framing. 0.7s wall clock.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">inception/mercury-2</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Load data &rarr; filter year &ge; 2020 &rarr; create variable &rarr; collapse to one record per sector-year (mean, sum, count) &rarr; sort. Discards existing dataset.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 248</span>
+          <span><i class="ti ti-clock"></i> 0.3s</span>
+          <span><i class="ti ti-bolt"></i> 800 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.02&cent;</span>
+        </div>
+        <div class="mcard-note">Fastest again: 800 t/s, 0.3s wall clock. Verbose formatted output for a short explanation.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug deepseek">deepseek/deepseek-v4-flash</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Reads large.csv, filters to year &ge; 2020, creates profit as revenue &minus; cost, collapses data by sector and year &mdash; computing mean revenue/profit, total revenue, and observation count per group. Sorts results.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 89</span>
+          <span><i class="ti ti-clock"></i> 2.0s</span>
+          <span><i class="ti ti-bolt"></i> 45 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.006&cent;</span>
+        </div>
+        <div class="mcard-note">Shortest and cheapest. 89 tokens, 0.006&cent;. Perfectly adequate explanation.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">xiaomi/mimo-v2.5</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Benchmarks performance on 10M rows. Loads CSV, filters year &ge; 2020, computes profit. Aggregates by sector and year: mean revenue/profit, total revenue, count of observations. Sorts result.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 332</span>
+          <span><i class="ti ti-clock"></i> 3.6s</span>
+          <span><i class="ti ti-bolt"></i> 93 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.01&cent;</span>
+        </div>
+        <div class="mcard-note">Clean numbered list. Xiaomi&rsquo;s model at $0.14/M input &mdash; cheaper than most frontier models.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">stepfun/step-3.7-flash</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Loads large.csv, keeps observations with year &ge; 2020, creates profit as revenue minus cost. Collapses data by sector and year, computing mean revenue and profit, total revenue, and count of ids. Sorts by sector and year. Tests performance of filtering, variable generation, and grouped aggregation on ~10 million rows.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 957</span>
+          <span><i class="ti ti-clock"></i> 6.8s</span>
+          <span><i class="ti ti-bolt"></i> 140 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.12&cent;</span>
+        </div>
+        <div class="mcard-note">Most reasoning tokens (957) for a 50-word output. Good explanation though &mdash; mentioned the benchmark context.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug qwen">qwen/qwen3.7-plus</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Processes large CSV in five steps: loads data, filters year &ge; 2020, generates profit variable, aggregates by sector and year via collapse (mean, sum, count), sorts result. (68 words)</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 1,283</span>
+          <span><i class="ti ti-clock"></i> 23.2s</span>
+          <span><i class="ti ti-bolt"></i> 55 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.22&cent;</span>
+        </div>
+        <div class="mcard-note">1,283 tokens for a 68-word answer. Included "(Word count: 68 words)" in its output. Spent 1,200 tokens reasoning about word count.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">moonshotai/kimi-k2.6</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Benchmarks processing a 10-million-row CSV. Loads data, keeps rows from 2020 onward, calculates profit as revenue minus cost, then aggregates by sector and year &mdash; computing average revenue and profit, total revenue, and row count. Sorts by sector and year.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 891</span>
+          <span><i class="ti ti-clock"></i> 21.1s</span>
+          <span><i class="ti ti-bolt"></i> 42 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.33&cent;</span>
+        </div>
+        <div class="mcard-note">45-word answer after 891 tokens of reasoning. Slow (21s) but correct.</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">z-ai/glm-5.1</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Benchmarks performance on 10M rows. Reads CSV, filters year &ge; 2020, generates profit variable, collapses by sector and year (mean revenue/profit, total revenue, ID counts), sorts results.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 755</span>
+          <span><i class="ti ti-clock"></i> 12.2s</span>
+          <span><i class="ti ti-bolt"></i> 62 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.37&cent;</span>
+        </div>
+        <div class="mcard-note">Correct. Long reasoning chain. Used LaTeX math notation in output ($\ge$ 2020).</div>
+      </div>
+
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug other">minimax/minimax-m3</span>
+        </div>
+        <div class="mcard-code mcard-prose"><code>Benchmarks data processing on 10M-row CSV. use loads data. keep filters to recent years. generate creates derived column. collapse aggregates per sector-year: mean revenue/profit, total revenue, count of IDs. sort orders result.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 282</span>
+          <span><i class="ti ti-clock"></i> 3.8s</span>
+          <span><i class="ti ti-bolt"></i> 75 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.04&cent;</span>
+        </div>
+        <div class="mcard-note">Good structure. Referenced each Stata command by name. Clean and cheap.</div>
+      </div>
+
+      <div class="mcard mcard-fail">
+        <div class="mcard-head">
+          <span class="model-slug xai">x-ai/grok-code-fast-1</span>
+        </div>
+        <div class="mcard-code"><code style="color:var(--ct-red)">Error: Model deprecated. xAI recommends Grok 4.3.</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> &mdash;</span>
+          <span><i class="ti ti-clock"></i> 0.4s</span>
+          <span><i class="ti ti-bolt"></i> &mdash;</span>
+          <span><i class="ti ti-currency-dollar"></i> &mdash;</span>
+        </div>
+        <div class="mcard-note">Deprecated model. Models come and go &mdash; another reason not to lock in.</div>
+      </div>
+
+    </div>
+
     <!-- Takeaway -->
     <div class="thesis" style="margin-top:60px">
       <h2>What this shows</h2>
       <ol>
-        <li><strong>Every model got the Stata right</strong> &mdash; from Opus 4.8 ($5/M input) to Gemma 4 ($0.06/M input), all 13 working models produced valid <code>collapse</code> or <code>tabstat</code> code. The free 1.2B model failed.</li>
-        <li><strong>Cost varies 100x for the same answer</strong> &mdash; Gemma 4 cost 0.005¢. Kimi K2.6 cost 1.01¢. Gemini 3.5 Flash cost 0.91¢. DeepSeek V4 Flash cost 0.01¢. Sonnet 4.5 cost 0.19¢. The expensive models are not better at this task.</li>
-        <li><strong>Speed varies 24x at the frontier</strong> &mdash; Gemini 3.1 Pro delivered 924 t/s. Kimi K2.6 delivered 44. Mercury 2 (diffusion LLM) hit 710 t/s at a fraction of the cost. For agent loops, speed compounds.</li>
-        <li><strong>Reasoning is not always helpful</strong> &mdash; Kimi K2.6 spent 2,400 tokens deliberating whether to include <code>use</code>, then omitted it. Grok 4.20 spent 2,226 tokens to produce <code>tabstat</code>. Sonnet 4.5 spent 56 tokens and got it right.</li>
+        <li><strong>Every model got both tasks right</strong> &mdash; writing and reading Stata code. From Opus 4.8 to DeepSeek V4 Flash, the core competence is commoditized.</li>
+        <li><strong>Only Opus caught the bug</strong> &mdash; the prompt uses <code>use</code> to load a .csv file, which is wrong in Stata (should be <code>import delimited</code>). Only Opus 4.8 flagged this. Domain expertise still differentiates frontier models.</li>
+        <li><strong>Cost varies 200x for the same answer</strong> &mdash; DeepSeek V4 Flash cost 0.006&cent; for the explanation task. Opus cost 1.06&cent;. For routine comprehension, the cheap model is indistinguishable.</li>
+        <li><strong>Reasoning tokens often waste money</strong> &mdash; Qwen spent 1,200 tokens reasoning about word count to produce a 68-word answer. Step 3.7 Flash used 957 tokens for 50 words. Sonnet 4.5 spent 56 tokens and got the writing task right. More thinking is not better thinking.</li>
       </ol>
     </div>
 

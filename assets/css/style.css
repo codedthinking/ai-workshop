@@ -803,6 +803,36 @@ img, svg { display: block; max-width: 100%; }
   font-style: normal;
 }
 
+/* Prose output (explanation text instead of code) */
+.mcard-prose {
+  background: var(--ct-surface);
+}
+.mcard-prose code {
+  color: var(--ct-ink);
+  white-space: pre-wrap;
+  font-family: var(--ct-font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.mcard-prose code code {
+  font-family: var(--ct-font-mono);
+  font-size: 13px;
+  background: var(--ct-surface-2);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* Section break heading between card grids */
+.section-break {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--ct-navy);
+  margin: 70px 0 10px;
+  padding-top: 50px;
+  border-top: 1px solid var(--ct-grey-3);
+}
+
 /* Session note (for schedule page) */
 .session-note {
   font-size: 14px;
