@@ -398,3 +398,173 @@ img, svg { display: block; max-width: 100%; }
     margin-bottom: 30px;
   }
 }
+
+/* ============================================================
+   Pages: prerequisites, tools
+   ============================================================ */
+
+/* Page hero (smaller than home hero) */
+.page-hero {
+  padding: 70px 0 50px;
+  background: var(--ct-white);
+}
+.page-hero h1 {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.15;
+  color: var(--ct-navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.page-hero .subtitle {
+  font-size: 18px;
+  color: var(--ct-grey-1);
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+/* Content area */
+.page-content {
+  padding: 0 0 100px;
+}
+
+/* Prerequisite groups */
+.prereq-group {
+  margin-bottom: 60px;
+}
+.prereq-group:last-child {
+  margin-bottom: 0;
+}
+.prereq-group > h2 {
+  font-family: var(--ct-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--ct-navy);
+  margin-bottom: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ct-grey-3);
+}
+.prereq-group > .group-intro {
+  font-size: 16px;
+  color: var(--ct-grey-1);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+/* Prerequisite cards */
+.prereq-card {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--ct-surface-2);
+}
+.prereq-card:last-child {
+  border-bottom: none;
+}
+.prereq-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.prereq-header h3 {
+  font-family: var(--ct-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ct-navy);
+}
+.prereq-card p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ct-grey-1);
+  margin-bottom: 10px;
+}
+.prereq-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code blocks */
+.code-block {
+  background: var(--ct-ink);
+  border-radius: var(--ct-radius-card);
+  padding: 16px 20px;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+.code-block code {
+  font-family: var(--ct-font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #C9C9D6;
+  white-space: pre;
+  display: block;
+}
+.code-comment {
+  color: var(--ct-grey-2);
+}
+
+/* Tool cards (clickable link cards) */
+.tool-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  margin-bottom: 2px;
+  background: var(--ct-white);
+  border-bottom: 1px solid var(--ct-surface-2);
+  text-decoration: none;
+  transition: background var(--ct-dur) var(--ct-ease);
+}
+.tool-card:last-child {
+  border-bottom: none;
+}
+.tool-card:hover {
+  background: var(--ct-surface-2);
+  opacity: 1;
+}
+.tool-info h3 {
+  font-family: var(--ct-font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ct-navy);
+  margin-bottom: 6px;
+}
+.tool-info p {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ct-grey-1);
+  margin: 0;
+}
+.tool-arrow {
+  flex-shrink: 0;
+  color: var(--ct-red);
+  font-size: 20px;
+  transition: transform var(--ct-dur) var(--ct-ease);
+}
+.tool-card:hover .tool-arrow {
+  transform: translateX(4px);
+}
+
+/* Active nav link */
+.site-header nav a.active {
+  color: var(--ct-red);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 50px 0 35px;
+  }
+  .page-hero h1 {
+    font-size: 32px;
+  }
+  .tool-card {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-hero h1 {
+    font-size: 28px;
+  }
+}
