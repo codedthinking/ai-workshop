@@ -7,7 +7,7 @@ description: "The same Stata prompt sent to 11 models simultaneously via OpenRou
 <section class="page-hero">
   <div class="container">
     <h1>Model performance</h1>
-    <p class="subtitle">One prompt, eleven models, simultaneous. All data from OpenRouter on 3 June 2026.</p>
+    <p class="subtitle">One prompt, fourteen models, simultaneous. All data from OpenRouter on 3 June 2026.</p>
   </div>
 </section>
 
@@ -57,6 +57,63 @@ list</code></div>
         <div class="mcard-note">Concise. Correct. No unnecessary commands.</div>
       </div>
 
+      <!-- Opus 4.8 -->
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug anthropic">anthropic/claude-opus-4.8</span>
+        </div>
+        <div class="mcard-code"><code>* Compute average revenue by year
+use "auto.dta", clear
+
+collapse (mean) avg_revenue = revenue, by(year)
+
+list year avg_revenue, clean noobs</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 67</span>
+          <span><i class="ti ti-clock"></i> 1.0s</span>
+          <span><i class="ti ti-bolt"></i> 70 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.43¢</span>
+        </div>
+        <div class="mcard-note">Most expensive model per token ($5/$25 per M). Clean output, renamed variable, <code>clean noobs</code> formatting. Comment despite "no commentary."</div>
+      </div>
+
+      <!-- Gemini Pro (latest = 3.1 Pro) -->
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug google">google/gemini-3.1-pro</span>
+        </div>
+        <div class="mcard-code"><code>use "auto.dta", clear
+
+// Compute the average revenue by year
+collapse (mean) revenue, by(year)
+
+// Display the results
+list</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 524</span>
+          <span><i class="ti ti-clock"></i> 0.6s</span>
+          <span><i class="ti ti-bolt"></i> 924 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.70¢</span>
+        </div>
+        <div class="mcard-note">Fastest frontier model (924 t/s). Correct but added comments. Most tokens spent on reasoning. Used <code>//</code> comments (valid Stata).</div>
+      </div>
+
+      <!-- Grok 4.20 -->
+      <div class="mcard">
+        <div class="mcard-head">
+          <span class="model-slug xai">x-ai/grok-4.20</span>
+        </div>
+        <div class="mcard-code"><code>use "auto.dta", clear
+tabstat revenue, by(year) statistics(mean)</code></div>
+        <div class="mcard-stats">
+          <span><i class="ti ti-hash"></i> 2,226</span>
+          <span><i class="ti ti-clock"></i> 16.3s</span>
+          <span><i class="ti ti-bolt"></i> 137 t/s</span>
+          <span><i class="ti ti-currency-dollar"></i> 0.60¢</span>
+        </div>
+        <div class="mcard-note">Used <code>tabstat</code> instead of <code>collapse</code> &mdash; displays averages without destroying the dataset. Valid alternative. 2,226 tokens mostly reasoning.</div>
+      </div>
+
       <!-- GPT 5.5 -->
       <div class="mcard">
         <div class="mcard-head">
@@ -72,7 +129,7 @@ list year avg_revenue, noobs</code></div>
           <span><i class="ti ti-bolt"></i> 57 t/s</span>
           <span><i class="ti ti-currency-dollar"></i> 0.00¢</span>
         </div>
-        <div class="mcard-note">Renamed output variable. Added <code>noobs</code>. Cost reported as 0 (cached?).</div>
+        <div class="mcard-note">Renamed output variable. Added <code>noobs</code>. Cost shows 0 &mdash; BYOK (own OpenAI key).</div>
       </div>
 
       <!-- Gemini 3.5 Flash -->
@@ -242,12 +299,34 @@ list</code></div>
     <div class="thesis" style="margin-top:60px">
       <h2>What this shows</h2>
       <ol>
-        <li><strong>All frontier models got the Stata right</strong> &mdash; <code>collapse (mean) revenue, by(year)</code> is the canonical answer, and every model above 20B parameters found it.</li>
-        <li><strong>Cost varies 100x</strong> &mdash; Sonnet 4.5 cost 0.19¢. Kimi K2.6 cost 1.01¢ for the same answer, mostly because of reasoning tokens. DeepSeek V4 Flash cost 0.01¢.</li>
-        <li><strong>Speed varies 1,700x</strong> &mdash; Mercury 2 (diffusion LLM) delivered 710 tokens/sec. Gemma 4 delivered 38. For a simple task, both are fine. For an agent loop running hundreds of calls, speed compounds.</li>
-        <li><strong>Reasoning is not always helpful</strong> &mdash; Kimi K2.6 spent 2,400 tokens deliberating whether to include <code>use</code>, then omitted it. Sonnet 4.5 spent 56 tokens and got it right.</li>
+        <li><strong>Every model got the Stata right</strong> &mdash; from Opus 4.8 ($5/M input) to Gemma 4 ($0.06/M input), all 13 working models produced valid <code>collapse</code> or <code>tabstat</code> code. The free 1.2B model failed.</li>
+        <li><strong>Cost varies 100x for the same answer</strong> &mdash; Gemma 4 cost 0.005¢. Kimi K2.6 cost 1.01¢. Gemini 3.5 Flash cost 0.91¢. DeepSeek V4 Flash cost 0.01¢. Sonnet 4.5 cost 0.19¢. The expensive models are not better at this task.</li>
+        <li><strong>Speed varies 24x at the frontier</strong> &mdash; Gemini 3.1 Pro delivered 924 t/s. Kimi K2.6 delivered 44. Mercury 2 (diffusion LLM) hit 710 t/s at a fraction of the cost. For agent loops, speed compounds.</li>
+        <li><strong>Reasoning is not always helpful</strong> &mdash; Kimi K2.6 spent 2,400 tokens deliberating whether to include <code>use</code>, then omitted it. Grok 4.20 spent 2,226 tokens to produce <code>tabstat</code>. Sonnet 4.5 spent 56 tokens and got it right.</li>
       </ol>
     </div>
 
   </div>
 </section>
+
+<script>
+// Minimal Stata syntax highlighter for the model cards
+document.querySelectorAll('.mcard-code code').forEach(function(el) {
+  var h = el.innerHTML;
+  // comments first (lines starting with * or containing //)
+  h = h.replace(/^(\*.*)$/gm, '<span class="st-cmt">$1</span>');
+  h = h.replace(/(\/\/.*)$/gm, '<span class="st-cmt">$1</span>');
+  // strings in double quotes
+  h = h.replace(/"([^"<]*)"/g, '<span class="st-str">"$1"</span>');
+  // commands at start of line
+  var cmds = ['use','clear','collapse','list','set','save','preserve','restore',
+    'tabstat','statsby','summarize','egen','bysort','display','describe','merge',
+    'sort','generate','replace','drop','keep','rename','assert','table','contract'];
+  var re = new RegExp('(^|\\n)(\\s*)\\b(' + cmds.join('|') + ')\\b', 'g');
+  h = h.replace(re, '$1$2<span class="st-cmd">$3</span>');
+  // options after commas and function names
+  h = h.replace(/\b(mean|by|clean|noobs|detail|more|off|all|statistics|r)\b(?=[^<]*(?:<span|$))/g,
+    '<span class="st-opt">$1</span>');
+  el.innerHTML = h;
+});
+</script>
