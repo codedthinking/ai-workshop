@@ -41,7 +41,7 @@ description: "A one-day workshop on agentic AI for economists and social scienti
       <ol>
         <li><strong>Intelligence is a commodity</strong> &mdash; understand the stack, unbundle it, pick your tools.</li>
         <li><strong>Agents work only when structure underneath them is good</strong> &mdash; your Day-1 practices are the prerequisite.</li>
-        <li><strong>Agents introduce new reproducibility risks</strong> &mdash; skills, structured IRs, and assertions are the cure.</li>
+        <li><strong>Agents introduce new reproducibility risks</strong> &mdash; pinned models, saved prompts, structured IRs, and assertions are the cure.</li>
       </ol>
     </div>
 
@@ -130,10 +130,11 @@ description: "A one-day workshop on agentic AI for economists and social scienti
             <span class="type-tag demo">Demo</span>
             <span class="session-title">The escape&ndash;enter loop in practice</span>
           </div>
-          <p class="session-desc">Live Claude Code session on a real research task. The two-layer model: natural language in, structured output out. Review diffs, not code. When to hit Escape. The &ldquo;toxic context&rdquo; failure mode &mdash; when to start fresh. The independence principle: never let the same session verify its own work. CLAUDE.md vs AGENTS.md: what belongs in each (project conventions, data assumptions, niche tools) and what does not (everything else &mdash; irrelevant instructions actively hurt).</p>
+          <p class="session-desc">Live Claude Code session on a real research task. The two-layer model: natural language in, structured output out. Review diffs, not code. When to hit Escape. The &ldquo;toxic context&rdquo; failure mode &mdash; when to start fresh. The independence principle: never let the same session verify its own work. Permission boundaries &mdash; approve reads and edits inside the project, deny destructive shell commands &mdash; so the agent can never delete or overwrite your data. CLAUDE.md vs AGENTS.md: what belongs in each (project conventions, data assumptions, niche tools) and what does not (everything else &mdash; irrelevant instructions actively hurt).</p>
           <div class="session-pills">
             <span class="pill">Claude Code</span>
             <span class="pill">diff review</span>
+            <span class="pill">permissions</span>
             <span class="pill">CLAUDE.md</span>
             <span class="pill">AGENTS.md</span>
             <span class="pill">context poisoning</span>
@@ -215,12 +216,14 @@ description: "A one-day workshop on agentic AI for economists and social scienti
             <span class="type-tag talk">Talk</span>
             <span class="session-title">Reproducibility from Day 1 &mdash; the prerequisite</span>
           </div>
-          <p class="session-desc">Quick recap of the Vilhuber/Koren principles as the necessary foundation: no hard-coded paths, no overwriting raw data, main.do with step flags, README from day 1, secrets in environment variables, checksum-guarded downloads. These are not just journal requirements &mdash; they are what makes your project legible to an agent. An agent working in a project with hard-coded paths, no folder structure, and one giant script will fail even with the best model. Day-1 practices are agent-compatible practices.</p>
+          <p class="session-desc">Quick recap of the Vilhuber/Koren principles as the necessary foundation: no hard-coded paths, no overwriting raw data, main.do with step flags, README from day 1, secrets in environment variables, checksum-guarded downloads. These are not just journal requirements &mdash; they are what makes your project legible to an agent. An agent working in a project with hard-coded paths, no folder structure, and one giant script will fail even with the best model. Day-1 practices are agent-compatible practices. But they handle only the <em>old</em> reproducibility risk. Agents add a new one: the same prompt does not produce the same code twice &mdash; models are non-deterministic, and the model you used is deprecated within a year. The cure is to treat the interaction as data &mdash; pin the exact model version, and commit the prompt and the transcript alongside the diff. The prompt is part of your methods section.</p>
           <div class="session-pills">
             <span class="pill">TIER protocol</span>
             <span class="pill">no hard-coded paths</span>
             <span class="pill">main.do</span>
             <span class="pill">README</span>
+            <span class="pill">model pinning</span>
+            <span class="pill">prompt as artifact</span>
           </div>
         </div>
       </div>
@@ -300,7 +303,7 @@ description: "A one-day workshop on agentic AI for economists and social scienti
             <span class="type-tag discussion">Discussion</span>
             <span class="session-title">What do you actually do on Monday?</span>
           </div>
-          <p class="session-desc">Structured around five choices: (1) which harness to start with, (2) which model for which task, (3) what goes in your CLAUDE.md &mdash; the minimum viable project config, (4) what structural change your project needs before an agent can work in it, (5) which failure modes to watch for &mdash; hallucination, silent data decisions, scope creep, context degradation, confident domain errors. Each participant writes their five answers. Collected answers become the shared takeaway. Close by restating the arc: Day-1 structure was already right. Skills make it agent-legible. Assertions make it auditable. The models will keep getting cheaper; the structure is the durable investment.</p>
+          <p class="session-desc">Structured around five choices: (1) which harness to start with, (2) which model for which task, (3) what goes in your CLAUDE.md &mdash; the minimum viable project config, (4) what structural change your project needs before an agent can work in it, (5) which failure modes to watch for &mdash; hallucination, silent data decisions, scope creep, context degradation, confident domain errors, restricted data leaving your machine. Each participant writes their five answers. Collected answers become the shared takeaway. Close by restating the arc: Day-1 structure was already right. Skills make it agent-legible. Assertions make it auditable. The models will keep getting cheaper; the structure is the durable investment.</p>
           <div class="session-pills">
             <span class="pill">harness choice</span>
             <span class="pill">model selection</span>

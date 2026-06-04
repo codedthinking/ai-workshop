@@ -96,6 +96,35 @@ opencode --version</code>
     </div>
 
     <div class="tool-section">
+      <h2>Before you bring data</h2>
+      <p class="section-intro">An LLM API is a third party. Anything you send leaves your machine. Decide what is safe to share <em>before</em> the workshop &mdash; especially if you work with restricted administrative or human-subjects data.</p>
+      <div class="tool-grid cols-3">
+
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-shield-lock"></i></div>
+          <span class="type-tag discussion">Decide first</span>
+          <h3>Can this data leave your machine?</h3>
+          <p>Data use agreements, IRB protocols, and statistical-agency contracts often forbid sending microdata to an external service. If in doubt, treat it as a no &mdash; the exercises work fine on synthetic or public data.</p>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-table"></i></div>
+          <span class="type-tag exercise">Safe default</span>
+          <h3>Mock or anonymized data</h3>
+          <p>Ask the agent to generate a synthetic dataset with the same schema, or anonymize a sample. You debug the <em>code</em> against fake data, then run it yourself on the real data, locally.</p>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-cpu"></i></div>
+          <span class="type-tag talk">When you can't share</span>
+          <h3>Local models + guardrails</h3>
+          <p>For restricted data, run an open-weight model locally (Ollama, LM Studio) or your institution's private instance. Either way, set permissions so the agent cannot read or delete files outside its sandbox.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tool-section">
       <h2>Optional but useful</h2>
       <div class="tool-grid cols-3">
 
