@@ -148,7 +148,7 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
 }
 .site-header .logo-link svg {
-  height: 36px;
+  height: 42px;
   width: auto;
 }
 /* recolor the koren.dev wordmark (ink) so it reads on navy;
@@ -428,7 +428,7 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   justify-content: space-between;
 }
-.site-footer .logo-link svg { height: 28px; width: auto; opacity: 0.6; }
+.site-footer .logo-link svg { height: 34px; width: auto; opacity: 0.6; }
 .site-footer .copyright {
   font-family: var(--ct-font-mono);
   font-size: 13px;
