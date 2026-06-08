@@ -1,0 +1,104 @@
+---
+layout: default
+title: "Visuals — Agentic AI Workshop"
+description: "Unlisted figure library for the workshop deck."
+sitemap: false
+---
+
+<style>
+  .fig { margin-bottom: 30px; }
+  .fig img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--x9-border);
+    background: #1D1D40;
+  }
+  .fig h3 {
+    font-family: var(--ct-font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: #fff;
+    margin: 16px 0 6px;
+  }
+  .fig p { font-size: 15.5px; line-height: 1.55; color: var(--x9-text-2); }
+  .fig .fig-src {
+    font-family: var(--ct-font-mono);
+    font-size: 12px;
+    color: var(--x9-text-2);
+    margin-top: 8px;
+  }
+  .fig .fig-src a { color: var(--x9-cyan); }
+</style>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker"><span class="p">~</span> figure library &middot; unlisted</div>
+    <h1>Visuals</h1>
+    <p class="subtitle">Diagrams and charts for the training deck, in the 9x Academic style. Open an SVG in a new tab to save it, or screenshot for slides. This page is intentionally not linked from the menu.</p>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+
+    <div class="tool-section">
+      <h2>How the machine works</h2>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/transformer-next-token.svg' | relative_url }}" alt="Transformer architecture and next-token prediction">
+        <h3>Everything is next-token prediction</h3>
+        <p>A decoder-only transformer turns a sequence of tokens into a probability distribution over the next one &mdash; embeddings, masked self-attention and feed-forward layers stacked N times, then softmax, then the autoregressive loop.</p>
+        <p class="fig-src"><a href="{{ '/assets/9x/diagrams/transformer-next-token.svg' | relative_url }}" target="_blank" rel="noopener">transformer-next-token.svg</a></p>
+      </figure>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/chat-roles.svg' | relative_url }}" alt="Chat roles: system, user, assistant inside the context window">
+        <h3>System, user, assistant</h3>
+        <p>A conversation is a list of role-tagged messages inside the context window. The model reads the whole transcript and writes the next assistant turn &mdash; it keeps no memory between calls, so the full history is re-sent every time.</p>
+        <p class="fig-src"><a href="{{ '/assets/9x/diagrams/chat-roles.svg' | relative_url }}" target="_blank" rel="noopener">chat-roles.svg</a></p>
+      </figure>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/harness-tools-llm.svg' | relative_url }}" alt="Harness and tools run locally; the LLM is remote">
+        <h3>Harness, tools, and the model</h3>
+        <p>The harness and its tools (files, shell, MCP, web) run on your machine; the LLM lives behind an API in the cloud. The harness builds a prompt, calls the remote model, runs the returned tool calls locally, appends the results, and loops.</p>
+        <p class="fig-src"><a href="{{ '/assets/9x/diagrams/harness-tools-llm.svg' | relative_url }}" target="_blank" rel="noopener">harness-tools-llm.svg</a></p>
+      </figure>
+    </div>
+
+    <div class="tool-section">
+      <h2>Intelligence is a commodity</h2>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/openrouter-token-share.svg' | relative_url }}" alt="Weekly token consumption on OpenRouter by model origin">
+        <h3>Weekly token consumption on OpenRouter</h3>
+        <p>U.S. vs Chinese vs other models. Chinese open-weight models now drive the majority of usage, and the totals are exploding. Redrawn in-theme; curve approximate.</p>
+        <p class="fig-src">Source: OpenRouter LLM Ranking Leaderboard &middot; <a href="{{ '/assets/9x/diagrams/openrouter-token-share.svg' | relative_url }}" target="_blank" rel="noopener">openrouter-token-share.svg</a></p>
+      </figure>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/open-models-catchup.svg' | relative_url }}" alt="Open-weight models trail the closed frontier by months, not years">
+        <h3>Open weights play catch-up</h3>
+        <p>The best open-weight model reaches each capability level shortly after the closed frontier, and the lag keeps shrinking &mdash; from roughly a year to a few weeks. Schematic, based on Epoch AI notable-models data.</p>
+        <p class="fig-src">Source: Epoch AI &middot; epoch.ai/data/ai-models &middot; <a href="{{ '/assets/9x/diagrams/open-models-catchup.svg' | relative_url }}" target="_blank" rel="noopener">open-models-catchup.svg</a></p>
+      </figure>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/open-closed-eci-gap.svg' | relative_url }}" alt="The gap between open and closed models on Epoch's Capabilities Index">
+        <h3>The open&ndash;closed ECI gap</h3>
+        <p>Measured with Epoch's Capabilities Index, the gap between the best open-weight and best closed model stays small and roughly stable &mdash; open trails by a few months. Figure recreated; ECI values approximate.</p>
+        <p class="fig-src">Source: Epoch AI (CC BY) &middot; epoch.ai/data-insights/open-closed-eci-gap &middot; <a href="{{ '/assets/9x/diagrams/open-closed-eci-gap.svg' | relative_url }}" target="_blank" rel="noopener">open-closed-eci-gap.svg</a></p>
+      </figure>
+
+      <figure class="fig">
+        <img src="{{ '/assets/9x/diagrams/openrouter-token-share-source.png' | relative_url }}" alt="Original OpenRouter token consumption chart">
+        <h3>Original chart (reference)</h3>
+        <p>The source figure the in-theme redraw above is based on, kept for reference.</p>
+        <p class="fig-src">Source: OpenRouter LLM Ranking Leaderboard, via Prof G Media &middot; <a href="{{ '/assets/9x/diagrams/openrouter-token-share-source.png' | relative_url }}" target="_blank" rel="noopener">openrouter-token-share-source.png</a></p>
+      </figure>
+    </div>
+
+  </div>
+</section>
