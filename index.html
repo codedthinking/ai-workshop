@@ -47,7 +47,7 @@ description: "A one-day workshop on agentic AI for economists and social scienti
       <ol>
         <li><strong>Intelligence is a commodity</strong> &mdash; understand the stack, unbundle it, pick your tools.</li>
         <li><strong>Agents work only when structure underneath them is good</strong> &mdash; your Day-1 practices are the prerequisite.</li>
-        <li><strong>Agents introduce new reproducibility risks</strong> &mdash; pinned models, saved prompts, structured IRs, and assertions are the cure.</li>
+        <li><strong>Agents introduce new reproducibility risks</strong> &mdash; pinned models, saved prompts, and careful review are the cure.</li>
       </ol>
     </div>
 
@@ -58,14 +58,33 @@ description: "A one-day workshop on agentic AI for economists and social scienti
     <div class="act">
       <div class="act-header">
         <span class="act-number">Act 1</span>
-        <span class="act-title">How LLMs actually work</span>
+        <span class="act-title">How do you work today?</span>
         <span class="act-duration">80 min</span>
       </div>
 
       <div class="session">
         <div class="session-time">
           <span>9:00</span>
-          <span class="session-duration">45 min</span>
+          <span class="session-duration">20 min</span>
+        </div>
+        <div class="session-body">
+          <div class="session-top">
+            <span class="type-tag exercise">Exercise</span>
+            <span class="session-title">Pair workflow mapping</span>
+          </div>
+          <p class="session-desc">The research question: <em>&ldquo;Which country has the highest share of non-programming use of Claude?&rdquo;</em> Pair up. Each person explains to their partner &mdash; on paper &mdash; how they would answer this question today: create a folder, find and download data, clean it, run analysis, produce a table. No computers. Just describe your workflow step by step.</p>
+          <div class="session-pills">
+            <span class="pill">pencil &amp; paper</span>
+            <span class="pill">pair work</span>
+            <span class="pill">current workflow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-time">
+          <span>9:20</span>
+          <span class="session-duration">40 min</span>
         </div>
         <div class="session-body">
           <div class="session-top">
@@ -84,22 +103,19 @@ description: "A one-day workshop on agentic AI for economists and social scienti
 
       <div class="session">
         <div class="session-time">
-          <span>9:45</span>
-          <span class="session-duration">35 min</span>
+          <span>10:00</span>
+          <span class="session-duration">20 min</span>
         </div>
         <div class="session-body">
           <div class="session-top">
-            <span class="type-tag talk">Talk</span>
-            <span class="session-title">The ecosystem &mdash; and the unbundling argument</span>
+            <span class="type-tag discussion">Discussion</span>
+            <span class="session-title">What did your partner forget?</span>
           </div>
-          <p class="session-desc">Four separable layers: <strong>model</strong> (GPT, Claude, Gemma, Qwen, DeepSeek), <strong>harness</strong> (Claude.ai, Cursor, Claude Code, Zed), <strong>MCP</strong> (tools the model can call at runtime), <strong>skill</strong> (plain-text instructions that live in your repo). Intelligence is commoditizing fast &mdash; Chinese models match frontier at 1/25th the cost, rankings change weekly. The opinionated prescription: pick one harness you are comfortable in, swap models freely for each task, write skills as readable markdown, keep very good structure in your work. Lock-in is the risk; model loyalty is a mistake.</p>
+          <p class="session-desc">Each partner presents the <em>other</em> person&rsquo;s workflow to the group. What steps were clear? What was implicit &mdash; assumed but never said? This is the same problem an agent faces: it only knows what you tell it. The gap between what you know and what you write down is where agents fail.</p>
           <div class="session-pills">
-            <span class="pill">model</span>
-            <span class="pill">harness</span>
-            <span class="pill">MCP</span>
-            <span class="pill">skill</span>
-            <span class="pill">OpenRouter</span>
-            <span class="pill">unbundling</span>
+            <span class="pill">implicit knowledge</span>
+            <span class="pill">communication gap</span>
+            <span class="pill">why structure matters</span>
           </div>
         </div>
       </div>
@@ -109,7 +125,7 @@ description: "A one-day workshop on agentic AI for economists and social scienti
     <div class="act">
       <div class="act-header">
         <span class="act-number">Act 2</span>
-        <span class="act-title">Working with agents</span>
+        <span class="act-title">The ecosystem &mdash; and working with agents</span>
         <span class="act-duration">110 min</span>
       </div>
 
@@ -129,6 +145,28 @@ description: "A one-day workshop on agentic AI for economists and social scienti
       <div class="session">
         <div class="session-time">
           <span>10:40</span>
+          <span class="session-duration">25 min</span>
+        </div>
+        <div class="session-body">
+          <div class="session-top">
+            <span class="type-tag talk">Talk</span>
+            <span class="session-title">The ecosystem &mdash; and the unbundling argument</span>
+          </div>
+          <p class="session-desc">Four separable layers: <strong>model</strong> (GPT, Claude, Gemma, Qwen, DeepSeek), <strong>harness</strong> (OpenCode, Claude Code, Cursor, Zed), <strong>MCP</strong> (tools the model can call at runtime), <strong>skill</strong> (plain-text instructions that live in your repo). Intelligence is commoditizing fast &mdash; Chinese models match frontier at 1/25th the cost, rankings change weekly. The opinionated prescription: pick one harness you are comfortable in, swap models freely for each task, write skills as readable markdown, keep very good structure in your work. Lock-in is the risk; model loyalty is a mistake.</p>
+          <div class="session-pills">
+            <span class="pill">model</span>
+            <span class="pill">harness</span>
+            <span class="pill">MCP</span>
+            <span class="pill">skill</span>
+            <span class="pill">OpenRouter</span>
+            <span class="pill">unbundling</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-time">
+          <span>11:05</span>
           <span class="session-duration">40 min</span>
         </div>
         <div class="session-body">
@@ -136,13 +174,12 @@ description: "A one-day workshop on agentic AI for economists and social scienti
             <span class="type-tag demo">Demo</span>
             <span class="session-title">The escape&ndash;enter loop in practice</span>
           </div>
-          <p class="session-desc">Live Claude Code session on a real research task. The two-layer model: natural language in, structured output out. Review diffs, not code. When to hit Escape. The &ldquo;toxic context&rdquo; failure mode &mdash; when to start fresh. The independence principle: never let the same session verify its own work. Permission boundaries &mdash; approve reads and edits inside the project, deny destructive shell commands &mdash; so the agent can never delete or overwrite your data. CLAUDE.md vs AGENTS.md: what belongs in each (project conventions, data assumptions, niche tools) and what does not (everything else &mdash; irrelevant instructions actively hurt).</p>
+          <p class="session-desc">Live OpenCode session on a real research task. The two-layer model: natural language in, structured output out. Review diffs, not code. When to hit Escape. The &ldquo;toxic context&rdquo; failure mode &mdash; when to start fresh. The independence principle: never let the same session verify its own work. Permission boundaries &mdash; approve reads and edits inside the project, deny destructive shell commands &mdash; so the agent can never delete or overwrite your data. CLAUDE.md: what belongs in it (project conventions, data assumptions, niche tools) and what does not (everything else &mdash; irrelevant instructions actively hurt).</p>
           <div class="session-pills">
-            <span class="pill">Claude Code</span>
+            <span class="pill">OpenCode</span>
             <span class="pill">diff review</span>
             <span class="pill">permissions</span>
             <span class="pill">CLAUDE.md</span>
-            <span class="pill">AGENTS.md</span>
             <span class="pill">context poisoning</span>
             <span class="pill">independence principle</span>
           </div>
@@ -151,41 +188,19 @@ description: "A one-day workshop on agentic AI for economists and social scienti
 
       <div class="session">
         <div class="session-time">
-          <span>11:20</span>
-          <span class="session-duration">30 min</span>
-        </div>
-        <div class="session-body">
-          <div class="session-top">
-            <span class="type-tag talk">Talk</span>
-            <span class="session-title">Skills and project configuration</span>
-          </div>
-          <p class="session-desc">Two kinds of plain text that make agents smarter. <strong>Project config</strong> (CLAUDE.md / AGENTS.md): your conventions, data assumptions, preferred tools &mdash; start with 3&ndash;5 rules, add one each time you correct the agent twice. <strong>Skills</strong>: reusable task templates with a fixed output location, commit convention, and explicit stopping rules. Show the paper-writing skill set as a worked example: five domain skills (WRITING, MODEL, LITERATURE, EMPIRICS, EDITING), each with a task queue. Contrast with dumping everything into one file &mdash; that actively degrades performance.</p>
-          <div class="session-pills">
-            <span class="pill">CLAUDE.md</span>
-            <span class="pill">domain skills</span>
-            <span class="pill">task queues</span>
-            <span class="pill">commit conventions</span>
-            <span class="pill">separation of concerns</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="session">
-        <div class="session-time">
-          <span>11:50</span>
-          <span class="session-duration">20 min</span>
+          <span>11:45</span>
+          <span class="session-duration">25 min</span>
         </div>
         <div class="session-body">
           <div class="session-top">
             <span class="type-tag exercise">Exercise</span>
-            <span class="session-title">Write a project config and a skill</span>
+            <span class="session-title">Write a project config</span>
           </div>
-          <p class="session-desc">10 minutes: draft a CLAUDE.md for your project &mdash; tools the agent does not know, naming conventions, data paths, verification rules. 5 minutes: draft a minimal skill for one recurring task. 5 minutes: share one thing that was hard to write down. The act of writing conventions in plain text for a model forces a precision that is valuable even if you never use the skill.</p>
+          <p class="session-desc">Draft a CLAUDE.md for the workshop project &mdash; what tools do we use (Stata, Python), where does the data live, what naming conventions apply, what should the agent never do? Start with 3&ndash;5 rules. Share one thing that was hard to write down. The act of writing conventions in plain text for a model forces a precision that is valuable even if you never use an agent.</p>
           <div class="session-pills">
             <span class="pill">hands-on</span>
             <span class="pill">CLAUDE.md</span>
-            <span class="pill">skill.md</span>
-            <span class="pill">your own project</span>
+            <span class="pill">pencil &amp; paper</span>
           </div>
         </div>
       </div>
@@ -195,7 +210,7 @@ description: "A one-day workshop on agentic AI for economists and social scienti
     <div class="act">
       <div class="act-header">
         <span class="act-number">Act 3</span>
-        <span class="act-title">Structure, reproducibility, and the agentic risk</span>
+        <span class="act-title">Build a project from scratch</span>
         <span class="act-duration">130 min</span>
       </div>
 
@@ -215,18 +230,17 @@ description: "A one-day workshop on agentic AI for economists and social scienti
       <div class="session">
         <div class="session-time">
           <span>13:00</span>
-          <span class="session-duration">30 min</span>
+          <span class="session-duration">25 min</span>
         </div>
         <div class="session-body">
           <div class="session-top">
             <span class="type-tag talk">Talk</span>
             <span class="session-title">Reproducibility from Day 1 &mdash; the prerequisite</span>
           </div>
-          <p class="session-desc">Quick recap of the Vilhuber/Koren principles as the necessary foundation: no hard-coded paths, no overwriting raw data, main.do with step flags, README from day 1, secrets in environment variables, checksum-guarded downloads. These are not just journal requirements &mdash; they are what makes your project legible to an agent. An agent working in a project with hard-coded paths, no folder structure, and one giant script will fail even with the best model. Day-1 practices are agent-compatible practices. But they handle only the <em>old</em> reproducibility risk. Agents add a new one: the same prompt does not produce the same code twice &mdash; models are non-deterministic, and the model you used is deprecated within a year. The cure is to treat the interaction as data &mdash; pin the exact model version, and commit the prompt and the transcript alongside the diff. The prompt is part of your methods section.</p>
+          <p class="session-desc">Quick recap of the Vilhuber/Koren principles as the necessary foundation: no hard-coded paths, no overwriting raw data, README from day 1, secrets in environment variables. These are not just journal requirements &mdash; they are what makes your project legible to an agent. An agent working in a project with hard-coded paths, no folder structure, and one giant script will fail even with the best model. Day-1 practices are agent-compatible practices. But they handle only the <em>old</em> reproducibility risk. Agents add a new one: the same prompt does not produce the same code twice &mdash; models are non-deterministic, and the model you used is deprecated within a year. The cure is to treat the interaction as data &mdash; pin the exact model version, save the prompt alongside the output. The prompt is part of your methods section.</p>
           <div class="session-pills">
-            <span class="pill">TIER protocol</span>
             <span class="pill">no hard-coded paths</span>
-            <span class="pill">main.do</span>
+            <span class="pill">folder structure</span>
             <span class="pill">README</span>
             <span class="pill">model pinning</span>
             <span class="pill">prompt as artifact</span>
@@ -236,44 +250,44 @@ description: "A one-day workshop on agentic AI for economists and social scienti
 
       <div class="session">
         <div class="session-time">
-          <span>13:30</span>
-          <span class="session-duration">25 min</span>
+          <span>13:25</span>
+          <span class="session-duration">20 min</span>
         </div>
         <div class="session-body">
           <div class="session-top">
             <span class="type-tag demo">Demo</span>
-            <span class="session-title">dodo: structured IR for your .do pipelines</span>
+            <span class="session-title">Empty folder to working project</span>
           </div>
-          <p class="session-desc">Live demo. Run an existing .do file through the dodo DuckDB extension unchanged. Use <code>show sql</code> to see what the agent actually produced &mdash; not what you asked for. Use <code>assert</code> to catch silent failures: agent dropped observations to force a merge, agent treated panel as cross-section, agent used an ID that is not stable over time. Use <code>dodoc</code> to compile the pipeline to SQL for CI. The point: .do syntax is a structured intermediate representation &mdash; the agent generates it, you audit the SQL it produces, the Makefile runs it.</p>
+          <p class="session-desc">Live demo. Start from an empty folder. Use bead to download the Anthropic Economic Index data. Set up the project structure. Use OpenCode to figure out how to run Stata from the command line. Write the first prompts: load the data, explore it, start answering the research question. Show what happens when the agent writes Python instead of Stata &mdash; and how your CLAUDE.md prevents it.</p>
           <div class="session-pills">
-            <span class="pill">dodo</span>
-            <span class="pill">show sql</span>
-            <span class="pill">assert</span>
-            <span class="pill">dodoc</span>
-            <span class="pill">CI</span>
+            <span class="pill">OpenCode</span>
+            <span class="pill">bead</span>
+            <span class="pill">Stata from the shell</span>
+            <span class="pill">first prompts</span>
+            <span class="pill">CLAUDE.md in action</span>
           </div>
         </div>
       </div>
 
       <div class="session">
         <div class="session-time">
-          <span>13:55</span>
-          <span class="session-duration">75 min</span>
+          <span>13:45</span>
+          <span class="session-duration">85 min</span>
         </div>
         <div class="session-body">
           <div class="session-top">
             <span class="type-tag exercise">Exercise</span>
-            <span class="session-title">Find the silent failure in your own pipeline</span>
+            <span class="session-title">Answer the research question</span>
           </div>
-          <p class="session-desc">Participants bring a .do file (or use a provided Hungarian company registry dataset). Task: (1) run it through dodo, (2) use <code>show sql</code> to find one thing the agent generated that you would not have caught by reading the .do file, (3) write two <code>assert</code> statements that would catch it next time, (4) add those asserts to a <code>make test</code> target. Debrief: each participant names their silent failure. Collect these &mdash; they form the workshop's shared artifact and illustrate why &ldquo;it ran without errors&rdquo; is not a test.</p>
+          <p class="session-desc">Your turn. Start from an empty folder. Use bead to get the Anthropic Economic Index data. Use OpenCode to write Stata scripts that answer the question: <em>&ldquo;Which country has the highest share of non-programming use of Claude?&rdquo;</em> Build the project step by step: folder structure, data loading, cleaning, analysis, output. Review every diff before you approve it. When you get stuck, start a fresh session &mdash; do not keep prompting into a broken context. Debrief: each participant shares one thing the agent did that surprised them.</p>
           <div class="session-pills">
             <span class="pill">hands-on</span>
-            <span class="pill">dodo</span>
-            <span class="pill">assert</span>
-            <span class="pill">make test</span>
-            <span class="pill">own data</span>
+            <span class="pill">OpenCode</span>
+            <span class="pill">Stata</span>
+            <span class="pill">bead</span>
+            <span class="pill">Anthropic Economic Index</span>
           </div>
-          <p class="session-note">Backup dataset provided for participants without a ready .do file.</p>
+          <p class="session-note">Instructors circulate to help with setup and troubleshooting.</p>
         </div>
       </div>
     </div>
@@ -309,9 +323,9 @@ description: "A one-day workshop on agentic AI for economists and social scienti
             <span class="type-tag discussion">Discussion</span>
             <span class="session-title">What do you actually do on Monday?</span>
           </div>
-          <p class="session-desc">Structured around five choices: (1) which harness to start with, (2) which model for which task, (3) what goes in your CLAUDE.md &mdash; the minimum viable project config, (4) what structural change your project needs before an agent can work in it, (5) which failure modes to watch for &mdash; hallucination, silent data decisions, scope creep, context degradation, confident domain errors, restricted data leaving your machine. Each participant writes their five answers. Collected answers become the shared takeaway. Close by restating the arc: Day-1 structure was already right. Skills make it agent-legible. Assertions make it auditable. The models will keep getting cheaper; the structure is the durable investment.</p>
+          <p class="session-desc">Structured around five choices: (1) what was the first thing you&rsquo;ll try with OpenCode on your own project, (2) which model for which task, (3) what goes in your CLAUDE.md &mdash; the minimum viable project config, (4) what structural change your project needs before an agent can work in it, (5) which failure modes to watch for &mdash; hallucination, silent data decisions, scope creep, context degradation, confident domain errors, restricted data leaving your machine. Each participant writes their five answers. Collected answers become the shared takeaway. Close by restating the arc: Day-1 structure was already right. Project config makes it agent-legible. Review makes it auditable. The models will keep getting cheaper; the structure is the durable investment.</p>
           <div class="session-pills">
-            <span class="pill">harness choice</span>
+            <span class="pill">next steps</span>
             <span class="pill">model selection</span>
             <span class="pill">CLAUDE.md</span>
             <span class="pill">structural prerequisite</span>
