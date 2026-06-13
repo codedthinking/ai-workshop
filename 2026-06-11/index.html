@@ -399,29 +399,6 @@
   </section>
 
   <section>
-    <h2>Do not let one session verify itself</h2>
-    <blockquote>
-      <p>Never let the same session verify its own work.</p>
-    </blockquote>
-    <ul>
-      <li>Agent writes code → you review the diff</li>
-      <li>Agent runs tests → a <strong>different</strong> session or you verify the output</li>
-      <li>Same context = same blind spots</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Good permission boundaries make agents safer</h2>
-    <div class="callout tip">
-      <strong>Approve:</strong> reads and edits inside the project directory
-    </div>
-    <div class="callout warning">
-      <strong>Deny:</strong> destructive shell commands, writes outside the project
-    </div>
-    <p>The agent can never delete or overwrite your data if permissions are set correctly.</p>
-  </section>
-
-  <section>
     <h2>CLAUDE.md is project config for agents</h2>
     <ul>
       <li><strong>What goes in:</strong> data assumptions, naming rules, niche tools, what the agent should never do</li>
@@ -446,23 +423,6 @@
       <li>Domain-specific, not generic</li>
       <li>The agent reads the skill and follows it like a recipe</li>
     </ul>
-  </section>
-
-  <section>
-    <h2>A paper-writing workflow naturally splits into skills</h2>
-    <table>
-      <thead>
-        <tr><th>Skill</th><th>Task queue</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>WRITING</code></td><td>Draft sections, revise, format</td></tr>
-        <tr><td><code>MODEL</code></td><td>Specify econometric model, robustness checks</td></tr>
-        <tr><td><code>LITERATURE</code></td><td>Find papers, summarize, cite</td></tr>
-        <tr><td><code>EMPIRICS</code></td><td>Run regressions, create tables, validate</td></tr>
-        <tr><td><code>EDITING</code></td><td>Proofread, consistency check, style</td></tr>
-      </tbody>
-    </table>
-    <p>Each skill has its own queue. Separation of concerns matters here too.</p>
   </section>
 
   <section>
@@ -535,17 +495,6 @@
   </section>
 
   <section>
-    <h2>Most MCPs are not worth the cost</h2>
-    <ul>
-      <li>Every MCP call burns context window on tool descriptions the model already has</li>
-      <li>The model can already read files, run shell commands, fetch URLs</li>
-      <li>Adding an MCP server adds latency, complexity, and failure modes</li>
-      <li>If your tool needs an MCP wrapper, the model probably can't use it well anyway</li>
-    </ul>
-    <p style="margin-top: 1em;"><em>The shell is the original universal tool protocol.</em></p>
-  </section>
-
-  <section>
     <h2>CLAUDE.md and skills are just words</h2>
     <ul>
       <li>There is no special pool of "skills" — a skill is a sentence you write in plain language</li>
@@ -571,82 +520,12 @@
     </ul>
   </section>
 
-  <!-- --- Exercise: Write a project config --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Exercise</h2>
-    <p class="kicker"><span class="accent">02e</span> · Write a project config</p>
-  </section>
-
-  <section>
-    <h2>Your turn (25 min)</h2>
-    <ol>
-      <li><strong>15 min:</strong> Draft a CLAUDE.md for the workshop project
-        <ul>
-          <li>What tools do we use? (Stata, Python)</li>
-          <li>Where does the data live?</li>
-          <li>What naming conventions apply?</li>
-          <li>What should the agent never do?</li>
-        </ul>
-      </li>
-      <li><strong>10 min:</strong> Share one thing that was hard to write down</li>
-    </ol>
-    <p style="margin-top: 1em;"><em>The act of writing conventions in plain text for a model forces a precision that is valuable even if you never use an agent.</em></p>
-  </section>
-
   <!-- ================================================================== -->
   <!-- ACT 3: Structure, reproducibility, and the agentic risk            -->
   <!-- ================================================================== -->
   <section data-background-color="#24244D">
     <h2 class="section-title">Act 3</h2>
     <p class="kicker"><span class="accent">03</span> · Build a project from scratch</p>
-  </section>
-
-  <!-- --- Reproducibility from Day 1 --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Reproducibility from Day 1</h2>
-    <p class="kicker"><span class="accent">03a</span> · The prerequisite</p>
-  </section>
-
-  <section>
-    <h2>Day-1 practices are what make a project agent-legible</h2>
-    <ul>
-      <li>No hard-coded paths</li>
-      <li>No overwriting raw data</li>
-      <li>README from day 1</li>
-      <li>Secrets in environment variables</li>
-    </ul>
-    <p style="margin-top: 1em;">These are not just journal requirements — they are what makes your project <strong>legible to an agent</strong>.</p>
-  </section>
-
-  <section>
-    <h2>Agents create a new reproducibility risk</h2>
-    <div class="columns">
-      <div class="col">
-        <h3>Old reproducibility risk</h3>
-        <p>Someone else can't re-run your code. Fixed by Day-1 practices.</p>
-      </div>
-      <div class="col">
-        <h3>New agentic risk</h3>
-        <p><em>You</em> can't re-run your code. The same prompt does not produce the same code twice.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>The same prompt will not reliably reproduce the same code</h2>
-    <ul>
-      <li>Temperature, sampling, and system state mean the same prompt → different code</li>
-      <li>The model you used is <strong>deprecated within a year</strong></li>
-      <li>Without pinning, your paper is not reproducible — even by you</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Treat the interaction as data</h2>
-    <div class="callout info">
-      <strong>Pin the exact model version. Commit the prompt and the transcript alongside the diff.</strong>
-    </div>
-    <p style="margin-top: 1em;">The prompt is part of your methods section.</p>
   </section>
 
   <!-- --- Empty folder to working project --- -->
@@ -667,56 +546,12 @@
     <p style="margin-top: 1em;">Watch what happens when the agent writes Python instead of Stata — and how your CLAUDE.md prevents it.</p>
   </section>
 
-  <!-- --- Exercise: Answer the research question --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Exercise</h2>
-    <p class="kicker"><span class="accent">03c</span> · Answer the research question</p>
-  </section>
-
-  <section>
-    <h2>Your turn (85 min)</h2>
-    <p>Start from an empty folder. Use bead to get the Anthropic Economic Index data.</p>
-    <ol>
-      <li>Set up the folder structure</li>
-      <li>Use OpenCode to write Stata scripts that answer: <em>"Which country has the highest share of non-programming use of Claude?"</em></li>
-      <li>Review every diff before you approve it</li>
-      <li>When you get stuck, start a fresh session</li>
-    </ol>
-    <p style="margin-top: 1em;"><strong>Debrief:</strong> each participant shares one thing the agent did that surprised them.</p>
-    <aside class="notes">
-      Instructors circulate to help with setup and troubleshooting. Common issues: Stata path on Windows, agent defaulting to Python, context degradation on long sessions.
-    </aside>
-  </section>
-
   <!-- ================================================================== -->
   <!-- CLOSING                                                             -->
   <!-- ================================================================== -->
   <section data-background-color="#24244D">
     <h2 class="section-title">Closing</h2>
     <p class="kicker"><span class="accent">04</span> · What comes next</p>
-  </section>
-
-  <section>
-    <h2>What do you do on Monday?</h2>
-    <ol>
-      <li><strong>What's the first thing</strong> you'll try with OpenCode on your own project?</li>
-      <li><strong>Which model</strong> for which task?</li>
-      <li><strong>What goes in your CLAUDE.md</strong> — the minimum viable project config?</li>
-      <li><strong>What structural change</strong> does your project need before an agent can work in it?</li>
-      <li><strong>Which failure modes</strong> to watch for?</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Failure modes to watch for</h2>
-    <ul>
-      <li>Hallucination — agent invents facts, citations, APIs</li>
-      <li>Silent data decisions — dropped rows, changed types, rounded values</li>
-      <li>Scope creep — agent rewrites code you didn't ask to change</li>
-      <li>Context degradation — quality drops as conversation grows</li>
-      <li>Confident domain errors — plausible-sounding but wrong economics</li>
-      <li>Restricted data leaving your machine — DUA / IRB violations</li>
-    </ul>
   </section>
 
   <section>
@@ -730,8 +565,7 @@
   <section class="title-slide" data-background-color="#1D1D40">
     <img class="x9-logo" src="../assets/9x/9x-logo.svg" alt="The 9x Academic">
     <h2>Thank you</h2>
-    <p class="subtitle">Write your five answers. We collect them.</p>
-    <p class="contact">miklos@koren.work · <a href="https://github.com/codedthinking/2026-06-11-ai-workshop">github.com/codedthinking/2026-06-11-ai-workshop</a></p>
+    <p class="contact">koren@codedthinking.com · <a href="https://the9x.ai/2026-06-11/">the9x.ai/2026-06-11</a></p>
   </section>
 
 </div>
