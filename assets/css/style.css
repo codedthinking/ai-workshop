@@ -434,6 +434,12 @@ img, svg { display: block; max-width: 100%; }
   font-size: 13px;
   color: var(--x9-text-2);
 }
+.site-footer .copyright a {
+  color: var(--x9-text-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.site-footer .copyright a:hover { color: var(--x9-text); }
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
