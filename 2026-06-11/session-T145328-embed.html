@@ -15,7 +15,7 @@
   <script>
     
 // OpenCode Session Replay Embed
-// Generated 2026-06-16T14:15:10.178Z
+// Generated 2026-06-16T14:35:28.286Z
 (function() {
   "use strict";
 
@@ -413,7 +413,7 @@
 
     // Create audio element
     this.audioEl = document.createElement('audio');
-    this.audioEl.preload = 'auto';
+    this.audioEl.preload = 'metadata';
     this.audioLoaded = false;
     this.simTime = 0;  // simulated clock (seconds) for when audio can't load
 
@@ -435,15 +435,17 @@
         // Use session span, not full file duration
         if (self.audioOffset > 0) {
           // totalDuration stays as computed from cues
-          // Seek to session start immediately
-          self.audioEl.currentTime = self.audioOffset;
         } else {
           self.totalDuration = self.audioEl.duration;
         }
         self.audioDurEl.textContent = fmtSec(self.totalDuration);
         self._positionSceneMarkers();
-        console.log('[oce] audio loaded, duration=' + self.audioEl.duration + ', offset=' + self.audioOffset + ', sessionDuration=' + self.totalDuration);
+        console.log('[oce] audio loadedmetadata, duration=' + self.audioEl.duration + ', offset=' + self.audioOffset + ', sessionDuration=' + self.totalDuration);
       }
+    });
+
+    this.audioEl.addEventListener('seeked', function() {
+      console.log('[oce] audio seeked to ' + self.audioEl.currentTime.toFixed(1));
     });
 
     this.audioEl.addEventListener('timeupdate', function() {
@@ -460,8 +462,9 @@
       }
     });
 
-    this.audioEl.addEventListener('error', function() {
+    this.audioEl.addEventListener('error', function(e) {
       // Audio failed to load — use simulated clock
+      console.error('[oce] audio error:', self.audioEl.error ? self.audioEl.error.message : 'unknown', self.audioEl.error);
       self.audioLoaded = false;
       self.audioDurEl.textContent = fmtSec(self.totalDuration);
       self._positionSceneMarkers();
@@ -881,9 +884,11 @@
       if (this.audioLoaded) {
         // If audio is before session start, seek to offset
         if (this.audioEl.currentTime < this.audioOffset) {
+          console.log('[oce] seeking to offset ' + this.audioOffset + ' (was ' + this.audioEl.currentTime + ')');
           this.audioEl.currentTime = this.audioOffset;
         }
-        this.audioEl.play();
+        var p = this.audioEl.play();
+        if (p && p.catch) p.catch(function(e) { console.error('[oce] play() rejected:', e); });
       } else {
         console.log('[oce] starting sim clock, totalDuration=' + this.totalDuration);
         this._startSimClock();
