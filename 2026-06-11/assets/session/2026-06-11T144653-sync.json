@@ -1,0 +1,55 @@
+{
+  "audio": "2026-06-11T143033.m4a",
+  "audio_offset_s": 974,
+  "cues": [
+    {
+      "audio_s": 974,
+      "message": "msg-0",
+      "label": "What does this project do?"
+    },
+    {
+      "audio_s": 974,
+      "message": "msg-1",
+      "label": "Quick overview",
+      "scene": true
+    },
+    {
+      "audio_s": 998,
+      "message": "msg-2",
+      "label": "Read the file tree first"
+    },
+    {
+      "audio_s": 998,
+      "message": "msg-3",
+      "label": "Reading files",
+      "scene": true
+    },
+    {
+      "audio_s": 999,
+      "message": "msg-4",
+      "label": "Detailed overview"
+    },
+    {
+      "audio_s": 1072,
+      "message": "msg-5",
+      "label": "Are there really Python files?"
+    },
+    {
+      "audio_s": 1073,
+      "message": "msg-7",
+      "label": "No.",
+      "scene": true
+    },
+    {
+      "audio_s": 1114,
+      "message": "msg-8",
+      "label": "Summarize in 200 words"
+    },
+    {
+      "audio_s": 1114,
+      "message": "msg-9",
+      "label": "200-word summary",
+      "scene": true
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "audio": "2026-06-11T111327.m4a",
+  "audio_offset_s": 3581,
+  "cues": [
+    {
+      "audio_s": 3581,
+      "message": "msg-0",
+      "label": "How to analyze with Stata?"
+    },
+    {
+      "audio_s": 3581,
+      "message": "msg-1",
+      "label": "Stata workflow",
+      "scene": true
+    },
+    {
+      "audio_s": 3606,
+      "message": "msg-2",
+      "label": "Do you have a skill?"
+    },
+    {
+      "audio_s": 3606,
+      "message": "msg-3",
+      "label": "No skill available",
+      "scene": true
+    }
+  ]
+}

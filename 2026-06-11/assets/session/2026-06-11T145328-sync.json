@@ -1,0 +1,61 @@
+{
+  "audio": "2026-06-11T143033.m4a",
+  "audio_offset_s": 1355,
+  "cues": [
+    {
+      "audio_s": 1355,
+      "message": "msg-0",
+      "label": "Summarize in 200 words"
+    },
+    {
+      "audio_s": 1355,
+      "message": "msg-1",
+      "label": "Reading project files",
+      "scene": true
+    },
+    {
+      "audio_s": 1363,
+      "message": "msg-3",
+      "label": "Project summary",
+      "scene": true
+    },
+    {
+      "audio_s": 1620,
+      "message": "msg-4",
+      "label": "Summarize in Hungarian"
+    },
+    {
+      "audio_s": 1620,
+      "message": "msg-5",
+      "label": "Hungarian summary",
+      "scene": true
+    },
+    {
+      "audio_s": 2090,
+      "message": "msg-6",
+      "label": "Say it again?"
+    },
+    {
+      "audio_s": 2170,
+      "message": "msg-7",
+      "label": "Summarize again"
+    },
+    {
+      "audio_s": 2170,
+      "message": "msg-8",
+      "label": "What we've done",
+      "scene": true
+    },
+    {
+      "audio_s": 2190,
+      "message": "msg-9",
+      "label": "What does this project do?"
+    },
+    {
+      "audio_s": 2190,
+      "message": "msg-10",
+      "label": "Project purpose",
+      "scene": true
+    }
+  ]
+}

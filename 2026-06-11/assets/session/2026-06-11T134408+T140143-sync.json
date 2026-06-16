@@ -1,0 +1,302 @@
+{
+  "audio": "2026-06-11T132015.m4a",
+  "audio_offset_s": 1311,
+  "cues": [
+    {
+      "audio_s": 1311,
+      "message": "msg-0",
+      "label": "Question: 22 tasks in HU"
+    },
+    {
+      "audio_s": 1311,
+      "message": "msg-1",
+      "label": "Searching files"
+    },
+    {
+      "audio_s": 1344,
+      "message": "msg-6",
+      "label": "Reads documentation",
+      "scene": true
+    },
+    {
+      "audio_s": 1351,
+      "message": "msg-7",
+      "label": "More file reads"
+    },
+    {
+      "audio_s": 1424,
+      "message": "msg-16",
+      "label": "Explains breakdown"
+    },
+    {
+      "audio_s": 1476,
+      "message": "msg-17",
+      "label": "Request numbers for each"
+    },
+    {
+      "audio_s": 1476,
+      "message": "msg-18",
+      "label": "Running query"
+    },
+    {
+      "audio_s": 1488,
+      "message": "msg-19",
+      "label": "Request counts",
+      "scene": true
+    },
+    {
+      "audio_s": 1896,
+      "message": "msg-20",
+      "label": "Verify HU-BU subset"
+    },
+    {
+      "audio_s": 1896,
+      "message": "msg-21",
+      "label": "Confirms subset",
+      "scene": true
+    },
+    {
+      "audio_s": 1961,
+      "message": "msg-22",
+      "label": "Write a test .do file"
+    },
+    {
+      "audio_s": 1961,
+      "message": "msg-23",
+      "label": "Writing test code"
+    },
+    {
+      "audio_s": 2005,
+      "message": "msg-31",
+      "label": "Save Stata skill"
+    },
+    {
+      "audio_s": 2021,
+      "message": "msg-33",
+      "label": "Runs test",
+      "scene": true
+    },
+    {
+      "audio_s": 2041,
+      "message": "msg-37",
+      "label": "Merge variable fix"
+    },
+    {
+      "audio_s": 2052,
+      "message": "msg-39",
+      "label": "NONE classification"
+    },
+    {
+      "audio_s": 2067,
+      "message": "msg-42",
+      "label": "Excluding NONE/SC"
+    },
+    {
+      "audio_s": 2080,
+      "message": "msg-44",
+      "label": "Test 2 passes"
+    },
+    {
+      "audio_s": 2086,
+      "message": "msg-45",
+      "label": "Test results summary"
+    },
+    {
+      "audio_s": 2108,
+      "message": "msg-46",
+      "label": "Refine test scope"
+    },
+    {
+      "audio_s": 2108,
+      "message": "msg-47",
+      "label": "Updating code"
+    },
+    {
+      "audio_s": 2126,
+      "message": "msg-50",
+      "label": "Both tests pass",
+      "scene": true
+    },
+    {
+      "audio_s": 2154,
+      "message": "msg-51",
+      "label": "Sum of regions check"
+    },
+    {
+      "audio_s": 2154,
+      "message": "msg-52",
+      "label": "Writing sum test"
+    },
+    {
+      "audio_s": 2167,
+      "message": "msg-54",
+      "label": "One failure"
+    },
+    {
+      "audio_s": 2170,
+      "message": "msg-55",
+      "label": "France rounding issue",
+      "scene": true
+    },
+    {
+      "audio_s": 2171,
+      "message": "msg-57",
+      "label": "Rounding analysis"
+    },
+    {
+      "audio_s": 2179,
+      "message": "msg-58",
+      "label": "Allow rounding"
+    },
+    {
+      "audio_s": 2179,
+      "message": "msg-59",
+      "label": "Fixing code"
+    },
+    {
+      "audio_s": 2240,
+      "message": "msg-61",
+      "label": "All three pass",
+      "scene": true
+    },
+    {
+      "audio_s": 2254,
+      "message": "msg-62",
+      "label": "Write AGENTS.md"
+    },
+    {
+      "audio_s": 2254,
+      "message": "msg-63",
+      "label": "Writing docs"
+    },
+    {
+      "audio_s": 2258,
+      "message": "msg-64",
+      "label": "AGENTS.md done",
+      "scene": true
+    },
+    {
+      "audio_s": 2288,
+      "message": "s2-msg-0",
+      "label": "New session: revise noncoding_by_country.do",
+      "scene": true
+    },
+    {
+      "audio_s": 2468,
+      "message": "s2-msg-0",
+      "label": "Revise noncoding_by_country.do"
+    },
+    {
+      "audio_s": 2468,
+      "message": "s2-msg-1",
+      "label": "Reading code",
+      "scene": true
+    },
+    {
+      "audio_s": 2514,
+      "message": "s2-msg-4",
+      "label": "Save output in output/"
+    },
+    {
+      "audio_s": 2514,
+      "message": "s2-msg-5",
+      "label": "Editing code",
+      "scene": true
+    },
+    {
+      "audio_s": 2534,
+      "message": "s2-msg-8",
+      "label": "Changes summary"
+    },
+    {
+      "audio_s": 2930,
+      "message": "s2-msg-9",
+      "label": "Run it"
+    },
+    {
+      "audio_s": 2930,
+      "message": "s2-msg-10",
+      "label": "Running Stata",
+      "scene": true
+    },
+    {
+      "audio_s": 2938,
+      "message": "s2-msg-12",
+      "label": "Output written"
+    },
+    {
+      "audio_s": 2946,
+      "message": "s2-msg-14",
+      "label": "178 countries"
+    },
+    {
+      "audio_s": 2965,
+      "message": "s2-msg-15",
+      "label": "Numbers haven't changed?"
+    },
+    {
+      "audio_s": 2965,
+      "message": "s2-msg-16",
+      "label": "Checking diff",
+      "scene": true
+    },
+    {
+      "audio_s": 2987,
+      "message": "s2-msg-19",
+      "label": "Numbers did change"
+    },
+    {
+      "audio_s": 3125,
+      "message": "s2-msg-20",
+      "label": "Plot noncoding share"
+    },
+    {
+      "audio_s": 3125,
+      "message": "s2-msg-21",
+      "label": "Writing Python plot",
+      "scene": true
+    },
+    {
+      "audio_s": 3188,
+      "message": "s2-msg-26",
+      "label": "Use Stata instead"
+    },
+    {
+      "audio_s": 3188,
+      "message": "s2-msg-27",
+      "label": "Writing Stata plot",
+      "scene": true
+    },
+    {
+      "audio_s": 3210,
+      "message": "s2-msg-29",
+      "label": "Dynamic approach"
+    },
+    {
+      "audio_s": 3238,
+      "message": "s2-msg-34",
+      "label": "Chart saved"
+    },
+    {
+      "audio_s": 3476,
+      "message": "s2-msg-35",
+      "label": "Use country codes on Y"
+    },
+    {
+      "audio_s": 3476,
+      "message": "s2-msg-36",
+      "label": "Rewriting chart",
+      "scene": true
+    },
+    {
+      "audio_s": 3484,
+      "message": "s2-msg-37",
+      "label": "Using graph hbar"
+    },
+    {
+      "audio_s": 3531,
+      "message": "s2-msg-42",
+      "label": "Chart with country codes"
+    }
+  ]
+}

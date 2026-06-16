@@ -1,0 +1,1262 @@
+
+00:00-00:02
+...generálni belőle.
+
+
+00:02-00:08
+And then
+
+
+00:08-00:12
+hands-on, hands-on
+
+
+00:12-00:14
+will be used to it.
+
+
+00:14-00:20
+I'll go ahead and see it,
+
+
+00:20-00:22
+so that I can see it.
+
+
+00:22-00:24
+I'll go ahead and see it.
+
+
+02:10-02:14
+We'll come back to these broad claims, but I want to put it out right at the beginning.
+
+
+02:14-02:20
+One claim is that intelligence kind of...
+
+
+02:20-02:28
+And we could discuss like what we mean by intelligence, but it's becoming a commodity.
+
+
+02:28-02:34
+So all these claims that now there's a newer model by Anthropic and it's smarter than the previous one.
+
+
+02:34-02:48
+It's interesting, but I think the big news here is that actually totally cheap and we're going to use a free model that costs zero dollars is going to be just as good.
+
+
+02:48-02:53
+And so the question is, what do you do when you have access to machines?
+
+
+02:53-03:05
+These are machines or tools like digital tools that very quickly can act in a semi-intelligent way for free.
+
+
+03:05-03:10
+And that's of course, as a research question, as labor economists, that's also very interesting.
+
+
+03:10-03:15
+The second claim is that even though these are like...
+
+
+03:15-03:22
+I think actually ChatGPT was a wrong direction, but it was very popular because you can chat with the AI.
+
+
+03:22-03:25
+But it's a very unstructured thing.
+
+
+03:25-03:31
+You're chatting and it pretends to understand your question or your point and it answers something.
+
+
+03:31-03:35
+And so I think the most benefit to...
+
+
+03:35-03:40
+The more benefits you can take out from these agents, the more structured you work.
+
+
+03:40-03:43
+And that's going to come back to your workflow.
+
+
+03:43-03:44
+If you...
+
+
+03:44-03:49
+So imagine there's this almost free and very fast intelligence in the other room.
+
+
+03:49-03:50
+It's a machine.
+
+
+03:50-03:55
+And you can tell it to do anything or close to anything in knowledge work.
+
+
+03:55-04:07
+And to really leverage that, which is an AI word, but I think as economists we have used it before ChatGPT started using it.
+
+
+04:07-04:09
+You really need to know what you're doing.
+
+
+04:09-04:16
+So imagine hiring a research assistant who can solve everything in like four seconds.
+
+
+04:16-04:25
+So you want to be very, very good in kind of telling them what to do because it's still your job.
+
+
+04:25-04:33
+And then the third and this we will see whether maybe already during a day we will recognize that,
+
+
+04:33-04:37
+that if you don't do this type of more structured work, it's a very...
+
+
+04:37-04:40
+So you can feel productive, but it's going to be a nightmare.
+
+
+04:40-04:47
+So I'm waiting for like September, I think it's going to be the...
+
+
+04:47-04:48
+Or like next...
+
+
+04:48-04:51
+This coming fall is going to be the period of AI hangover.
+
+
+04:51-04:57
+When all the scientists who have started using agentic AI tools in December during the winter break.
+
+
+04:57-05:03
+And they are writing papers and they're going to revise papers for journals or something,
+
+
+05:03-05:09
+nine months later, and they realize they don't understand what their machine did nine months earlier.
+
+
+05:09-05:12
+And then they will panic.
+
+
+05:12-05:17
+And I would like you to stop this before even happening.
+
+
+05:17-05:22
+So like I said, let's understand a little bit about how these LLMs work.
+
+
+05:22-05:31
+So this is about, I'm not talking about vision or audio, very, very useful applications of that as well.
+
+
+05:31-05:38
+So if you want to understand OCR and the problems related to like digital documents,
+
+
+05:38-05:41
+talk to Attila Gaspar, an expert in this.
+
+
+05:41-05:47
+I'm only talking about text and so large language models.
+
+
+05:47-05:52
+So there are new tools every day really.
+
+
+05:52-05:57
+And we call this agentic AI, but it's important to understand that it started with ChatGPT
+
+
+05:57-06:01
+and it's still a chat completion engine.
+
+
+06:01-06:09
+So the basic idea is that the large language models, there's an...
+
+
+06:09-06:20
+I haven't read the math in detail, but the idea is that you have some text, there's some vector math.
+
+
+06:20-06:27
+But you can, as economists, I think our best analogy that we can think of is like a Markov chain.
+
+
+06:27-06:36
+If you're, if you've ever done a time series forecasting, you know, at the very least in grad school,
+
+
+06:36-06:37
+you had to have some time series forecasting.
+
+
+06:37-06:39
+I say, okay, so maybe there's seasonality.
+
+
+06:39-06:42
+So maybe I should look like 12 months before.
+
+
+06:42-06:45
+And so that's exactly what LLMs do.
+
+
+06:45-06:48
+is just that they don't look like 12 months before.
+
+
+06:48-06:54
+It's a big kind of a Markov chain where every token, so token is roughly a word.
+
+
+06:54-06:59
+We'll look at it a little bit, a little bit more detail.
+
+
+06:59-07:02
+Every token can depend on, on the past.
+
+
+07:02-07:10
+So much like in an, you know, an auto regressive time series forecast, but it's a very long past.
+
+
+07:10-07:14
+And it's a very big matrix that they have to estimate.
+
+
+07:14-07:21
+So, now like a state of the art models have like a 1 million longer, what they call context window.
+
+
+07:21-07:27
+So it's like an auto regressive model or a distributed like model with 1 million legs.
+
+
+07:27-07:29
+And every,
+
+
+07:29-07:35
+token can depend on every other token.
+
+
+07:35-07:38
+So it's not just, it's not just kind of a linearly additive.
+
+
+07:38-07:41
+it's a quadratic model.
+
+
+07:41-07:44
+So basically it means you have like 1 million squared parameters to,
+
+
+07:44-07:45
+to,
+
+
+07:45-07:49
+to estimate, to try to predict what is going to be the next word.
+
+
+07:49-07:51
+And,
+
+
+07:51-07:53
+so here the cat set on,
+
+
+07:53-07:54
+and,
+
+
+07:54-07:57
+okay, with some probability you want to say the.
+
+
+07:57-08:05
+And we'll see what that implies for how they work and how they, how they cannot work.
+
+
+08:05-08:14
+Now the, what happening inside the machine, I don't want to say too much about it, but what I think it's important to understand the very basics of,
+
+
+08:14-08:19
+of text embedding, that these words are transformed into numbers.
+
+
+08:20-08:26
+and it's a very, very smart idea.
+
+
+08:26-08:30
+That's actually predates these LLMs quite a bit.
+
+
+08:30-08:37
+That based on the position in, in, in sentences, you can try to figure out kind of the semantic meaning of a word.
+
+
+08:37-08:40
+and you can characterize it in a high dimensional vector.
+
+
+08:40-08:46
+And so that dimensionality is typically like a thousand dimensions and you give like a floating point number,
+
+
+08:46-08:52
+like where is this word in, in, in a thousand dimensional space.
+
+
+08:52-08:53
+that,
+
+
+08:54-08:55
+so that's, that's the vector.
+
+
+08:55-08:57
+And so there are these typical, if you've seen,
+
+
+08:57-09:01
+this discussion of text embedding two vectors,
+
+
+09:01-09:03
+then you might have seen many of these examples.
+
+
+09:03-09:09
+What this means is that really it's a semantic, it's the meaning of the word characterized in numbers.
+
+
+09:09-09:17
+And so, you know, one example, if you take, and it's numbers, vectors, so you can do linear algebra on them.
+
+
+09:17-09:24
+And so you can take king, you can subtract man and you can add woman and you get queen,
+
+
+09:24-09:28
+or you get, you get a number that's very close to the token queen.
+
+
+09:28-09:35
+So if you find like what, what would be the closest token that would come out of this linear operation would be queen.
+
+
+09:35-09:44
+And you can do it with, you know, France minus, so like Paris minus France plus Italy will become Rome.
+
+
+09:44-09:51
+Okay, so, and this is but important, this is all trained by the context in which people are using these words in sentences.
+
+
+09:51-09:56
+So in like in similar positions in this million by million big matrix,
+
+
+09:56-10:02
+whenever people said France and then later they said Paris, you know, in similar context they have said,
+
+
+10:02-10:05
+Italy and Rome.
+
+
+10:05-10:14
+And, but importantly, so you might see and we will look at some of the models, you might see claims about, you know,
+
+
+10:14-10:16
+how big is the models.
+
+
+10:16-10:17
+They have some parameters.
+
+
+10:17-10:29
+And so these are going to be, you know, 70 billion or I think the biggest models are measured in trillions of parameters.
+
+
+10:29-10:34
+So the model is literally like a couple billion or up to a trillion numbers.
+
+
+10:34-10:41
+And so that's also means like why it's very hard to, so this is not really software, it's not text for sure.
+
+
+10:41-10:49
+So it also means like why it's very hard to protect this intellectual property, because it's just a bunch of numbers.
+
+
+10:49-11:04
+And more importantly, if you, I'll come back to this, that because we are in some semantic space, you don't have to have the exact numbers, you just have to have the
+approximate numbers.
+
+
+11:04-11:18
+So it's actually very easy to clone a model, trying to figure out maybe not the precise number, you can do it, you want to have copied the 70 billion precise numbers from
+entropy or open AI.
+
+
+11:18-11:25
+But something similar and maybe king minus man plus woman is going to get not exactly a bit of cream, but a little bit off.
+
+
+11:25-11:30
+But there are not a lot of other words around that, so your model will still find out.
+
+
+11:30-11:36
+So it's also a way to make models smaller and cheaper.
+
+
+11:36-11:52
+So in terms of the economics of these models, and this is where I think a lot of mainstream discussion is basically focusing on the first level.
+
+
+11:52-11:56
+You have to pour a lot of money into training these models.
+
+
+11:56-12:05
+Imagine you had like a problem setting time series econometrics where you have like one million lags and one million other variables.
+
+
+12:05-12:09
+So you have to estimate like a million by million parameters.
+
+
+12:09-12:10
+You will struggle with that.
+
+
+12:10-12:13
+You need a lot of data for this.
+
+
+12:13-12:26
+So this fixed cost of estimating these models is definitely in the tens of millions, but actually for like state of the art models, actually billions of dollars.
+
+
+12:26-12:33
+And so the biggest players are open AI and so people are building these Google, Google also.
+
+
+12:33-12:37
+So you have to estimate the amount of data, which is a lot of data, which is distributed.
+
+
+12:37-12:42
+Even though the original idea, so this quadratic tension idea is distributed.
+
+
+12:42-12:47
+The model is a Google invention, but they didn't work with it.
+
+
+12:47-12:49
+So we can see it as a paper.
+
+
+12:49-12:50
+It's published as a paper.
+
+
+12:50-12:51
+It's free to use.
+
+
+12:51-13:05
+Everybody, they quite lacked the actual usable AI models, but entropy can and open AI are the biggest and they have spent many billions into the space and they want to
+recover some of the billions.
+
+
+13:05-13:06
+But that's a sunk cost.
+
+
+13:06-13:11
+So, you know, it's their fault, their problem that they have sunk all this money.
+
+
+13:11-13:14
+It's not our job to give money to them.
+
+
+13:14-13:15
+So, you know, it's not our job to do that.
+
+
+13:24-13:31
+So, you have this big model and then you can adopt it to certain applications.
+
+
+13:31-13:35
+We haven't really used fine-tuned models.
+
+
+13:35-13:42
+It's also, it's at least an order of magnitude, actually, probably more like several orders of magnitude cheaper.
+
+
+13:42-13:47
+Because these general models are like general intelligence.
+
+
+13:47-13:51
+So, they are trained on the entire Wikipedia, the entire internet and everything,
+
+
+13:51-13:57
+all the books and all the New York Times articles that they can get their hands on, even if they deny.
+
+
+13:57-14:04
+And then you can kind of chat with them as an intelligent, as if you were chatting to an intelligent person,
+
+
+14:04-14:12
+but they might not know the newest data tricks or the best way to cluster standard errors, for example.
+
+
+14:12-14:18
+And so, fine-tuning could help in that, but it's pretty costly and it's not really worth it.
+
+
+14:20-14:28
+And then another stage that actually is very popular when people create like open source models is quantization.
+
+
+14:28-14:35
+And this is coming back to this idea that it's just a bunch of numbers and it is basically reducing the precision of those numbers.
+
+
+14:35-14:41
+So, a floating point number takes a lot of space, costly to and slow to work with.
+
+
+14:41-14:50
+And you just basically cut the number of significant digits and hope that the model is still usable and basically test it to make sure that it's kind of okay.
+
+
+14:50-14:58
+And so, there's a lot of these models to make existing models smaller and workable.
+
+
+14:58-15:06
+And so, the one thing that we do have to really interact with because that's really the variable cost is inference.
+
+
+15:06-15:12
+So, how do you, once you have this big matrix of the distributed lag model, if you like, how do you predict the next token?
+
+
+15:12-15:19
+So, that's called the inference step when you're just, you already have the numbers and you put in some data, the cat was sitting on,
+
+
+15:19-15:25
+and then you crunch it through the numbers and spit out the next token.
+
+
+15:25-15:32
+That is still somewhat costly because it's a big matrix and it's a lot of like matrix algebra.
+
+
+15:32-15:40
+So, it's helpful if you have good GPUs and so it's not, especially for these very, very big models.
+
+
+15:40-15:48
+So, it's not free, but like orders, orders of magnitude smaller cost than the fixed cost of training these models.
+
+
+15:48-15:57
+And so, as economists, you know, okay, the variable cost is kind of something that, and maybe there's a markup on that, we can live with that.
+
+
+15:57-16:07
+But if entropy or open AI coming and crying about their fixed cost and charging us exorbitant fees,
+
+
+16:07-16:11
+very well, we only care about the variable cost.
+
+
+16:11-16:16
+So, actually, this is changing very, very rapidly.
+
+
+16:16-16:24
+So, already with quantization, you can have like small models that would fit on your phone
+
+
+16:24-16:29
+and would actually do the inference itself on the, all the matrix algebra on the phone
+
+
+16:29-16:34
+with no connection to any big company, not even Apple.
+
+
+16:34-16:41
+So, basically, totally free with the exception of some electricity costs.
+
+
+16:41-16:52
+So, all the discussion about big data centers, electricity, the, you know, demand for GPUs and like billions invested into the industry,
+
+
+16:52-16:56
+that's all happening at basically pretty much the first layer.
+
+
+16:56-17:03
+And so, these big players are kind of running after, and the investors, they're running after their money and they're trying to capture,
+
+
+17:03-17:10
+because the variable cost is very small, it's actually a pretty, and it's very easy to copy these models.
+
+
+17:10-17:20
+So, kind of the, there's very little technical or legal protection for your intellectual property.
+
+
+17:20-17:22
+So, it's a very competitive fringe.
+
+
+17:22-17:25
+It's not the top, but the fringe is very, very competitive.
+
+
+17:25-17:35
+So, that's why these firms are trying everything to capture the surplus and charge way above your variable cost.
+
+
+17:35-17:45
+So, this I think I've said that, and you know, sometimes it really, it gives rise to very interesting discussions when,
+
+
+17:45-17:53
+when these big American firms who have consumed the entire internet, including all books and all articles,
+
+
+17:53-17:57
+and then they start complaining that others are copying their intellectual property.
+
+
+17:57-18:05
+But, they have built very good models, we will see them in actions.
+
+
+18:05-18:07
+So, I mentioned fine tuning.
+
+
+18:07-18:10
+We don't need this, so we're gonna put it aside.
+
+
+18:10-18:14
+You can have like very, very specialized applications if you're doing this.
+
+
+18:14-18:22
+say, document character recognition, maybe there's some, but in like general, the way we're gonna use it to write code,
+
+
+18:22-18:25
+it's not, it's not needed at all.
+
+
+18:25-18:27
+So, I'm gonna, I'm gonna skip that.
+
+
+18:27-18:29
+I mentioned what quantization does.
+
+
+18:29-18:32
+It can drastically reduce the size of a, of a model.
+
+
+18:32-18:39
+It can, it can even, so by now, we'll check what model we will be using.
+
+
+18:39-18:44
+I think it's like a 30 billion parameter model.
+
+
+18:44-18:46
+We're not going to run it locally.
+
+
+18:46-18:49
+I'm not sure how easy it is to run it locally.
+
+
+18:50-19:07
+But already, things that would fit on a, on a phone, like three or four or five gigabytes of data, and using the processor on the phone, can give you a pretty good chat
+experience and can code already.
+
+
+19:07-19:17
+So, I think, I think the future is going towards like a smaller, cheaper, basically free models where you're only consuming the electricity and that's it.
+
+
+19:17-19:22
+We're not quite there yet, but I think that's, that's where we are going.
+
+
+19:22-19:32
+And so, I will tell you a bit more about, because I think it's important to understand the agentic nature, like what's happening when we do inference.
+
+
+19:32-19:34
+So, we're not going to do it on our laptops.
+
+
+19:34-19:37
+We're still going to call out to a cloud service.
+
+
+19:37-19:43
+And so, the way it works is that, like I said, it's still a chat completion engine.
+
+
+19:43-19:48
+So, we're going to give some text to, to the cloud service.
+
+
+19:48-19:53
+And then it will do the computation in their big data center.
+
+
+19:53-19:58
+But it doesn't have to be very big, because our requests are not going to be too complicated.
+
+
+19:58-20:03
+and then send back the words that they, that they have generated.
+
+
+20:03-20:15
+And so, so the way to think about this variable cost, and I keep, keep saying that, that, and I think statistics should also take note that how do you measure AI?
+
+
+20:15-20:21
+I think, you know, you want to measure physical output and then you can talk about prices and quality and everything.
+
+
+20:21-20:23
+But the first thing is to measure physical output.
+
+
+20:23-20:27
+The unit of AI or at least LLMs is millions of tokens.
+
+
+20:27-20:32
+You send tokens to, to the server and they send tokens back.
+
+
+20:32-20:50
+So, for tokens, we should think roughly words, but sometimes you can take the stem or, so it's a little bit, you know, a hundred word text might make, maybe like 120
+tokens because of the punctuation and everything else.
+
+
+20:52-20:57
+And so, so most of the inference pricing is actually priced in millions of tokens.
+
+
+20:57-21:03
+Like I'm going to charge you by the million tokens you send in and by the million tokens you send out, I send out.
+
+
+21:03-21:07
+And it also already tells you that this is a big machinery.
+
+
+21:07-21:15
+So it generates a lot of tokens and also it's quite cheap, seemingly quite cheap because they have to, to charge by the million.
+
+
+21:15-21:25
+So if I were to just, you know, ask them to tell me a joke and they can come up with a joke in a hundred words, then it's going to be a very cheap, very cheap activity.
+
+
+21:27-21:35
+And so I think we should be thinking of, you know, what is the quantity of tokens we are consuming and there's vastly different prices as we will see.
+
+
+21:36-21:45
+So here, so we're going to use a model that is the market price for it is, and there's a market for this, it's very organized exchange basically.
+
+
+21:45-21:52
+The market price for this is 30 cents per, or 28 cents per million token.
+
+
+21:53-21:55
+So it's among the cheaper, cheaper scale.
+
+
+21:55-21:58
+They have a sale, so we're going to actually use it for free.
+
+
+21:58-22:09
+And it's actually very typical that new models, they offer like a sale, which means that they keep your data to train and improve their model.
+
+
+22:09-22:12
+But you can use them for free for like a couple of weeks.
+
+
+22:12-22:18
+But even if not free, we can count by the end of the day, how many, you know, how much it would have cost.
+
+
+22:18-22:23
+And I, I suspect it will not go up to like $3.
+
+
+22:23-22:27
+I think we're going to, we're going to stay between like $1 or $2.
+
+
+22:27-22:43
+Actually much, much less than that, because if you, if you work every waking hour of the day and doing very, very hard programming,
+
+
+22:45-22:54
+if you're iterating with the, with the agent all the time, you might be generating one to three million tokens in a day.
+
+
+22:54-23:00
+Okay. So that would call, that would cost like $1 with this model in one day.
+
+
+23:00-23:08
+So if you have like 20 working days, that would be like a $20 version, but this is like the full when you're not doing anything else during the day.
+
+
+23:08-23:10
+So we will be below $1 for sure.
+
+
+23:11-23:21
+So by contrast, the, the state of the art models have like insane numbers, 15 or even higher dollars per, per million.
+
+
+23:21-23:28
+And there are other models like CHETGPT and, and then Tropic has this model that you pay for a month and then you get something.
+
+
+23:28-23:31
+And one issue is that you don't really know what you get.
+
+
+23:32-23:35
+So I think it's going to become like electricity.
+
+
+23:35-23:46
+There's really no electricity contract that says, you know, come sign up with MVM and then you're going to get a very, very good electricity service.
+
+
+23:46-23:48
+It's the best in the world.
+
+
+23:48-23:50
+Our electrons are really, really smart.
+
+
+23:50-23:51
+They can travel very fast.
+
+
+23:52-23:58
+And we also give you this washing machine as a part of the bundle and it only costs you this amount per month.
+
+
+23:58-23:59
+No, that's not.
+
+
+23:59-24:05
+You buy the washing machine elsewhere, your computer elsewhere, and you pay by kilowatt hours.
+
+
+24:05-24:07
+So it's a meter usage.
+
+
+24:07-24:17
+And I think that's where we're going to be going because it's just such a competitive fringe and a very, relative to the sun cost, it's a very low, low marginal cost.
+
+
+24:17-24:21
+So this is how I would like you to think of LLMs.
+
+
+24:21-24:25
+And I think if you remember this, then, then you'll understand how LLMs work.
+
+
+24:25-24:30
+I don't know how many of you are old enough to have seen Memento.
+
+
+24:31-24:46
+So I can, without spoilers, I can give you that the basic premise of the movie is that Leonard, the main character of the movie, after some accident, he has a memory span
+of five minutes.
+
+
+24:46-24:58
+And in order to basically live like a goal-oriented life, and we can kind of see what his main goal is in life, find him and kill him.
+
+
+24:59-25:02
+And there's someone he really wants to kill.
+
+
+25:02-25:18
+So he'll have to make notes for himself on the mirror, or better yet, tattoo short messages on his body, so that in the next five minutes he can refer to these messages and
+figure out what is his main goal in life.
+
+
+25:18-25:22
+And that, I think, is a very apt analogy for LLMs.
+
+
+25:23-25:29
+So remember that, what I call it, context window, the lag in your Markov chain.
+
+
+25:29-25:33
+That's all that they know about the word. There's nothing else.
+
+
+25:33-25:40
+And so that's like the five-minute memory gap.
+
+
+25:41-25:48
+And if you want them to remember anything else, you have to write it down and you have to make them read it in those five minutes.
+
+
+25:48-25:50
+So that's a big challenge.
+
+
+25:50-26:03
+There's this fundamental limitation of these models, is that there's no, there's some, and we'll show some techniques for that, but like, how do you remember
+something if you have such a limited attention span?
+
+
+26:04-26:19
+Because not only you have to have a lot of these tattoos on your body, and notes on the mirror, post-its, you have to remember to consult those post-its and where did you
+put that tattoo to check that.
+
+
+26:19-26:20
+So it's very hard.
+
+
+26:21-26:28
+And I think you, if you remember the movie, you will understand how LLMs think, and also their failure mode.
+
+
+26:28-26:35
+So even the very smartest models will make completely stupid mistakes because of this mode of operation.
+
+
+26:35-26:41
+And also kind of shows that the longer this context window, the more smarter the model feels.
+
+
+26:42-26:56
+because imagine that if your memory is not five minutes, but like a day, there's a lot more you can do because you can consult your, your, your more permanent memory.
+
+
+26:56-27:00
+You know, you might even have like a notebook that you can, that you can read.
+
+
+27:05-27:17
+And so I know I said it, but I'm going to say it one more time just to emphasize that, that whenever, so everything that's not in the last, not five minutes, but like 1
+million tokens,
+
+
+27:17-27:22
+we're going to use a model that has a context window of 200,000, I believe.
+
+
+27:22-27:25
+And it's actually for our purposes, it's totally fine.
+
+
+27:25-27:28
+We don't need 1 million or 2 million context windows.
+
+
+27:28-27:31
+Everything that's outside is gone.
+
+
+27:32-27:34
+And then we've forgotten it like, was never there.
+
+
+27:34-27:41
+And that can actually lead to some very interesting, you can try arguing with the model with the short memory.
+
+
+27:41-27:49
+And if you're confidently claim things that has gone out the, the other end of the, of the memory.
+
+
+27:49-27:54
+And they don't remember that they don't, they don't know that they don't remember because it's completely gone.
+
+
+27:54-28:01
+And they will conf, totally confidently claim something that may be the opposite of what, what you just discussed half an hour ago.
+
+
+28:01-28:09
+So, if you, if you, if you, if you've run out of context.
+
+
+28:09-28:15
+It introduces another failure mode and this is a little bit of a spoiler.
+
+
+28:15-28:23
+So if you still want to watch Memento, because it's also very, so this context window can be kind of contaminated.
+
+
+28:24-28:33
+So, you know, if you ever write something on your body that, you know, maybe it was a bad idea, you had a tattoo and whatever.
+
+
+28:33-28:39
+Five minutes later you will not remember why you wrote it on your body and you will think that that's the truth.
+
+
+28:39-28:43
+Right? And that's, that's everything you need to know about the world.
+
+
+28:43-28:45
+And that can happen with LLMs as well.
+
+
+28:45-28:52
+It goes on a, it comes up with a bad solution and you start arguing that, hey, this is not what I asked.
+
+
+28:52-28:58
+And that's actually worse because it still believes that that's the truth.
+
+
+28:58-29:12
+Like, I was just the one example, I was doing derivations for, for my macro model with one of the smartest cloud models the other day.
+
+
+29:12-29:19
+It's really, it has a one million context window. It's, it's very smart, so to speak.
+
+
+29:19-29:24
+And I gave some notes about, you know, this is my derivation and kind of keep going and it kept going.
+
+
+29:24-29:31
+And so it turns out in my derivations, there was an algebraic mistake because we're human.
+
+
+29:31-29:35
+And it did not catch it because I didn't ask to catch it.
+
+
+29:35-29:39
+And it was like at the beginning of the memory. So it was just born.
+
+
+29:39-29:45
+It was like a, like an infant and all this is the first thing that my master tells me, it must be true.
+
+
+29:45-29:47
+So it kept going with the wrong assumption.
+
+
+29:47-29:50
+I mean, even the very smart, we had like long discussion.
+
+
+29:50-29:58
+And then later I checked, no, there was like, it's luckily not that big a, not that big a gap, but there was a gap.
+
+
+29:58-30:04
+I guess if I, if I asked it to check my derivations, it might be, would have, would have caught it.
+
+
+30:04-30:13
+But I think that, that analogy of, of, of, you have to manage what the, what the agent knows is very important.
+
+
+30:13-30:16
+Both by like, understand what it doesn't know.
+
+
+30:16-30:22
+And also if it knows something bad, you can always just kill the old agent and get a new one.
+
+
+30:22-30:29
+And they don't feel pain. They don't have feelings. So you don't have to feel bad about that.
+
+
+30:29-30:30
+Please.
+
+
+30:30-30:33
+Can you rewrite this? I mean, within the context window, like, you know,
+
+
+30:33-30:38
+check the derivation piece first and then it rewrites it.
+
+
+30:38-30:44
+Yes. And actually this, I'm not sure if an open code we can, we, we, we can check.
+
+
+30:44-31:03
+But you actually should be able to, and I think some, some tools let you do that. Because the way this works is actually worse than what I said is that because you're,
+you're sending these messages to a far away server and they don't, and they're like millions of people using chat GPT at a time.
+
+
+31:03-31:11
+They don't remember like who they are talking to. So every time you're sending a message, you're sending the entire history.
+
+
+31:11-31:19
+So if you get to the end of that one million window, you're, you're basically like sending several novels of this is what we've been working on.
+
+
+31:19-31:27
+And we'll start from scratch and read from the beginning that, Hey, ah, this is what this is. Oh, there was this error. And this is how we fix it. Oh, wait, we didn't.
+
+
+31:27-31:40
+So it will go through the entire process again. And so that should be easy to, to fix. Just go back and don't send the entire history just to up to a point where, where
+you're confident that it was, it was still correct.
+
+
+31:40-31:57
+And so what happens is that, is that, and this is what makes it agentic. So agentic really means two things, I think. And you can add some flavor, but I think these are,
+these two are,
+
+
+31:57-32:15
+the basic one is that there's like a loop that's happening that there's a tool that's going to send messages to, to the, to the LLM. And, uh, so typically this tool has
+some, uh, system messages as well, that will tell the LLM how to behave and what to expect from you.
+
+
+32:15-32:26
+Um, and then get back the, get back these messages and then react to these messages. So maybe send more messages. So it's, it's, it's kind of a basically like a for loop.
+
+
+32:26-32:48
+Um, so unlike in chat GPT where once chat GPT tells you something, it waits until you read it and, and, uh, react the, uh, the agent. So we can call these the LLM or the
+model. And this could be the agent. The agent is in a for loop. So they can, uh, keep, they can keep, uh, going if they want to.
+
+
+32:48-33:06
+And the other important stuff is tool, tool calling, which I will get to, uh, in a second. But so, like I said, it's still chat completion. So the agent might send, uh,
+some kind of system rules like, uh, uh, you know, don't use swear words and whatnot. Uh, what can you do on, on the user's computer?
+
+
+33:06-33:18
+And then the user might, so we might have a request that typically we're going to type in, like in a chat, um, chat interface. And that's how open code operates as well.
+
+
+33:18-33:31
+So for example, we have a state, uh, uh, file and we want to call out the sales by firms and years, um, to compute, compute the means. And so then both of these are sent to the
+LLM.
+
+
+33:31-33:44
+Who's going to read this as text and spit out text, because there's nothing else that they can. They're not intelligent. They don't understand anything. They just
+generate, uh, next, uh, tokens.
+
+
+33:44-34:00
+One layer that I put, that I didn't put in here. It's also a clever trick is called chain of thought, uh, reasoning is you, they can pretend to be thinking, but it's a very
+good quality pretension by basically writing long words.
+
+
+34:00-34:10
+They're writing long sentences for themselves. Like in, like you would do in Memento. I mean, you wake up and you see yourself in the mirror and see you have tattoos all
+over your body.
+
+
+34:10-34:29
+And then you start this, uh, internal monologue of what the hell can be going on. And so that's what LLMs can do. And, and so they might write like a long novel and at the end
+of which they conclude that the answer is a collapse parentheses, some, um, by firm space here or something.
+
+
+34:29-34:44
+Um, so the thinking mode of LLMs is basically just like a scrapbook that they have where they can write a lot more text before they, they, uh, send you the final, final
+answer. And so then the, uh, uh, so they're going to, uh, uh,
+

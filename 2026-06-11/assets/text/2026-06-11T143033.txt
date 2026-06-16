@@ -1,0 +1,3144 @@
+
+00:00-00:05
+If you see any of your files, it's just there.
+
+
+00:05-00:10
+What do you think?
+
+
+00:10-00:12
+You can show the Opera router?
+
+
+00:12-00:24
+I think this is an example where I said tool,
+
+
+00:24-00:26
+and I thought it was going to be like an agent tool,
+
+
+00:26-00:29
+and started going customizing my open code.
+
+
+00:29-00:33
+No, just add it to the website.
+
+
+00:33-00:40
+Okay, hopefully it's going to figure this out.
+
+
+00:40-00:45
+So open router.
+
+
+00:45-00:49
+So there's a website called openrouter.ai.
+
+
+00:49-00:54
+So remember opencode.ai, and this is openrouter.ai.
+
+
+00:58-01:11
+So we're going to put this in the recording as well.
+
+
+01:15-01:21
+Okay, so I don't know how much you can see.
+
+
+01:21-01:24
+I think you can see a lot without logging in.
+
+
+01:24-01:30
+So basically what openrouter is doing is a so-called inference platform.
+
+
+01:30-01:35
+It's like an exchange for inference providers.
+
+
+01:35-01:37
+Remember from the morning?
+
+
+01:37-01:42
+Inference is where you generate the electricity and turn them into tokens, basically.
+
+
+01:42-01:47
+But just to illustrate that they have...
+
+
+01:48-01:49
+So they have...
+
+
+01:49-01:54
+Now they cleaned up a little bit.
+
+
+01:54-01:56
+I think they deleted some older models.
+
+
+01:56-02:02
+They have 338 text models, 32 image models, and a whole bunch of other models.
+
+
+02:02-02:05
+At some point it was over 400.
+
+
+02:05-02:07
+But maybe they have deleted all their models.
+
+
+02:07-02:12
+So they provide you access to almost every LLM in the world.
+
+
+02:12-02:18
+It's not almost every, but like the most used.
+
+
+02:18-02:22
+So including the very fancy ones.
+
+
+02:22-02:24
+So just look at the numbers.
+
+
+02:24-02:30
+Remember that a million token is the quantity here.
+
+
+02:30-02:32
+So this is price per million token.
+
+
+02:32-02:33
+50.
+
+
+02:35-02:42
+So if we rank it from, say, highest to lowest...
+
+
+02:42-02:49
+Oh my god, I think they don't really want you to use that model.
+
+
+02:49-02:55
+I think it's an old model and I think they just don't like you to use it.
+
+
+02:55-02:59
+600 GPT 5.5.
+
+
+02:59-03:02
+I don't even want to know what those things are.
+
+
+03:02-03:04
+Because those are like 100.
+
+
+03:04-03:09
+But the newest model is, like I said, Fable 5.
+
+
+03:09-03:12
+It came out like, I don't know, two or three days ago from Anthropic.
+
+
+03:12-03:14
+It costs 50.
+
+
+03:14-03:15
+It's probably very good.
+
+
+03:15-03:18
+We're not going to try it because we're going to burn our...
+
+
+03:18-03:21
+And if you scroll down, you have...
+
+
+03:21-03:26
+I'm going to look for MIMO, which we were using.
+
+
+03:26-03:30
+Search models, MIMO.
+
+
+03:30-03:31
+MIMO.
+
+
+03:31-03:34
+MIMO V2.5.
+
+
+03:34-03:37
+And it says 28 cents per million tokens.
+
+
+03:37-03:44
+So it's a big gap between the prices.
+
+
+03:44-03:46
+So...
+
+
+03:46-03:51
+And the way this works is that you get basically like a long password,
+
+
+03:51-03:55
+an API key with which you can connect to OpenRouter.
+
+
+03:55-03:58
+And then you can load any of these models.
+
+
+03:58-04:01
+So it basically gives you flexibility.
+
+
+04:01-04:07
+You don't have to sign and ease of use because you don't have to sign up for
+
+
+04:07-04:11
+Anthropic, for OpenAI, for all of these different providers.
+
+
+04:11-04:13
+You just sign up for OpenRouter.
+
+
+04:13-04:16
+You give them a credit card, pay some money.
+
+
+04:16-04:22
+And then you can use any of these 400 models.
+
+
+04:22-04:29
+And also in terms of administration, it's very easy because it's a prepaid.
+
+
+04:29-04:31
+It's actually what we did with the research group.
+
+
+04:31-04:33
+We uploaded a bunch of money here.
+
+
+04:33-04:37
+And then anybody can pick their favorite model.
+
+
+04:37-04:43
+We could set limits like, okay, you can pick your favorite model up to a price threshold.
+
+
+04:43-04:50
+So now András has set a password or an API key that has a total limit of $10.
+
+
+04:50-04:54
+So hopefully we will not hit it.
+
+
+04:54-04:56
+Let me see if...
+
+
+04:56-04:58
+Yeah.
+
+
+04:58-04:59
+Very good.
+
+
+04:59-05:01
+I was saying in terms of...
+
+
+05:01-05:03
+Will I indeed it on it?
+
+
+05:03-05:04
+No.
+
+
+05:04-05:05
+Can I take advantage of it?
+
+
+05:05-05:06
+No.
+
+
+05:06-05:07
+Anything.
+
+
+05:07-05:08
+No.
+
+
+05:08-05:15
+You can have the API key from a VS code or a sublime text or sublime, not a cloud code
+
+
+05:15-05:17
+and anything else.
+
+
+05:17-05:20
+So it actually, my open code actually caught me.
+
+
+05:20-05:24
+I wanted to publish the key itself and it told me that's not a good idea.
+
+
+05:24-05:26
+Which is true.
+
+
+05:26-05:27
+OpenAI?
+
+
+05:27-05:34
+I want to publish this link where you can find the...
+
+
+05:34-05:40
+I'm just gonna make you a viewer.
+
+
+05:40-05:44
+Where you can find the key.
+
+
+05:44-05:57
+And if you haven't used an API key before, the logic is that it's like a password.
+
+
+05:57-06:06
+But in traditional authentication you have a username and a password and your password might be one, two, three, four, like eight characters or twelve or sixteen.
+
+
+06:06-06:08
+Here you don't have a username because why bother?
+
+
+06:08-06:14
+Because your password is so long that it's enough to just have it.
+
+
+06:14-06:24
+So API key is just a very, very long password basically.
+
+
+06:24-06:27
+And apparently...
+
+
+06:32-06:33
+I think it's being...
+
+
+06:34-06:47
+So if you still have the website open and you go to tools, then in about one minute that link should appear up there.
+
+
+06:47-06:59
+And then you can find the...
+
+
+06:59-07:05
+You will get here to this drawing whiteboard.
+
+
+07:05-07:09
+And then you can just copy paste that long ugly password from there.
+
+
+07:09-07:12
+Actually...
+
+
+07:12-07:14
+Apparently...
+
+
+07:14-07:15
+There's a QR code as well.
+
+
+07:15-07:16
+So you can...
+
+
+07:16-07:19
+But I don't know how to copy from your phone to the...
+
+
+07:19-07:20
+It's complicated.
+
+
+07:20-07:23
+You could get it via the QR code as well.
+
+
+07:23-07:25
+I'll tell you.
+
+
+07:25-07:26
+Tell you about that.
+
+
+07:26-07:27
+Just get the code.
+
+
+07:27-07:28
+Did we push?
+
+
+07:28-07:29
+I'm thinking.
+
+
+07:29-07:30
+Tökéletes, Igen.
+
+
+07:30-07:31
+Ez az SK-val kezdedik.
+
+
+07:31-07:32
+Igen.
+
+
+07:32-07:33
+És ezt csináljuk meg a tevarat.
+
+
+07:33-07:34
+I'm thinking.
+
+
+07:35-07:36
+Tehát ezt ott a kezedet.
+
+
+07:36-07:37
+Tökéletes, Igen.
+
+
+07:37-07:38
+Ez az SK-val kezdedik.
+
+
+07:38-07:39
+Igen.
+
+
+07:39-07:40
+Ez az SK-val kezdedik.
+
+
+07:40-07:41
+Igen.
+
+
+07:41-07:42
+És ezt csináljuk meg a tevarat.
+
+
+07:42-07:43
+Igen.
+
+
+07:43-07:44
+És ezt csináljuk meg a tevarat.
+
+
+07:44-07:45
+Ezt is connected.
+
+
+07:45-07:46
+Hát akkor new session-t kell indítani, hogy minden rendben van.
+
+
+07:46-07:47
+Indíts, hát indíts egy new session-t.
+
+
+07:47-07:48
+Lehet, hogy nem, de furcsa mondjuk.
+
+
+07:48-07:49
+Jó.
+
+
+07:49-07:50
+Hát akkor a new session-t kell indítani, hogy minden rendben van.
+
+
+07:50-07:51
+Indíts egy new session-t.
+
+
+07:51-07:52
+Lehet, hogy nem fogja most.
+
+
+07:52-07:54
+Lehet, hogy nem, de furcsa mondjuk.
+
+
+07:54-07:55
+Jó.
+
+
+07:55-07:56
+Hát akkor a new session-t.
+
+
+07:56-07:57
+Hát próbáljuk meg, hogy...
+
+
+07:57-07:58
+Hogy akkor, hogy abban a mappában legyen.
+
+
+07:58-07:59
+Abban a mappában.
+
+
+07:59-08:00
+Próbáljuk meg.
+
+
+08:00-08:01
+Hogy csatlakozik.
+
+
+08:01-08:02
+Hát valahogy a kórtában van a baján.
+
+
+08:02-08:03
+Hát akkor, hogy abban a mappában legyen.
+
+
+08:03-08:04
+Abban a mappában.
+
+
+08:04-08:05
+Hát akkor, hogy abban a mappában legyen.
+
+
+08:05-08:06
+Abban a mappában.
+
+
+08:06-08:07
+Hát akkor, hogy abban a mappában legyen.
+
+
+08:07-08:08
+Abban a mappában.
+
+
+08:08-08:09
+Próbáljuk meg.
+
+
+08:09-08:10
+Aha.
+
+
+08:10-08:11
+Hogy csatlakozik.
+
+
+08:11-08:12
+Hát valahogy a kórtában van a baján.
+
+
+08:12-08:14
+Hát valahogy a kórtában van a baján.
+
+
+08:14-08:15
+Hát valahogy a kórtában van a baján.
+
+
+08:16-08:18
+Hát akkor, hogy mi ez egy pluszom van.
+
+
+08:18-08:19
+A kórtában van.
+
+
+08:19-08:20
+Hát hogy nincs a napi előtt.
+
+
+08:20-08:21
+Hát akkor ez a baj.
+
+
+08:21-08:22
+Nincs a napi ki a pluszhoz.
+
+
+08:22-08:23
+Hát akkor a másikra csak elcsatlakozni.
+
+
+08:23-08:24
+Hát akkor próbáljuk ki.
+
+
+08:24-08:25
+Hát akkor nem a napi van.
+
+
+08:43-08:45
+Hát akkor vissza az OpenAI-re és akkor...
+
+
+08:45-08:47
+Hát azt fingom, sincs.
+
+
+08:47-08:48
+Hát akkor nem a napi van.
+
+
+08:50-08:51
+Hát akkor az egy browser oldalt nyitnak.
+
+
+08:51-08:52
+Próbáljuk ki.
+
+
+08:52-08:53
+Hát akkor nem a napi van.
+
+
+10:04-10:06
+Your skills are also there.
+
+
+10:06-10:07
+It's interesting.
+
+
+10:07-10:09
+So you can see all my skills.
+
+
+10:09-10:11
+But all their comments as well.
+
+
+10:11-10:13
+I think it's either login or...
+
+
+10:13-10:14
+Beléptetek?
+
+
+10:14-10:17
+Or like authenticate.
+
+
+10:17-10:19
+Megy itt is lehet, hogy meg ide.
+
+
+10:19-10:21
+Then not like this.
+
+
+10:21-10:22
+És akkor...
+
+
+10:22-10:23
+Maybe I need to...
+
+
+10:23-10:25
+I'm gonna ask.
+
+
+10:25-10:30
+Oh, maybe here in the model space
+
+
+10:30-10:33
+I could connect provider.
+
+
+10:33-10:34
+Yeah.
+
+
+10:34-10:38
+So, akkor ide az API key-t.
+
+
+10:38-10:39
+No provider.
+
+
+10:39-10:42
+A webodon, on a whole apper.
+
+
+10:42-10:44
+So when you say connect provider, what does it say?
+
+
+10:44-10:45
+Where you put the API key?
+
+
+10:45-10:48
+Where you put the API key?
+
+
+10:48-10:49
+And then...
+
+
+10:49-10:52
+And then you will add open router.
+
+
+10:52-10:53
+Okay.
+
+
+10:53-10:55
+And then the API key.
+
+
+10:55-10:58
+Oh, but sorry.
+
+
+10:58-11:00
+I didn't copy the...
+
+
+11:00-11:02
+So this is the API key.
+
+
+11:02-11:03
+I don't know.
+
+
+11:05-11:06
+Hol van az API key?
+
+
+11:06-11:07
+Continue.
+
+
+11:07-11:09
+It's open router connected.
+
+
+11:09-11:11
+Hol van az API key?
+
+
+11:11-11:12
+Honnan...
+
+
+11:12-11:13
+So you go to the website.
+
+
+11:13-11:16
+Remember the website and then on the whiteboards.
+
+
+11:16-11:17
+It's under whiteboards.
+
+
+11:17-11:19
+It's under Whiteboard.
+
+
+11:21-11:23
+.
+
+
+11:23-11:39
+,.
+
+
+11:39-11:41
+.
+
+
+11:41-11:48
+Let me show this. So if you go to open code when you're selecting the model,
+
+
+11:48-11:53
+then there's going to be a plus button. You can add new models.
+
+
+11:53-12:03
+.
+
+
+12:03-12:08
+I just refreshed my-- so I think we should have the same version.
+
+
+12:08-12:13
+.
+
+
+12:23-12:24
+.
+
+
+12:24-12:27
+.
+
+
+12:27-12:28
+.
+
+
+12:28-12:28
+.
+
+
+12:28-12:30
+.
+
+
+12:30-12:30
+.
+
+
+12:30-12:31
+.
+
+
+12:37-12:37
+.
+
+
+12:37-12:38
+.
+
+
+12:38-12:48
+So there's some-- you can actually link-- if you have already existing accounts, you can link them here.
+
+
+12:48-12:54
+So in providers, you can open AI, clause-- don't add clause, sorry. Don't emphasize this.
+
+
+12:54-13:01
+It's not trivial, because for open AI, the GPT you need the pro version for API, I don't know if you want to go to call back.
+
+
+13:01-13:05
+Yes, open AI-- so this is actually a nice story, so let me--
+
+
+13:05-13:06
+Okay.
+
+
+13:06-13:16
+And then, if you can help people set up open router, until then I tell this story, it's how the tech industry works these days.
+
+
+13:16-13:18
+I think it's fascinating.
+
+
+13:18-13:20
+I just don't see this happening in Hungary.
+
+
+13:20-13:21
+Csabi, belépte?
+
+
+13:21-13:32
+Early January, Entropic kicked out open code, because you could connect to Entropic with your monthly subscription, which is what I did.
+
+
+13:32-13:34
+I had a monthly subscription, but I like open code better than Claude.
+
+
+13:34-13:38
+So I was using it via open code.
+
+
+13:38-13:43
+So you could-- not counting tokens, but go against the monthly limit.
+
+
+13:43-13:48
+And they just kicked out everybody that you can only use this with Claude code, open router is out.
+
+
+13:48-13:50
+Sorry, open code is out.
+
+
+13:50-13:53
+And this happened on a Thursday.
+
+
+13:53-13:55
+I know it from an interview of the guy.
+
+
+13:55-14:00
+I mean, I immediately recognized that this happened, but how they see, they saw it at the other end.
+
+
+14:00-14:05
+Like Thursday evening, they already saw some Twitter activity that people are complaining.
+
+
+14:05-14:13
+They were already expecting this, because it's like the price gap between open models and what Claude is charging is insane.
+
+
+14:13-14:17
+So they were expecting Entropic to react to that at some point.
+
+
+14:17-14:20
+So they already had some plan B to go.
+
+
+14:20-14:22
+And they immediately shot an email to OpenAI.
+
+
+14:22-14:27
+They said, guys, now is the time for you to score some PR points.
+
+
+14:27-14:32
+And so within 24 hours, they had a deal with OpenAI.
+
+
+14:32-14:36
+They implemented this OpenAI connection via Codex.
+
+
+14:36-14:43
+And they advertised this on Twitter that all the people who-- everybody was-- because open code is used mostly by coders,
+
+
+14:43-14:45
+who use a lot of tokens.
+
+
+14:45-14:51
+And if you charge them via the Entropic prices, it would be insanely expensive.
+
+
+14:51-14:54
+So Friday morning, everybody was pleased at Entropic.
+
+
+14:54-14:55
+What's happening?
+
+
+14:56-15:04
+And then by Friday afternoon, they had a-- like, yeah, Entropic sucks, but OpenAI, you can use it.
+
+
+15:04-15:11
+So that's kind of the startup ecosystem.
+
+
+15:11-15:17
+But don't-- you can connect Entropic, but don't do it because they would charge by the token and it's insane.
+
+
+15:17-15:22
+So I had OpenRouter, I think I already did.
+
+
+15:22-15:28
+I copy my secret key, and then I think I'm good to go.
+
+
+15:28-15:37
+And then I don't-- so I think we could set some limits on the models as well.
+
+
+15:37-15:46
+But I'm going to show you my-- so we are still in this project.
+
+
+15:46-15:49
+OK, so I'm going to show you my favorite model.
+
+
+15:49-15:56
+It's not very smart, but it's very fast, and it's kind of entertainingly fast.
+
+
+15:56-15:58
+It's called Mercury 2.
+
+
+15:58-16:03
+It's actually based on a different architecture, not this quadratic million-by-million matrix,
+
+
+16:03-16:07
+because it's insanely costly and slow to compute.
+
+
+16:07-16:14
+So they are building a completely different diffusion language model, and it makes it super fast.
+
+
+16:14-16:19
+So I could ask, like, what does this project do?
+
+
+16:19-16:25
+And so that was it.
+
+
+16:25-16:30
+It's kind of terse, but Python-- like what?
+
+
+16:30-16:38
+Am I in the-- and I think I made up some of these, I think, learning from my skills.
+
+
+16:38-16:49
+Read the file tree, and then say something.
+
+
+16:49-16:58
+So it's like very fast, not very precise, but it's like having a quick conversation with your colleague who is not paying attention.
+
+
+16:58-17:06
+But sometimes this is useful as well, because literally in one second, it gives you a kind of a little bit more than half-picked answer.
+
+
+17:06-17:12
+And sometimes it's more useful than a better answer in like three minutes.
+
+
+17:12-17:19
+So this is actually now better, although we may have left some Python code in there.
+
+
+17:19-17:23
+I don't think there's any Python code.
+
+
+17:23-17:29
+So this is like super fast, but not very smart.
+
+
+17:29-17:46
+Another example, I think, so Mistral is a French, it's a European model, so then your data at least remains within the EU.
+
+
+17:46-17:49
+It's small, so it's also not very smart.
+
+
+17:49-17:54
+It's smarter than Mercury too, and it's also very fast.
+
+
+17:54-17:59
+So I can ask, are there really Python files?
+
+
+18:07-18:17
+And so relative to like thinking, thinking, thinking, thinking, thinking, thinking, thinking, this is kind of very refreshing.
+
+
+18:17-18:28
+So then, it's fair point here.
+
+
+18:28-18:29
+Can you ask?
+
+
+18:29-18:32
+So it has some positive correlation with the truth.
+
+
+18:32-18:34
+Maybe not very strong, but yes.
+
+
+18:34-18:45
+Let's summarize the project structure in 200 words.
+
+
+18:45-18:51
+And just looking at it, it's pretty good.
+
+
+18:51-18:53
+So for this type of task, it got done.
+
+
+18:53-18:57
+You can actually look at the metadata, I believe, three seconds.
+
+
+18:57-18:58
+So it got done in three seconds.
+
+
+18:58-19:01
+It read the stuff and gave you the answer.
+
+
+19:01-19:03
+So you don't have to go in circles.
+
+
+19:03-19:07
+And it's also not, in the meantime, it's not consuming a lot of tokens.
+
+
+19:07-19:09
+So it's keeping things free.
+
+
+19:09-19:12
+And Andras is checking how much we are consuming.
+
+
+19:12-19:17
+Actually, just to how do you even look around for models?
+
+
+19:17-19:20
+Because it's kind of where would you even start?
+
+
+19:20-19:21
+There's 400 of them.
+
+
+19:21-19:27
+So OpenRouter, and I like doing that.
+
+
+19:27-19:29
+There is this rankings.
+
+
+19:29-19:31
+And it's just fascinating.
+
+
+19:31-19:34
+I sometimes, they have weekly rankings.
+
+
+19:34-19:38
+And I just, not every week, but I sometimes go on here.
+
+
+19:38-19:40
+And it changes every week.
+
+
+19:40-19:46
+And so here they rank by token consumption.
+
+
+19:46-19:49
+So basically popularity, like which are the most heavily used.
+
+
+19:49-19:50
+And DeepSeek.
+
+
+19:50-19:58
+DeepSeek was actually the first Chinese clone model, like an open model trained last February
+
+
+19:58-19:59
+2025.
+
+
+19:59-20:05
+And that created a panic in the AI community with good reason.
+
+
+20:05-20:07
+And now version 4 is now the most popular.
+
+
+20:07-20:09
+It's actually highly capable.
+
+
+20:09-20:10
+It's not too fast.
+
+
+20:10-20:11
+Maybe the flash is faster.
+
+
+20:11-20:12
+It's not too cheap either.
+
+
+20:12-20:13
+So.
+
+
+20:13-20:18
+And then here you can look at like which are the most popular.
+
+
+20:18-20:21
+And you know, you can go by popularity.
+
+
+20:21-20:24
+But also if you click like what is Minimax M3.
+
+
+20:24-20:28
+Then you can check, you can see the pricing.
+
+
+20:28-20:30
+So this is $1.20.
+
+
+20:32-20:37
+Sorry, I haven't mentioned that usually the meter on two, it's like an electricity meter
+
+
+20:37-20:38
+with two directions.
+
+
+20:38-20:41
+You are sending tokens to the LLM and they are sending.
+
+
+20:41-20:43
+And what they are generating is harder to sync.
+
+
+20:43-20:45
+So they are charging more for this.
+
+
+20:45-20:46
+You are paying for both.
+
+
+20:46-20:50
+Usually the input is much fewer, what you send.
+
+
+20:50-20:52
+And it's a small price anyway.
+
+
+20:52-20:55
+So you can just ignore the input pricing and just focus on the output pricing.
+
+
+20:55-21:00
+So $1.20 is like a mid, like a low price range.
+
+
+21:00-21:11
+So relative to the 50 for fable or 15 for some top notch models, this is 1/10, less than 1/10 of that.
+
+
+21:11-21:13
+But we were using a 28 cent model.
+
+
+21:13-21:14
+This is better.
+
+
+21:14-21:15
+This is better than that.
+
+
+21:15-21:17
+But it's more expensive.
+
+
+21:17-21:25
+And those programs using similar amount of tokens for the same test.
+
+
+21:25-21:27
+No.
+
+
+21:27-21:35
+So I would guess that the one which is cheaper uses 100 times as much tokens as the more expensive one.
+
+
+21:35-21:37
+That could also happen.
+
+
+21:37-21:38
+There's no, really no way.
+
+
+21:38-21:40
+You can actually limit how much they can sync.
+
+
+21:40-21:43
+So how many tokens they can write in their scrapbook.
+
+
+21:43-21:48
+And so the question, then you can limit the spending, but then kind of how smart they are.
+
+
+21:48-21:50
+So that's basically up to them.
+
+
+21:50-21:51
+You can control it.
+
+
+21:51-21:57
+No, I can't say this because this page, you do not know how much you have to pay.
+
+
+21:57-22:01
+Because if you do not know how much you consume, you only know the price.
+
+
+22:01-22:05
+Yeah, it's true, but roughly speaking you can guess that.
+
+
+22:05-22:08
+There used to be, it used to show somewhere up here.
+
+
+22:08-22:09
+I don't know where it shows.
+
+
+22:09-22:12
+I have a common, I'm mostly using the common line version.
+
+
+22:12-22:15
+It's like very prominently displayed in the top right.
+
+
+22:15-22:18
+Like how many tokens I have used in this session.
+
+
+22:18-22:22
+What fraction of the context window it is.
+
+
+22:22-22:26
+So, you know, how close you are to tattooing your entire body.
+
+
+22:26-22:28
+And how much you have spent.
+
+
+22:28-22:30
+So I have spent two cents.
+
+
+22:30-22:35
+And then you can immediately see if something is wrong.
+
+
+22:35-22:41
+So I could ask the same prompt, summarize the project structure.
+
+
+22:41-22:43
+I'm going to start a new session.
+
+
+22:43-22:47
+So as not to pollute the context from a more sophisticated model.
+
+
+22:47-22:49
+What was it?
+
+
+22:49-22:52
+Minimax M3.
+
+
+22:57-23:00
+And so this is a little bit smarter than MIMO 2.5.
+
+
+23:00-23:02
+It's also slower.
+
+
+23:02-23:03
+It's thinking.
+
+
+23:03-23:05
+And then it's going to cost us a little bit more.
+
+
+23:05-23:09
+Actually per unit it's four times as expensive.
+
+
+23:09-23:14
+I see that András is checking how the dollars are disappearing.
+
+
+23:14-23:15
+And so we get a.
+
+
+23:15-23:19
+0, 0, 0, 8.
+
+
+23:19-23:20
+0, 0, 8.
+
+
+23:20-23:24
+So almost a cent we have already spent.
+
+
+23:24-23:25
+Awesome.
+
+
+23:25-23:29
+And so but for this type of task you don't even need this.
+
+
+23:29-23:33
+You don't even need like a dollar model because why?
+
+
+23:33-23:38
+The cheaper models can.
+
+
+23:38-23:43
+And I don't really want to go into the very top model space because they are expensive.
+
+
+23:43-23:45
+But they're going to end.
+
+
+23:45-23:48
+So like number six is Sonnet.
+
+
+23:48-23:51
+It's you can see that this is like 15 per million dollars.
+
+
+23:51-23:53
+So it's 10 times as expensive.
+
+
+23:53-23:56
+And it's very, very rarely worth it.
+
+
+23:56-24:05
+Here they give you performance benchmarks, speed, pricing, different providers.
+
+
+24:05-24:11
+Maybe the same model is served from different providers.
+
+
+24:11-24:13
+They might actually charge a different price.
+
+
+24:13-24:14
+It's very rare.
+
+
+24:14-24:17
+For some reason they don't compete on price.
+
+
+24:17-24:20
+I guess with entropy they are not allowed to compete on price.
+
+
+24:20-24:27
+But with open models you could, you know, K, RTK could set up an inference provider and compete
+
+
+24:27-24:33
+that we're going to serve like MIMO 2.5 models at 27 cents and beat the market.
+
+
+24:33-24:40
+And you can actually in the leaderboard or rankings, you can check the benchmark.
+
+
+24:40-24:43
+So this is where I got the data from for the plot.
+
+
+24:43-24:53
+But also what I really like is the different categories like programming or science.
+
+
+24:53-24:54
+So let's see.
+
+
+24:54-25:00
+So this is open router AI rankings.
+
+
+25:00-25:05
+So this is going back like a year.
+
+
+25:05-25:09
+And actually I should talk to them and get data and analyze their data.
+
+
+25:09-25:12
+because I think this is really, really, really interesting.
+
+
+25:12-25:22
+Is the market share of the individual models in the programming, kind of used for programming applications.
+
+
+25:22-25:27
+And you can see that initially last summer it was closed on at four.
+
+
+25:27-25:30
+The biggest market share.
+
+
+25:30-25:31
+So this is a very good model.
+
+
+25:31-25:31
+So this is a very good model.
+
+
+25:31-25:36
+Then this thing which was what the Gemini 2.5, I believe, started becoming important.
+
+
+25:36-25:43
+Then that thing which, another very good labeling.
+
+
+25:43-25:48
+Grok, I think that's a Grok model.
+
+
+25:48-25:55
+And you can see kind of the life cycle that these big models, they last like a couple of months and then they are gone.
+
+
+25:55-25:59
+And you can see this very sudden emergence like here.
+
+
+25:59-26:04
+Kimi 2.5, that's an open Chinese model.
+
+
+26:04-26:06
+It's actually a very capable model.
+
+
+26:06-26:10
+So I think among the open models that's the one I like the best.
+
+
+26:10-26:14
+It's also not super cheap because it's a big model.
+
+
+26:14-26:18
+I think that week it was probably free as a promotion.
+
+
+26:18-26:21
+You can see that bang, everybody switched to it.
+
+
+26:21-26:23
+Like, okay, let's see what it does.
+
+
+26:23-26:27
+Next week it was Minimax 2.5 that had the sale.
+
+
+26:27-26:34
+And so they had like the same, like 33% market share immediately, week to week.
+
+
+26:34-26:44
+And then it was Mimo 2, Quen 3.6, Kimi 2.6.
+
+
+26:44-26:48
+And I guess this is now Mimo 2.5 is very popular.
+
+
+26:48-26:55
+And so this is, you kind of have to play around for your use case which one you like.
+
+
+26:55-26:57
+But for that you need to be able to switch.
+
+
+26:59-27:04
+And just to highlight, I'm going to go back to our Mimo 2.5.
+
+
+27:04-27:06
+I think as an overall model that's pretty good.
+
+
+27:06-27:16
+Can you show the comparison side?
+
+
+27:16-27:21
+Because on that there is what a model features do with your data.
+
+
+27:21-27:27
+If you go to operator and models and compare.
+
+
+27:28-27:30
+Okay, give me just a second.
+
+
+27:30-27:33
+I'm just, so for example writing, not all of them.
+
+
+27:33-27:35
+So many of these are good coders.
+
+
+27:35-27:37
+Not all of them are very good writers.
+
+
+27:37-27:40
+Like structure they understand and like meaning.
+
+
+27:40-27:44
+So kind of broad drafting, it's okay.
+
+
+27:44-27:48
+But I'm fairly certain that even once it succeeds,
+
+
+27:48-27:53
+it's going to be not a very good quality essay.
+
+
+27:53-27:55
+Especially in Hungarian.
+
+
+27:55-28:00
+And it's, anyway let's, I'll let it work.
+
+
+28:00-28:01
+So, um.
+
+
+28:01-28:06
+If you go to models and compare.
+
+
+28:06-28:07
+Okay.
+
+
+28:07-28:10
+Okay, that is the compare and.
+
+
+28:10-28:12
+Okay, yeah, that's so.
+
+
+28:12-28:13
+Just, uh.
+
+
+28:13-28:18
+So I could be going, uh.
+
+
+28:18-28:23
+Mimo 2.5 and say, uh.
+
+
+28:23-28:26
+Minimax M3.
+
+
+28:26-28:30
+Can I do more than two?
+
+
+28:30-28:31
+And yes, absolutely.
+
+
+28:31-28:36
+Okay, I want to do what's called North Code.
+
+
+28:36-28:38
+They don't have North Code yet.
+
+
+28:38-28:39
+It came out yesterday.
+
+
+28:39-28:40
+Come on.
+
+
+28:40-28:41
+North Mini.
+
+
+28:42-28:43
+Uh.
+
+
+28:43-28:45
+Okay, they probably don't.
+
+
+28:45-28:50
+I think they actually have it in open, uh.
+
+
+28:50-28:51
+Open, uh.
+
+
+28:51-28:52
+Uh.
+
+
+28:52-28:53
+Open, uh.
+
+
+28:53-28:54
+Uh.
+
+
+28:54-28:55
+Okay, they probably don't.
+
+
+28:55-28:56
+I think they actually have it in open, uh.
+
+
+28:56-28:57
+Open, uh.
+
+
+28:57-28:58
+Code.
+
+
+28:58-28:59
+We will check that.
+
+
+28:59-29:00
+We'll check the.
+
+
+29:00-29:01
+Uh, text in a minute.
+
+
+29:01-29:02
+So let's just do two.
+
+
+29:02-29:03
+Scroll down and, uh.
+
+
+29:03-29:04
+Show what features.
+
+
+29:04-29:05
+Okay, this is a.
+
+
+29:05-29:06
+This is nice.
+
+
+29:06-29:07
+This is really nice.
+
+
+29:07-29:08
+But you have to check.
+
+
+29:08-29:09
+Like it.
+
+
+29:09-29:10
+Can it read pictures?
+
+
+29:10-29:11
+Yes or no?
+
+
+29:11-29:12
+Can it understand audio?
+
+
+29:12-29:13
+Uh.
+
+
+29:13-29:17
+I always check it is to use or, or used for training or not.
+
+
+29:17-29:19
+If you go to three models, appear.
+
+
+29:19-29:20
+Yeah, and it's a good thing.
+
+
+29:20-29:21
+So I think that's a good thing.
+
+
+29:21-29:22
+Okay, I think that's a good thing.
+
+
+29:22-29:23
+Yeah, and I think that's a good thing.
+
+
+29:23-29:24
+That's a good thing.
+
+
+29:24-29:25
+Okay, so we're going to go.
+
+
+29:25-29:26
+So I'm going to go.
+
+
+29:26-29:27
+I'm going to go.
+
+
+29:28-29:29
+Okay, so I'm going to go.
+
+
+29:29-29:30
+I'm going to go.
+
+
+29:32-29:33
+But if you go to three models, appear.
+
+
+29:33-29:34
+Check it.
+
+
+29:34-29:35
+What do we.
+
+
+29:35-29:36
+What they do with your data.
+
+
+29:36-29:37
+This is very good.
+
+
+29:37-29:41
+Yeah, because no from training and auto use.
+
+
+29:41-29:44
+Okay, it's a free model, but I'm.
+
+
+29:44-29:46
+I can give you my data.
+
+
+29:46-29:47
+Mm-hmm.
+
+
+29:47-29:52
+And anywhere if it's NVIDIA, I'm don't care about.
+
+
+29:52-29:58
+They use to train their models, but if they are no name Chinese provider, I am thinking.
+
+
+29:58-30:10
+So one thing that they very prominently display, of course, so probably not even down here,
+
+
+30:10-30:14
+but up top, is the context length.
+
+
+30:14-30:19
+So these are also, memo is also 1 million.
+
+
+30:19-30:20
+I thought it was 200.
+
+
+30:20-30:28
+So like 1 million is kind of a big model of context length, so that's already kind of smart.
+
+
+30:28-30:31
+But 200k is pretty good for us.
+
+
+30:31-30:36
+We don't typically need more than that.
+
+
+30:36-30:48
+So you get context, price, and then the other, like how many, how long a text can generate in one go.
+
+
+30:48-30:52
+And this is actually very important, like how they use your data.
+
+
+31:00-31:06
+So what I'm thinking is, is that the Cillak-Szema, it will be a good thing to come from it?
+
+
+31:06-31:09
+This is not too bad actually.
+
+
+31:09-31:12
+I don't know if anybody uses Cillak-Szema in Hungarian.
+
+
+31:12-31:14
+Do you know what that means?
+
+
+31:14-31:15
+Yes.
+
+
+31:15-31:18
+So it's this business intelligence term, star schema.
+
+
+31:18-31:26
+What I explained that you separately store, separately think about the metric, the one that has a number in it, the x,
+
+
+31:26-31:34
+and the dimensions, which are the indexes like i, j, et cetera, which are typically categorical variables.
+
+
+31:34-31:39
+So you basically put categorical variables in separate tables than the metric.
+
+
+31:39-31:46
+And that's, and it's called a star schema because you have the metric in the center and in a typical business application,
+
+
+31:46-31:54
+and actually all of our applications, like if you think about admin, it's a transactional database that could be represented in the star schema.
+
+
+31:54-31:55
+What's the metric?
+
+
+31:55-31:57
+Like how many hours you worked in the month?
+
+
+31:57-31:59
+What was your pay in the month?
+
+
+31:59-32:02
+See, there's two facts in the middle.
+
+
+32:02-32:09
+And a lot of different dimensions could be the, your occupation, the company you work for, your gender, your age.
+
+
+32:09-32:18
+And you know, I immediately listed like four, but imagine there's like 12 different dimensions that you can do the analysis by.
+
+
+32:18-32:26
+And so kind of trying to force it into one table, these 12 dimensions is painful as we, as we know from experience.
+
+
+32:26-32:29
+So they keep it separate in separate tables, basically.
+
+
+32:29-32:34
+So that's the broad idea of, so it's a bit clunky.
+
+
+32:34-32:40
+So it's not very good, but it's actually usable Hungarian.
+
+
+32:40-32:45
+So you won't know until, until you try.
+
+
+32:45-32:51
+One thing to, I want to show like how this works with like a really dumb model.
+
+
+32:51-32:52
+So let's see.
+
+
+32:52-33:03
+I want to select text models and I want to select ones that have a very low context window.
+
+
+33:03-33:07
+So apparently 10 million context window is the largest.
+
+
+33:07-33:10
+I don't even want to know what that is.
+
+
+33:10-33:14
+And it's not, it's an open source model, so it's actually not expensive.
+
+
+33:14-33:17
+So if we scroll down.
+
+
+33:17-33:27
+So the issue is that with these agents MD and the skills, the tool is already sending a lot of information to the LLM before you ask anything.
+
+
+33:27-33:40
+So if you were to ask like a model of a very small size that looks quite reasonable, like 3.52, but it's the original, that's the original chat GPT.
+
+
+33:40-33:42
+It was GPT 3.5.
+
+
+33:42-33:58
+So we could, we could ask this just to illustrate how it's gonna fail.
+
+
+33:58-34:00
+It doesn't even want to.
+
+
+34:00-34:03
+There is some code data, it has a .
+
+
+34:03-34:04
+Yeah.
+
+
+34:09-34:30
+It might not have, we can check, we might not have tool calling because for this to work with, let's compare it with GPT 3.
+
+
+34:30-34:36
+Yeah, it doesn't, it was so long ago, it doesn't really want to surface that, I understand because it's a very old.
+
+
+34:36-34:39
+Okay, let's not go back that far in time.
+
+
+34:39-34:42
+So let's say, Haiku.
+
+
+34:42-34:52
+So 16K token, so very small.
+
+
+34:52-34:56
+Does it support tool calling features?
+
+
+34:56-34:58
+Where do I tool use?
+
+
+34:58-34:59
+It says, it says it does tool use.
+
+
+34:59-35:00
+Okay, so let's see.
+
+
+35:00-35:01
+It says edge.
+
+
+35:01-35:05
+So I guess it means that on edge computing devices, which is not a computer, but like a computer.
+
+
+35:05-35:11
+But like a cell phone or even smaller device, it's good to have a small model.
+
+
+35:11-35:19
+But it's going to like totally fail because once we fill in everything, it's gonna run out of memory.
+
+
+35:19-35:25
+So let's say, say it again.
+
+
+35:25-35:32
+So basically I cannot, so what happens if we never run out of memory.
+
+
+35:32-35:35
+So basically you run out of space on your body for tattooing.
+
+
+35:35-35:45
+So then actually what these agents do, these harnesses do, is they initiate a compaction, which is reading the, before they reach, because once they read it's gone.
+
+
+35:45-35:49
+Before they reach the limit, they are like 80%.
+
+
+35:49-35:59
+They read your entire session and they try to summarize it in a shorter way to kind of, you know, write it somewhere else to remember before you forget everything.
+
+
+35:59-36:04
+But with this small model, you cannot even do that because it's just too small.
+
+
+36:04-36:16
+But Haiku is actually not that small and it's unfortunately, it's still expensive.
+
+
+36:16-36:19
+It's still expensive because it's an entropic model.
+
+
+36:19-36:21
+But it's a very, very low level model.
+
+
+36:21-36:24
+It's, they actually use it to some very simple tasks.
+
+
+36:24-36:35
+And I can illustrate it for a very simple task, but, uh,
+
+
+36:35-36:38
+We can go with the latest because they don't change the price usually.
+
+
+36:38-36:42
+So, uh, and Andras will stop me.
+
+
+36:42-37:01
+oh, it's actually provided a summary of what we did.
+
+
+37:01-37:03
+Uh,
+
+
+37:03-37:21
+Just quickly looking at it doesn't look, uh, wrong.
+
+
+37:21-37:27
+Um, just to illustrate, this is actually a much, much smaller model than anything that he's been,
+
+
+37:27-37:29
+he's been working with.
+
+
+37:29-37:41
+Um, and still can get, uh, most of the, um, most of the tasks right.
+
+
+37:41-37:47
+So, uh, what else do we wanna illustrate with the different, uh, models?
+
+
+37:47-37:52
+Mm-hmm.
+
+
+37:52-37:54
+Let me check the key.
+
+
+37:54-37:55
+Between.
+
+
+37:55-37:56
+There's one thing.
+
+
+37:56-37:57
+I think it's fun.
+
+
+37:57-37:58
+Uh, I wanna illustrate this.
+
+
+37:58-38:14
+So we've been, uh, so last week, we, we, uh, we were, uh, discussing with, and that's,
+
+
+38:14-38:18
+so one, one issue is like you're sending data to the LLM provider, which might be in China.
+
+
+38:18-38:22
+Uh, and your data might be restricted or confidential or something.
+
+
+38:22-38:27
+And, uh, so while we were discussing, which we ended up coding up, well, initially it didn't
+
+
+38:27-38:35
+work, but then I, uh, I asked ClaudeCode to work more of it and coded up a, uh, kind of a proxy
+
+
+38:35-38:43
+server between open code and the LLM providers that does like, uh, confidential data sanitization.
+
+
+38:43-38:48
+Uh, and, uh, it was like, I don't know, a couple hours work.
+
+
+38:48-38:49
+It's kind of working.
+
+
+38:49-38:53
+I wanna show you how it works because I think it's, uh, fun.
+
+
+38:53-38:57
+Because these, uh, models are going to be confused.
+
+
+38:57-38:59
+Uh, even the smartest one.
+
+
+38:59-39:04
+And, uh, I think it helps you understand, you know, what a model knows and what's the difference
+
+
+39:04-39:06
+between model and tool.
+
+
+39:06-39:15
+So, uh, I'm going to, uh, open a, you won't be able to follow this along because now it's
+
+
+39:15-39:17
+only running on my computer.
+
+
+39:17-39:19
+Actually, I have to check whether this is running.
+
+
+39:19-39:21
+It's probably not running.
+
+
+39:21-39:38
+It's probably, uh, is there PII.
+
+
+39:38-39:39
+Okay, here.
+
+
+39:39-40:03
+So that's unfortunately the laziness that I could try to read how that, uh, code works
+
+
+40:03-40:08
+and how I should start the server or I can just ask my agent to, uh, start it.
+
+
+40:08-40:11
+Uh, and let the agent read.
+
+
+40:11-40:16
+And so the logic is the following.
+
+
+40:16-40:18
+Let me explain why it fires up.
+
+
+40:18-40:22
+Is that, remember that the LLM is in the cloud somewhere.
+
+
+40:22-40:24
+Uh, and the agent is here on my computer.
+
+
+40:24-40:27
+So the agent sees everything on my computer.
+
+
+40:27-40:31
+Uh, but, uh, the LLM does not.
+
+
+40:31-40:33
+The LLM only sees what you send it to.
+
+
+40:33-40:41
+And so, uh, what we did with this, uh, tool is to, uh, add like a mini web server in between.
+
+
+40:41-40:49
+So my open code, I can set my open code to talk to this web server and not, uh, open router.
+
+
+40:49-40:56
+And the web server would first sanitize the private information and then send it along to the LLM.
+
+
+40:56-41:13
+It's, um, taking a bit of time, not quite sure why.
+
+
+41:13-41:18
+I could have read.
+
+
+41:18-41:28
+So it's called make run, okay.
+
+
+41:28-41:30
+Now, okay, now I'm curious, sorry.
+
+
+41:34-41:39
+Uh, so this is my fastest model.
+
+
+41:39-41:40
+So what did I say?
+
+
+41:40-41:42
+Like, start the server.
+
+
+41:42-41:48
+Okay, so it's running.
+
+
+41:48-41:55
+So, uh, it's like, might not be the smartest, but does what I ask it to do very quickly.
+
+
+41:55-42:05
+So now that it's running, I can actually connect my, uh, um, I'm going to start a new, uh, project because I have some, we have some test data in there.
+
+
+42:05-42:12
+Um, it's in Trezorate code.
+
+
+42:12-42:22
+So I'm going to hold Python proxy.
+
+
+42:22-42:23
+Okay.
+
+
+42:23-42:26
+And I am going to connect.
+
+
+42:26-42:29
+I search for PII.
+
+
+42:29-42:30
+Where is it?
+
+
+42:30-42:33
+Uh, maybe I have to edit.
+
+
+42:33-42:37
+Oh, there's a PII proxy.
+
+
+42:37-42:45
+I thought we are already connected.
+
+
+42:45-42:53
+Oh, it's just a search feature is not very good.
+
+
+42:53-42:59
+So, uh, and we have set up a bunch of models that can go through, go through this, um,
+
+
+42:59-43:00
+proxy.
+
+
+43:00-43:03
+So we were playing with which one?
+
+
+43:03-43:04
+Mimo 2.5.
+
+
+43:04-43:07
+So let's be fair and, and use the same thing.
+
+
+43:07-43:13
+So it's basically going to go to the same model via this, uh, uh, server.
+
+
+43:13-43:16
+And we have actually a bunch of test files here.
+
+
+43:16-43:21
+So here we have a test PII data that we generated randomly.
+
+
+43:21-43:25
+A bunch of names, numbers, credit card numbers, whatnot.
+
+
+43:25-43:36
+And, uh, suppose I ask, like, um, find the oldest person in PII, test PII data.
+
+
+43:36-43:38
+And let's see what it does.
+
+
+43:38-43:52
+And in the mean, okay, I don't know what happens.
+
+
+43:52-44:09
+So maybe I need to set the API key.
+
+
+44:09-44:22
+So maybe I need to set the API key.
+
+
+44:22-44:23
+Okay.
+
+
+44:23-44:24
+So, let's see.
+
+
+44:24-44:25
+Okay.
+
+
+44:25-44:26
+So, let's see.
+
+
+44:26-44:27
+Hello.
+
+
+44:27-44:28
+Okay.
+
+
+44:28-44:40
+Now something is happening.
+
+
+44:40-44:58
+It's a bit slow because the original model was not very fast.
+
+
+44:58-45:03
+And, uh, our, uh, proxy is also slowing it down a little bit.
+
+
+45:03-45:13
+So what we're doing is that when you get a name or an address or a telephone number or an email address or a credit card number or what else is, uh, uh, birth date.
+
+
+45:13-45:14
+GPT chat.
+
+
+45:14-45:21
+It gets, uh, replaced, uh, by a random name, email address and support.
+
+
+45:21-45:34
+So, let's see, uh, uh, totally random, just, uh, randomly generated so that you can, uh, don't reveal the, uh, actual, uh, identity of the, uh, of the person.
+
+
+45:34-45:45
+Jennifer Olson, born 1936.
+
+
+45:45-45:46
+Okay.
+
+
+45:46-45:59
+Um, so we could check in the, uh, uh, where's the test data?
+
+
+45:59-46:03
+So, here.
+
+
+46:03-46:08
+Are somebody on GPT chat on the API key?
+
+
+46:08-46:14
+Well, it was $3.
+
+
+46:14-46:19
+No, but, uh, Jennifer Olson is indeed born in 1936.
+
+
+46:19-46:20
+I don't know.
+
+
+46:20-46:22
+But I think we have, uh, earlier.
+
+
+46:22-46:30
+Well, uh, so, like, let's say,
+
+
+46:30-46:32
+Yeah, so, like,
+
+
+46:32-46:34
+So, like, let's say,
+
+
+46:34-46:37
+Show the top five oldest people
+
+
+46:37-46:38
+Sort by.
+
+
+46:38-46:40
+10 dollars, I'm a limit.
+
+
+46:40-46:41
+And so, like, let's say, you know, we're not going to do that.
+
+
+46:41-46:42
+I'm not going to do that.
+
+
+48:19-48:29
+So like what year was Jennifer Olson born?
+
+
+48:29-48:34
+So why would it be confusing?
+
+
+48:34-48:36
+Because you anonymized the data, don't you?
+
+
+48:36-48:37
+Sorry?
+
+
+48:37-48:38
+Because you anonymized the data.
+
+
+48:38-48:41
+Yeah, so Jennifer Olson is going to be the same random person as,
+
+
+48:41-48:46
+we will ask what the LLM believes Jennifer Olson to be.
+
+
+48:46-48:49
+That's 1976.
+
+
+48:49-48:50
+Okay?
+
+
+48:50-48:56
+And then I'm going to be nasty and say,
+
+
+48:56-49:01
+"How can she be oldest?"
+
+
+49:01-49:04
+It's actually the correct answer, Jennifer Olson is the oldest,
+
+
+49:04-49:07
+it's just that the LLM doesn't have the data.
+
+
+49:07-49:13
+I actually saw in the instructions that goes to the LLM,
+
+
+49:13-49:17
+so that's on your bathroom mirror before you look at your tattoos.
+
+
+49:17-49:22
+It does say, the proxy server does say that,
+
+
+49:22-49:30
+okay, so I, poor LLM is now going to go in circle.
+
+
+49:30-49:34
+It does say at the beginning, but apparently it forgets that
+
+
+49:34-49:38
+you're going to see data and none of this data is real.
+
+
+49:38-49:41
+So don't do any computation in your head.
+
+
+49:41-49:43
+That's why I actually gave the good answer,
+
+
+49:43-49:46
+because it's already in the prompt that any computation you do
+
+
+49:46-49:52
+should be done on the end user's computer who has the real data.
+
+
+50:05-50:08
+And now we totally confused it.
+
+
+50:08-50:12
+So let me show you why.
+
+
+50:12-50:18
+Like, can you spell the name Jennifer Olson?
+
+
+50:18-50:24
+Use the NATO alphabet.
+
+
+50:24-50:36
+And so then we'll understand why the poor LLM is totally confused.
+
+
+50:36-50:41
+Like, Mike India, so what?
+
+
+50:41-50:46
+Michael, Joel, what?
+
+
+50:46-50:47
+Or?
+
+
+50:47-51:00
+I don't, I now literally don't understand, so.
+
+
+51:00-51:13
+I'm going to ask you to, ask you to provide it.
+
+
+51:13-51:16
+John's on, what's the terms?
+
+
+51:16-51:22
+So I could, can someone put it together?
+
+
+51:22-51:24
+But in any case, they see a different name.
+
+
+51:24-51:31
+And so it's a question whether they try to do something with their information in there.
+
+
+51:31-51:35
+Actually, the reason why we put in actual names and birthdates and addresses,
+
+
+51:35-51:38
+so that when they do the mental gymnastics,
+
+
+51:38-51:41
+they still think of these as names and birthdates
+
+
+51:41-51:44
+and can do whatever they do with birthdates.
+
+
+51:44-51:48
+And if they want to write code, then they can write the proper code.
+
+
+51:48-51:49
+they can write the proper code.
+
+
+51:49-51:52
+But doing it in their head is impossible for them.
+
+
+51:52-51:59
+So just say, did they keep completely different numbers in the last two answers?
+
+
+51:59-52:02
+This I don't understand, we'll have to think.
+
+
+52:02-52:03
+But this, this...
+
+
+52:03-52:09
+Then if you go down, then you said that there was M, I, K,
+
+
+52:09-52:13
+and in the last line there is D, A, R.
+
+
+52:13-52:15
+I think I don't...
+
+
+52:15-52:17
+D, D, D, M, M...
+
+
+52:17-52:22
+There's like maybe a kilo, and now there is a delta of L1.
+
+
+52:22-52:25
+Not sure.
+
+
+52:25-52:26
+Maybe it forget the...
+
+
+52:26-52:28
+Where I said, did I misspelled?
+
+
+52:28-52:29
+No.
+
+
+52:29-52:31
+I can try again.
+
+
+52:31-52:40
+Let's see what happens.
+
+
+52:40-52:45
+Because with the birthdate what happened is that if it was a full birthdate,
+
+
+52:45-52:50
+it was personally identifiable information, got redacted by us,
+
+
+52:50-52:53
+and they got a fake number.
+
+
+52:53-52:56
+But as soon as they truncated it to like a four-digit birth year,
+
+
+52:56-53:01
+it's not PII anymore, so it got the clean number, and it got confused.
+
+
+53:01-53:02
+like how can...
+
+
+53:02-53:09
+If I cut the first four, it's going to be a different number, and it got understandably confused.
+
+
+53:09-53:15
+I'm going to let it rest after a while and explain it.
+
+
+53:15-53:20
+Remember, at the very beginning, it should have read the instruction, but...
+
+
+53:20-53:27
+And actually the first version was like totally confused and tried to do like completely crazy.
+
+
+53:27-53:29
+So N...
+
+
+53:29-53:32
+Backe...
+
+
+53:32-53:35
+It's yet...
+
+
+53:35-53:36
+Baker.
+
+
+53:36-53:38
+Baker, N. Baker, okay.
+
+
+53:38-53:39
+But that's yet another...
+
+
+53:39-53:44
+Okay, it's supposed to be...
+
+
+53:44-53:50
+The mapping is supposed to be persistent, so that when you're interacting with the agent,
+
+
+53:50-53:57
+then you can still use the same logic, but apparently that persistency got broken somewhere.
+
+
+53:57-54:03
+So that's the...
+
+
+54:03-54:06
+But I think initially, so the initial start was actually good,
+
+
+54:06-54:10
+because initially when we started with this, it would go in circles like crazy,
+
+
+54:10-54:15
+and immediately it started, instead of just reading the file and saying that this is the oldest,
+
+
+54:15-54:24
+which is what a typical LM would do, it started writing a Python code that returned the actual answer.
+
+
+54:24-54:27
+They didn't see the actual answer.
+
+
+54:27-54:33
+They actually read the wrong answer, confidently reported it back to us,
+
+
+54:33-54:37
+and our kind of proxy turned it back into the right answer.
+
+
+54:37-54:42
+So that's the fine, that's how it should be working.
+
+
+54:42-54:45
+We managed to trick it later.
+
+
+54:45-54:50
+I'm just gonna make it relax, and then I think we're good.
+
+
+55:04-55:05
+We're gonna make it...
+
+
+55:05-55:06
+Something like that.
+
+
+55:06-55:07
+Amber...
+
+
+55:08-55:09
+So yeah, I guess it's...
+
+
+55:09-55:24
+Something broke the persistence, so they get a new name every time, which is a bug, which we should fix.
+
+
+55:24-55:25
+Keep going.
+
+
+55:25-55:26
+But I think...
+
+
+55:26-55:40
+It's just kind of a random exercise to illustrate that what's in their head, and what they can do on the computer, is two different things.
+
+
+55:40-55:52
+Of course, if you keep them very different, then they're not gonna be useful, because they don't understand what you want, and you don't understand what they are doing, so you need to have a common language.
+
+
+55:52-55:58
+It's not just one language, but it is actually possible to try to...
+
+
+55:58-56:17
+Because it is coming up that companies are forbidding to use LLMs because of GDPR and EU AI Act and whatnot, and so having a proxy to filter the data could actually be useful for a lot of researchers as well.
+
+
+56:17-56:27
+So, I think that's about it from my side.
+
+
+56:27-56:31
+Let's have a little wind down exercise.
+
+
+56:31-56:34
+Make Padig.
+

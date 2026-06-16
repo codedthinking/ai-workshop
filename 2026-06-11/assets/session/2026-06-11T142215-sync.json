@@ -1,0 +1,43 @@
+{
+  "audio": "2026-06-11T132015.m4a",
+  "audio_offset_s": 3706,
+  "cues": [
+    {
+      "audio_s": 3706,
+      "message": "msg-0",
+      "label": "Create README from template"
+    },
+    {
+      "audio_s": 3706,
+      "message": "msg-1",
+      "label": "Reading project files",
+      "scene": true
+    },
+    {
+      "audio_s": 3806,
+      "message": "msg-2",
+      "label": "Reading more docs"
+    },
+    {
+      "audio_s": 3813,
+      "message": "msg-3",
+      "label": "Writing README"
+    },
+    {
+      "audio_s": 3869,
+      "message": "msg-4",
+      "label": "Keep going"
+    },
+    {
+      "audio_s": 3869,
+      "message": "msg-5",
+      "label": "Finishing README",
+      "scene": true
+    },
+    {
+      "audio_s": 3938,
+      "message": "msg-6",
+      "label": "README created"
+    }
+  ]
+}

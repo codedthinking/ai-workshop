@@ -1,0 +1,123 @@
+{
+  "audio": "2026-06-11T132015.m4a",
+  "audio_offset_s": 2468,
+  "cues": [
+    {
+      "audio_s": 2468,
+      "message": "msg-0",
+      "label": "Revise noncoding_by_country.do"
+    },
+    {
+      "audio_s": 2468,
+      "message": "msg-1",
+      "label": "Reading code",
+      "scene": true
+    },
+    {
+      "audio_s": 2514,
+      "message": "msg-4",
+      "label": "Save output in output/"
+    },
+    {
+      "audio_s": 2514,
+      "message": "msg-5",
+      "label": "Editing code",
+      "scene": true
+    },
+    {
+      "audio_s": 2534,
+      "message": "msg-8",
+      "label": "Changes summary"
+    },
+    {
+      "audio_s": 2930,
+      "message": "msg-9",
+      "label": "Run it"
+    },
+    {
+      "audio_s": 2930,
+      "message": "msg-10",
+      "label": "Running Stata",
+      "scene": true
+    },
+    {
+      "audio_s": 2938,
+      "message": "msg-12",
+      "label": "Output written"
+    },
+    {
+      "audio_s": 2946,
+      "message": "msg-14",
+      "label": "178 countries"
+    },
+    {
+      "audio_s": 2965,
+      "message": "msg-15",
+      "label": "Numbers haven't changed?"
+    },
+    {
+      "audio_s": 2965,
+      "message": "msg-16",
+      "label": "Checking diff",
+      "scene": true
+    },
+    {
+      "audio_s": 2987,
+      "message": "msg-19",
+      "label": "Numbers did change"
+    },
+    {
+      "audio_s": 3125,
+      "message": "msg-20",
+      "label": "Plot noncoding share"
+    },
+    {
+      "audio_s": 3125,
+      "message": "msg-21",
+      "label": "Writing Python plot",
+      "scene": true
+    },
+    {
+      "audio_s": 3188,
+      "message": "msg-26",
+      "label": "Use Stata instead"
+    },
+    {
+      "audio_s": 3188,
+      "message": "msg-27",
+      "label": "Writing Stata plot",
+      "scene": true
+    },
+    {
+      "audio_s": 3210,
+      "message": "msg-29",
+      "label": "Dynamic approach"
+    },
+    {
+      "audio_s": 3238,
+      "message": "msg-34",
+      "label": "Chart saved"
+    },
+    {
+      "audio_s": 3476,
+      "message": "msg-35",
+      "label": "Use country codes on Y"
+    },
+    {
+      "audio_s": 3476,
+      "message": "msg-36",
+      "label": "Rewriting chart",
+      "scene": true
+    },
+    {
+      "audio_s": 3484,
+      "message": "msg-37",
+      "label": "Using graph hbar"
+    },
+    {
+      "audio_s": 3531,
+      "message": "msg-42",
+      "label": "Chart with country codes"
+    }
+  ]
+}

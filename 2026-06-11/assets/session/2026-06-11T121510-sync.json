@@ -1,0 +1,23 @@
+{
+  "audio": "2026-06-11T111327.m4a",
+  "audio_offset_s": 3698,
+  "cues": [
+    {
+      "audio_s": 3698,
+      "message": "msg-0",
+      "label": "How to analyze with Stata?"
+    },
+    {
+      "audio_s": 3698,
+      "message": "msg-1",
+      "label": "Loading stata-aei skill",
+      "scene": true
+    },
+    {
+      "audio_s": 3703,
+      "message": "msg-2",
+      "label": "Skill-informed response",
+      "scene": true
+    }
+  ]
+}

@@ -1,0 +1,3964 @@
+
+00:00-00:02
+What is it?
+
+
+00:02-00:04
+It's a password.
+
+
+00:12-00:14
+You can open it, and you can open it.
+
+
+00:14-00:16
+You can open it.
+
+
+00:16-00:18
+We can open it.
+
+
+00:18-00:20
+Yes, it's a password.
+
+
+00:20-00:22
+We can open it.
+
+
+00:22-00:24
+And then we can open it.
+
+
+00:24-00:26
+We can open it.
+
+
+00:26-00:28
+Let's see what it is.
+
+
+00:28-00:36
+Okay, welcome back to the afternoon session.
+
+
+00:36-00:44
+So, we were discussing with András what other tasks to do in the afternoon.
+
+
+00:44-00:48
+And we do want to illustrate how different models behave.
+
+
+00:48-00:54
+And just a moment ago, we were thinking whether we should ask the agent to write the paper already.
+
+
+00:54-00:56
+So, we could even ask it to write.
+
+
+00:56-01:00
+And you will actually see the different models are good at different tasks.
+
+
+01:00-01:02
+Not all of them are good models, for example.
+
+
+01:02-01:04
+We will see.
+
+
+01:06-01:12
+Before that, let's get some Stata results.
+
+
+01:12-01:20
+So, I don't think everybody, myself included, could run their Stata.
+
+
+01:20-01:34
+So, those who couldn't run their Stata, please put up a yellow sticker.
+
+
+01:34-01:36
+So, I think we can do that.
+
+
+01:36-01:37
+Okay.
+
+
+01:38-01:41
+I'll try to fix mine first.
+
+
+01:41-01:47
+And then I think I understand what my problem is.
+
+
+01:47-01:52
+And then come and help you.
+
+
+01:52-01:53
+and help you?
+
+
+01:53-01:56
+On your ?
+
+
+01:56-02:19
+- So, it probably can launch your status
+
+
+02:19-02:24
+from the command line, which they can invoke,
+
+
+02:24-02:27
+but they may not find the state itself,
+
+
+02:27-02:29
+which is what happened with me.
+
+
+02:29-02:44
+- Yeah, and I think it already--
+
+
+02:44-02:46
+-
+
+
+02:48-02:52
+- That's a good example where I already kind of poisoned the context.
+
+
+02:52-02:56
+It was going in circles, trying stuff that didn't work,
+
+
+02:56-02:59
+and now if I could just--
+
+
+02:59-03:00
+-
+
+
+03:00-03:03
+-
+
+
+03:07-03:09
+- What happened? Oh, this is good.
+
+
+03:09-03:09
+-
+
+
+03:09-03:11
+- Rolled back, two rolled back messages.
+
+
+03:11-03:12
+That's good.
+
+
+03:12-03:13
+So I could go all the way back.
+
+
+03:13-03:15
+So I could delete--
+
+
+03:15-03:16
+-
+
+
+03:16-03:22
+- Delete these last two things, which ended up going nowhere.
+
+
+03:22-03:26
+-
+
+
+03:26-03:27
+-
+
+
+03:31-03:34
+- This is just my machine-specific instructions,
+
+
+03:34-03:36
+so don't copy this.
+
+
+03:36-03:38
+But I think it's going to work, we'll see.
+
+
+03:38-03:41
+-
+
+
+03:41-03:42
+-
+
+
+03:50-03:51
+- Okay, it didn't work.
+
+
+03:51-03:52
+-
+
+
+03:54-03:58
+-
+
+
+03:58-04:03
+- Okay, it will keep looking. I forgot where it is. I can try to find it myself.
+
+
+04:03-04:11
+So on Linux or Mac, you might have several terminals, not just one, and not all of them find data.
+
+
+04:11-04:13
+We'll see.
+
+
+04:14-04:16
+- So who had yellow stickers?
+
+
+04:16-04:18
+-
+
+
+04:18-04:19
+-
+
+
+04:20-04:23
+- Let's see, Balázs, what is your agent doing?
+
+
+04:23-04:24
+-
+
+
+04:25-04:27
+-
+
+
+04:35-04:36
+-
+
+
+04:37-04:40
+-
+
+
+04:40-04:41
+-
+
+
+04:41-04:43
+- Okay, but this is just chatting, so
+
+
+04:43-04:47
+Can-- Did it actually run?
+
+
+04:47-04:53
+So if you go back-- So here you can see what it's trying to do.
+
+
+04:53-04:56
+Like I think it's still struggling.
+
+
+04:56-05:08
+Oh, now I think it found its way.
+
+
+05:08-05:12
+So it was looking for my Stata, it found it and it,
+
+
+05:12-05:17
+I think eventually it's going to complete, hopefully.
+
+
+05:17-05:24
+So, but on your computer, your Stata will be somewhere else.
+
+
+05:24-05:25
+OK.
+
+
+05:25-05:28
+And but it basically just like, where is Stata, where is Stata?
+
+
+05:28-05:30
+And eventually it found it.
+
+
+05:30-05:54
+- Okay, that's a good point.
+
+
+05:54-06:00
+That's a state error, not an agent.
+
+
+06:00-06:02
+We can check that.
+
+
+06:02-06:06
+But you have Stata on the machine, right?
+
+
+06:06-06:09
+It's gonna be somewhere similar.
+
+
+06:09-06:13
+So eventually it was like, let me look for Stata binary.
+
+
+06:13-06:16
+And I started looking in like application/stata
+
+
+06:16-06:19
+and it found it eventually.
+
+
+06:19-06:22
+So my recommendation for now is just to keep,
+
+
+06:22-06:25
+make it keep searching.
+
+
+06:30-06:36
+And it's also a bit slow.
+
+
+06:36-06:40
+It might be, all of us are trying to connect to the same model
+
+
+06:40-06:42
+at the same time.
+
+
+06:42-06:46
+So who needs help with running the codes?
+
+
+06:46-06:47
+- Okay.
+
+
+06:47-06:49
+-
+
+
+06:49-06:53
+-
+
+
+06:53-06:55
+-
+
+
+06:57-06:57
+-
+
+
+06:57-07:04
+-
+
+
+07:04-07:05
+-
+
+
+07:05-07:06
+- So if you still,
+
+
+07:06-07:08
+-
+
+
+07:08-07:10
+- If you still couldn't complete,
+
+
+07:10-07:14
+so mine is creating data derived
+
+
+07:14-07:16
+task coding crosswalk and the like.
+
+
+07:16-07:18
+-
+
+
+07:18-07:19
+-
+
+
+07:19-07:22
+- Which is I specifically added to only classify tasks
+
+
+07:22-07:24
+and not do any analysis.
+
+
+07:26-07:35
+because I wanted to make sure that this is happening.
+
+
+07:35-07:41
+Someone had an issue with the import delimited.
+
+
+07:41-07:44
+Mine seems to be, well let's check,
+
+
+07:44-07:50
+check what it created, derived, you are coding.
+
+
+07:50-07:56
+Okay, not a very long CSV, but that's okay.
+
+
+07:56-08:00
+And then task coding, there are a whole bunch of
+
+
+08:00-08:07
+entropic tasks with zeros and hopefully some ones.
+
+
+08:07-08:13
+I will just search for, yes there are some that are ones.
+
+
+08:13-08:19
+So I'm happy with my output.
+
+
+08:19-08:22
+So make sure you get, if you didn't get to this point,
+
+
+08:22-08:25
+or if you're not happy with your output,
+
+
+08:25-08:30
+you can ask for help, or you can also ask your agent for help.
+
+
+08:30-08:52
+Next I'm gonna make a plan to compute the share of non-coding related requests for each country.
+
+
+08:52-09:01
+Use full countries, not territories.
+
+
+09:01-09:09
+Actually, you don't have to make a, let's write a code.
+
+
+09:09-09:13
+Write a do file to compute, not territories.
+
+
+09:13-09:25
+And so now I'm curious what it's going to do because if, I don't know if you noticed, but the geographies are a bit of a mess.
+
+
+09:25-09:30
+Like in India there are different states.
+
+
+09:30-09:34
+And then in various countries there are states.
+
+
+09:34-09:36
+In some countries there are none.
+
+
+09:36-09:44
+And so it would have to aggregate the request before computing any percentage.
+
+
+09:44-09:50
+I didn't specifically say this, but let's see if it recognizes this.
+
+
+09:50-09:53
+If not we can just correct it.
+
+
+09:53-09:55
+Just keep it.
+
+
+09:57-09:59
+Tell us, please.
+
+
+09:59-10:01
+Okay.
+
+
+10:01-10:08
+That is interesting. I can...
+
+
+10:08-10:16
+And that's why you either give very specific instructions or you review what your agent did.
+
+
+10:16-10:31
+Because I think that's a wrong solution.
+
+
+10:31-10:43
+Because I think what it's doing is that basically reading in the request by geography.
+
+
+10:43-10:50
+Then merging on the task, which are the coding.
+
+
+10:50-10:51
+Okay.
+
+
+10:51-10:56
+And then reading in the geography descriptors and only keeping the countries.
+
+
+10:58-11:00
+Which is not good.
+
+
+11:00-11:03
+I mean it's logical, but that's not what I had in mind.
+
+
+11:03-11:10
+Because if you have sub units of a country, then I want you to add up the...
+
+
+11:10-11:23
+So I will tell it like, wait, if you only have a country state level info for a country,
+
+
+11:25-11:36
+add up and request by country before computing the share.
+
+
+11:36-11:37
+Okay.
+
+
+11:37-11:38
+So now I had to be...
+
+
+11:38-11:40
+It's almost like...
+
+
+11:40-11:46
+It's like a short English attack.
+
+
+11:46-11:48
+No, for instance, it's like a fixed area.
+
+
+11:48-11:50
+It's like a short English attack.
+
+
+11:50-11:52
+No, for instance, it's like a fixed area.
+
+
+11:52-11:52
+It's like a fixed area.
+
+
+11:52-11:53
+I think it's like a fixed area.
+
+
+11:53-11:55
+It's like a fixed area.
+
+
+11:55-11:57
+It's like a fixed area.
+
+
+11:57-11:58
+I'm not sure.
+
+
+11:58-11:59
+It's like a fixed area.
+
+
+11:59-12:00
+It's like a fixed area.
+
+
+12:00-12:00
+It's like a fixed area.
+
+
+12:00-12:01
+It's like a fixed area.
+
+
+12:01-12:02
+It's like a fixed area.
+
+
+12:02-12:02
+I'm not sure.
+
+
+12:02-12:03
+It's like a fixed area.
+
+
+12:03-12:04
+It's like a fixed area.
+
+
+12:04-12:05
+It's like a fixed area.
+
+
+12:05-12:05
+It's like fixed area.
+
+
+12:06-12:06
+It's like fixed area.
+
+
+12:07-12:08
+It's like fixed area.
+
+
+12:09-12:10
+It's like fixed area.
+
+
+12:10-12:11
+It's like fixed area.
+
+
+12:11-12:12
+It's like fixed area.
+
+
+12:12-12:13
+So I can't see it.
+
+
+12:13-12:13
+It's like fixed area.
+
+
+12:13-12:14
+It's like fixed area.
+
+
+12:14-12:15
+It's like fixed area.
+
+
+12:15-12:25
+So I can't see it.
+
+
+12:25-12:29
+I can't like the wall.
+
+
+12:29-12:42
+I can't comment on your text.
+
+
+12:42-12:48
+So I don't know what's going on.
+
+
+12:48-12:50
+Is it the comment for my-- oh, no, it's there.
+
+
+12:50-12:57
+So it's basically probably giving the comment and the context as well.
+
+
+12:59-13:02
+So it's kind of easier to interact with the agent.
+
+
+13:02-13:05
+Otherwise, it will just read the whole text again and--
+
+
+13:05-13:17
+So it removed my comment.
+
+
+13:17-13:21
+But hopefully, it's not going to-- I don't know why it's so slow.
+
+
+13:21-13:26
+I think it's-- we're being sottled because we're using this free version for-- together.
+
+
+13:26-13:30
+So it's a little bit easier.
+
+
+13:30-13:33
+Because this is typically-- should be quite fast.
+
+
+13:33-13:42
+So now I could add some visualization.
+
+
+13:42-13:50
+So like save the results in CSV and in a separate.
+
+
+13:50-13:51
+And this is just my taste.
+
+
+13:51-13:56
+Unlike Balazs, I like to keep things separate.
+
+
+13:56-14:10
+In a separate do file, create a horizontal bar chart with a share of non-coding requests.
+
+
+14:12-14:13
+decreasing.
+
+
+14:13-14:18
+Top 20 countries only.
+
+
+14:18-14:32
+And I want to-- here is it.
+
+
+14:34-14:36
+It's a little bit new interface.
+
+
+14:36-14:36
+It's a little bit new interface.
+
+
+14:36-14:38
+It's a little bit new interface.
+
+
+14:38-14:44
+Because I also want to show you how much tokens we are consuming as we keep doing this.
+
+
+14:44-14:45
+It's a little bit new interface.
+
+
+14:45-14:47
+It's a little bit new interface.
+
+
+15:05-15:16
+So I'm just kind of quickly glancing at it.
+
+
+15:16-15:17
+It looks--
+
+
+15:17-15:26
+It looks correct to me.
+
+
+15:26-15:28
+It's a little bit new interface.
+
+
+15:28-15:30
+It looks like it's a little bit new interface.
+
+
+15:54-15:58
+A little bit of getting used to working with agents
+
+
+15:58-16:02
+is that I think you have to tolerate a bit of an error rate,
+
+
+16:02-16:08
+which as scientists were not really trained to do,
+
+
+16:08-16:13
+is that because it's so fast in coding,
+
+
+16:13-16:18
+actually fixing the error is quick.
+
+
+16:18-16:20
+So once you basically have something going,
+
+
+16:20-16:22
+and it's OK, it works,
+
+
+16:22-16:24
+and then you can start checking and thinking about it
+
+
+16:24-16:26
+and verifying.
+
+
+16:26-16:30
+But you want to get to the place where the full pipeline loads the data,
+
+
+16:30-16:32
+cleans the data,
+
+
+16:32-16:34
+does the analysis, does the plot,
+
+
+16:34-16:36
+is up and running,
+
+
+16:36-16:38
+and then I think it's easier to check the errors.
+
+
+16:38-16:40
+So what's happening?
+
+
+16:40-16:42
+I think it's easier to do that.
+
+
+16:46-16:50
+I think it's easier to do that.
+
+
+16:50-16:52
+I think it's easier to do that.
+
+
+16:54-17:06
+So it wanted to use country names.
+
+
+17:06-17:10
+So it started going in circles.
+
+
+17:10-17:12
+I think it's easier to do that.
+
+
+17:26-17:26
+Sorry?
+
+
+17:26-17:28
+I think it's easier to do that.
+
+
+17:30-17:31
+I don't know yet.
+
+
+17:31-17:32
+Let me check.
+
+
+17:32-17:34
+Data derived.
+
+
+17:34-17:36
+Oh, it hasn't.
+
+
+17:36-17:38
+It's still writing code.
+
+
+17:38-17:39
+Run.
+
+
+17:39-17:41
+Now it's running.
+
+
+17:41-17:49
+But like where do you put...
+
+
+17:49-17:52
+Where is the output?
+
+
+17:52-17:53
+Where is the output?
+
+
+17:53-17:54
+Resolitung.
+
+
+17:54-17:55
+Megzorvel.
+
+
+17:55-17:58
+I think it's struggling.
+
+
+17:58-18:00
+It's not asking for help.
+
+
+18:00-18:02
+Or maybe the log...
+
+
+18:02-18:04
+Go ID not found.
+
+
+18:06-18:21
+Go ID not found.
+
+
+18:21-18:25
+It's interesting.
+
+
+18:25-18:26
+I want to check how...
+
+
+18:26-18:28
+I don't know if this is where it is.
+
+
+18:28-18:29
+Oh, okay, okay.
+
+
+18:29-18:30
+Yes, yes.
+
+
+18:30-18:31
+Okay.
+
+
+18:31-18:32
+Let's...
+
+
+18:32-18:34
+So here's what happened.
+
+
+18:34-18:34
+In one of the files, not sure which one.
+
+
+18:34-18:35
+It did not import the proper variable names.
+
+
+18:35-18:35
+And that's just basically bad stata practice.
+
+
+18:35-18:47
+So the agent doesn't know how to really import delimited in stata.
+
+
+18:47-18:48
+So I can properly call the agent.
+
+
+18:48-18:49
+Always import delimited with...
+
+
+18:49-18:50
+Is it called var names or row names or what's it called?
+
+
+18:50-18:51
+Variable names.
+
+
+18:53-18:54
+In the first row?
+
+
+18:56-18:57
+Yeah.
+
+
+18:58-18:59
+Okay.
+
+
+18:59-19:00
+So I can properly call the agent.
+
+
+19:00-19:01
+And then I can call the agent.
+
+
+19:37-19:49
+And so this is getting a bit messy.
+
+
+19:49-19:52
+I mean here the danger is that if it gets too messy,
+
+
+19:52-19:53
+it's going to get confused.
+
+
+19:53-19:55
+And then we should start a new chat.
+
+
+19:55-20:00
+But it's still like writing a code that we will run in the end.
+
+
+20:00-20:01
+So how?
+
+
+20:01-20:04
+The beginning is that control, shift, enter.
+
+
+20:04-20:09
+And then now the code doesn't really care how to get your style.
+
+
+20:09-20:14
+But you still use capital letters and things like that.
+
+
+20:14-20:17
+It's just an old comment or it's useful.
+
+
+20:17-20:19
+I mean it does.
+
+
+20:19-20:22
+So it does infer that the user is upset.
+
+
+20:22-20:29
+I mean in this context,
+
+
+20:29-20:31
+probably not.
+
+
+20:31-20:33
+Because if I ask it nicely,
+
+
+20:33-20:35
+it would do it the same way.
+
+
+20:35-20:39
+But I think at the margin it makes a little bit of a difference.
+
+
+20:39-20:41
+Like I could trigger it to--
+
+
+20:41-20:43
+the user is really upset,
+
+
+20:43-20:46
+so let me remember not to make this mistake again.
+
+
+20:46-20:51
+So it could trigger to write a skill for itself or something.
+
+
+20:51-20:58
+Because it's a semi-sentient bunch of numbers.
+
+
+20:58-21:04
+And it just feels good for me to--
+
+
+21:04-21:08
+That's the honest reason.
+
+
+21:08-21:16
+And holding share is too high.
+
+
+21:16-21:17
+Why?
+
+
+21:17-21:18
+Okay.
+
+
+21:18-21:19
+So I don't know why--
+
+
+21:19-21:20
+Why does it--?
+
+
+21:20-21:21
+Okay.
+
+
+21:21-21:22
+And this I'm not going to allow you.
+
+
+21:22-21:23
+Like why does it think that--?
+
+
+21:23-21:28
+So it says that non-coding share in HT--
+
+
+21:28-21:29
+What is HT?
+
+
+21:29-21:29
+High ET?
+
+
+21:29-21:30
+High ET?
+
+
+21:30-21:31
+Or I don't know.
+
+
+21:31-21:34
+Is 6.7% and it's too low.
+
+
+21:34-21:40
+I mean, it does sound too low to me, but--
+
+
+21:40-21:41
+All right.
+
+
+21:41-21:42
+So what's a test--?
+
+
+21:42-21:43
+Let's see.
+
+
+21:44-21:45
+Coding.
+
+
+21:46-21:47
+Non-coding by country.
+
+
+21:48-21:49
+So this is the non-coding--?
+
+
+21:49-21:50
+Okay.
+
+
+21:52-21:53
+And it's just--?
+
+
+21:53-21:55
+It does sound too low to me, but--?
+
+
+21:55-21:58
+It does sound too low to me, but--?
+
+
+21:58-22:00
+All right.
+
+
+22:00-22:01
+Okay.
+
+
+22:01-22:05
+So what's the test coding--?
+
+
+22:05-22:06
+No.
+
+
+22:06-22:08
+Non-coding by country.
+
+
+22:08-22:10
+So this is the non-coding--?
+
+
+22:10-22:11
+Okay.
+
+
+22:12-22:13
+So what's the test coding--?
+
+
+22:13-22:14
+Non-coding by country.
+
+
+22:14-22:16
+So this is the non-coding--?
+
+
+22:16-22:17
+Okay.
+
+
+22:18-22:19
+Again.
+
+
+22:19-22:20
+New terminal.
+
+
+22:20-22:21
+What's the value?
+
+
+22:21-22:26
+It does look too low to me.
+
+
+22:26-22:27
+Like, for example, in--?
+
+
+22:27-22:28
+Let's look at Hungary.
+
+
+22:28-22:29
+There we are.
+
+
+22:29-22:32
+So this is actually what the data is.
+
+
+22:32-22:36
+It's a sample of entropic requests in one week.
+
+
+22:36-22:40
+So in one week, they sample one million requests, and that's the data.
+
+
+22:40-22:43
+And then they anonymize and stuff.
+
+
+22:43-22:45
+So this is not their full--?
+
+
+22:45-22:46
+It's only one week.
+
+
+22:46-22:51
+So in one week, 687 Hungarian requests got into the sample.
+
+
+22:51-22:59
+Eight of which apparently were non-coding related requests, which I don't really believe.
+
+
+22:59-23:07
+Okay.
+
+
+23:07-23:08
+That's more--?
+
+
+23:08-23:09
+It was 1999.
+
+
+23:09-23:10
+Okay.
+
+
+23:10-23:11
+That is really interesting.
+
+
+23:11-23:12
+Okay.
+
+
+23:12-23:13
+That's excellent reproducibility.
+
+
+23:13-23:14
+So let's check.
+
+
+23:14-23:15
+Like, we get all kinds of--?
+
+
+23:15-23:16
+So let's look at the raw data.
+
+
+23:16-23:17
+Request Geo.
+
+
+23:17-23:18
+Okay.
+
+
+23:18-23:19
+And--?
+
+
+23:20-23:21
+And--
+
+
+23:21-23:22
+And--?
+
+
+23:26-23:27
+Oh, but it's not sorted.
+
+
+23:27-23:34
+Oh, Hungary is broken down into the country and Budapest.
+
+
+23:41-23:44
+Oh, okay.
+
+
+23:44-23:49
+And there are 22 tasks.
+
+
+23:49-24:04
+We could ask, what are the 22 tasks involved in Hungary?
+
+
+24:04-24:05
+And then we'll--
+
+
+24:05-24:06
+So, why not?
+
+
+24:06-24:07
+Why not?
+
+
+24:07-24:17
+Actually, I'm going to revert this and start a new session for this so as not to--
+
+
+24:17-24:20
+Um,
+
+
+24:20-24:33
+Because I don't wanted to remember bad things.
+
+
+24:33-24:36
+I'm going to open like a new session for exploration.
+
+
+24:36-24:37
+Uh-huh.
+
+
+24:37-24:38
+And--
+
+
+24:38-24:39
+So, it's a--
+
+
+24:39-24:40
+It's a brand new baby.
+
+
+24:40-24:41
+Every session is completely new.
+
+
+24:41-24:43
+The skills it remembers.
+
+
+24:43-25:02
+And we can have like a project specific document that we will show in a second.
+
+
+25:02-25:03
+And that it remembers.
+
+
+25:03-25:09
+But what happened in the other session it doesn't know anything about.
+
+
+25:09-25:18
+So, like it had to understand the part of the-- like the description of the document in the first place.
+
+
+25:18-25:36
+Oh, it's actually getting the names good.
+
+
+25:36-25:37
+Yeah.
+
+
+25:37-25:43
+So, hopefully it's going to create me a nice table.
+
+
+25:43-25:55
+So, what was your percentage?
+
+
+25:55-25:56
+So, we didn't need to come up with--
+
+
+25:56-25:57
+Hát, igen.
+
+
+25:57-25:58
+Csak, ez nekem szinkronizálni a kín.
+
+
+25:58-25:59
+Hát, igen.
+
+
+25:59-26:00
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:06-26:13
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:13-26:17
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:17-26:19
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:19-26:20
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:20-26:23
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:26-26:31
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:31-26:35
+Csak, ez nekem szinkronizálni a kín.
+
+
+26:35-26:37
+Ez nekem szinkronizálni a kín.
+
+
+26:49-26:52
+Ez nekem szinkronizálni a kín.
+
+
+26:58-27:00
+Ez nekem szinkronizálni a kín.
+
+
+27:00-27:04
+Ez nekem szinkronizálni a kín.
+
+
+27:08-27:10
+Ez nekem szinkronizálni a kín.
+
+
+28:42-28:44
+A kín.
+
+
+28:44-28:46
+Ez nekem szinkronizálni a kín.
+
+
+29:28-29:30
+Ez egy ilyen probléma, amit nem ismerek.
+
+
+29:32-29:34
+Ez nem szintem.
+
+
+29:38-29:43
+- Yes, because, hang on, four.
+
+
+29:43-29:51
+Okay, let's verify.
+
+
+29:51-29:54
+The, unfortunately, the raw data documentation
+
+
+29:54-29:57
+is very bad, so this kind of, not only this,
+
+
+29:57-29:58
+you don't find like, you don't find out the units
+
+
+29:58-30:00
+of the variables.
+
+
+30:00-30:05
+Like it took us a time to figure out that there's columns
+
+
+30:05-30:10
+classifying how much this task takes for the AI
+
+
+30:10-30:13
+and how much does it take for the human.
+
+
+30:13-30:16
+And they are both some floating point numbers.
+
+
+30:16-30:18
+And one is in hours and the other is in minutes.
+
+
+30:18-30:22
+But we could only infer it from the context
+
+
+30:22-30:24
+and how they discuss it, because they never give you
+
+
+30:24-30:27
+the units of the data, but we could
+
+
+30:27-30:33
+verify if Hu Bu,
+
+
+30:33-30:35
+the data, the data.
+
+
+30:35-30:36
+- That's a good look.
+
+
+30:36-30:37
+- Uh-huh. - Yeah.
+
+
+30:37-30:38
+- That's a good look. - Yeah.
+
+
+30:39-30:55
+So are the tasks listed also as Hu, and are the request numbers smaller?
+
+
+30:55-30:55
+- Right.
+
+
+30:55-30:56
+- Right.
+
+
+30:56-30:57
+- Right.
+
+
+30:57-30:57
+- Right.
+
+
+30:57-30:58
+- Right.
+
+
+30:58-30:59
+- Right.
+
+
+30:59-30:59
+- Right.
+
+
+30:59-31:00
+- Right.
+
+
+31:00-31:01
+- Right now, huh?
+
+
+31:01-31:02
+- Right.
+
+
+31:02-31:07
+- And so for, I'm curious what it's going, oh, okay.
+
+
+31:07-31:11
+So we learned something.
+
+
+31:11-31:12
+- True.
+
+
+31:12-31:13
+- That, uh.
+
+
+31:13-31:15
+- I think it was true.
+
+
+31:15-31:15
+- Okay.
+
+
+31:17-31:23
+- So then actually probably the earlier, like the, um, the aggregate country level is also
+
+
+31:23-31:24
+correct.
+
+
+31:24-31:26
+And in addition, they have the country state level.
+
+
+31:26-31:31
+Okay.
+
+
+31:31-31:33
+-
+
+
+31:33-31:36
+- Because, um, this is what it found.
+
+
+31:36-31:42
+So look, for every possible task ID that is mentioned in Budapest is also mentioned in
+
+
+31:42-31:45
+Hungary and the number of requests is smaller.
+
+
+31:45-31:47
+So at least it does not contradict.
+
+
+31:47-31:48
+-
+
+
+31:48-31:50
+-
+
+
+31:50-31:51
+-
+
+
+31:52-31:54
+-
+
+
+31:54-31:55
+-
+
+
+31:56-31:58
+-
+
+
+31:58-32:04
+- -
+
+
+32:04-32:06
+- So I think the country level information is the correct.
+
+
+32:06-32:12
+But we are asked to verify if that's correct. It should hold for every country. So like India,
+
+
+32:12-32:13
+US.
+
+
+32:13-32:21
+- He was against the United States and there he told me that state level is summed up to the country level in some cases.
+
+
+32:21-32:22
+- Okay.
+
+
+32:22-32:28
+-
+
+
+32:28-32:36
+- Oh, it's still, and this is how you see that it did not remember the previous session because it's still struggling to find Stata.
+
+
+32:36-32:37
+-
+
+
+32:37-32:38
+- And actually,
+
+
+32:38-32:40
+-
+
+
+32:40-32:41
+-
+
+
+32:41-32:51
+- I'm just going to save a very short skill about how you can run Stata.
+
+
+32:51-32:52
+-
+
+
+32:53-32:53
+-
+
+
+32:53-32:54
+-
+
+
+32:55-32:55
+-
+
+
+32:55-32:56
+-
+
+
+32:57-32:57
+-
+
+
+32:57-33:00
+-
+
+
+33:00-33:01
+-
+
+
+33:05-33:07
+-
+
+
+33:07-33:08
+-
+
+
+33:09-33:11
+-
+
+
+33:11-33:11
+-
+
+
+33:11-33:14
+-
+
+
+33:14-33:15
+-
+
+
+33:17-33:17
+-
+
+
+33:17-33:18
+-
+
+
+33:18-33:18
+-
+
+
+33:18-33:24
+-
+
+
+33:24-33:24
+-
+
+
+33:24-33:25
+-
+
+
+33:25-33:25
+-
+
+
+33:25-33:26
+-
+
+
+33:26-33:26
+-
+
+
+33:26-33:33
+-
+
+
+33:33-33:34
+-
+
+
+33:34-33:34
+-
+
+
+33:34-33:35
+-
+
+
+33:36-33:36
+-
+
+
+33:36-33:37
+-
+
+
+33:38-33:38
+-
+
+
+33:38-33:39
+-
+
+
+33:39-33:39
+-
+
+
+33:39-33:40
+-
+
+
+33:40-33:40
+-
+
+
+33:40-33:42
+-
+
+
+33:44-33:45
+-
+
+
+33:46-33:48
+-
+
+
+33:50-33:51
+-
+
+
+33:54-33:54
+-
+
+
+33:54-33:57
+-
+
+
+33:57-33:58
+-
+
+
+33:58-34:01
+-
+
+
+34:01-34:02
+-
+
+
+34:02-34:02
+-
+
+
+34:02-34:04
+-
+
+
+34:04-34:05
+-
+
+
+34:08-34:08
+-
+
+
+34:08-34:11
+-
+
+
+34:11-34:12
+-
+
+
+34:12-34:14
+-
+
+
+34:14-34:15
+-
+
+
+34:16-34:46
+I can only do this test for regions that also have a country.
+
+
+34:46-34:51
+So maybe there are some statistical-- there was like a not as well specified or something,
+
+
+34:51-34:53
+region and it confused our test.
+
+
+34:53-35:03
+So we will have to update the metadata about this data to understand what is going on.
+
+
+35:03-35:07
+But it looks like that we can just...
+
+
+35:15-35:23
+It basically says that all regions exist at their parent country level and no region exceeds its country request count.
+
+
+35:23-35:32
+Okay, also check for sum of regions should be less than equal country count.
+
+
+35:32-35:39
+And so now we're going to have some data testing as well.
+
+
+35:39-35:46
+Okay, so there is a--
+
+
+35:46-35:54
+Okay, so there's a--
+
+
+35:54-36:01
+So this is, you know, typically we would kind of browse the data, struggle with it, typically not write actual like automated tests,
+
+
+36:01-36:09
+because every time you get the new data you could run the same test and verify that this still holds.
+
+
+36:09-36:10
+And this is just much easier.
+
+
+36:10-36:17
+It says, okay, the region sum to 896 in France and countries 895.
+
+
+36:17-36:18
+Probably a rounding error.
+
+
+36:18-36:19
+I tend to agree.
+
+
+36:19-36:28
+So I'm going to say allow for rounding in the code.
+
+
+36:28-36:36
+And so then what we learned is that if you want to do this at the country level, we should just keep the--
+
+
+36:36-36:37
+keep the country.
+
+
+36:37-37:04
+So I'm going to go back to my previous session, which was--
+
+
+37:04-37:12
+Where was the--
+
+
+37:12-37:20
+Oh, here are decisions.
+
+
+37:20-37:22
+Okay, so all three of our tests have passed.
+
+
+37:22-37:24
+So now we understand.
+
+
+37:24-37:27
+So actually--
+
+
+37:27-37:34
+So it might be a good time to create an agents.md.
+
+
+37:34-37:50
+So an agents.md is basically a skill.
+
+
+37:50-37:53
+So you can store it locally inside the folder.
+
+
+37:53-37:54
+And it's read.
+
+
+37:54-37:55
+It's not context specific.
+
+
+37:55-37:57
+So it's always read.
+
+
+37:57-37:59
+So it's not like, let me see what skill I need.
+
+
+37:59-38:04
+Whatever is in that file is always told to the model.
+
+
+38:04-38:14
+But like, you know, what we just learned about the data, I think it's useful to know all the time.
+
+
+38:14-38:17
+So let's save it there.
+
+
+38:17-38:19
+Many models have a tendency to be verbose.
+
+
+38:19-38:23
+And maybe this agent.md is going to be long.
+
+
+38:23-38:24
+Hopefully not.
+
+
+38:24-38:28
+I would--
+
+
+38:28-38:32
+Because this is stuff that the agent tattoos on their body.
+
+
+38:32-38:38
+I think it should be very short and very specific to the project.
+
+
+38:38-38:44
+Like, you know, this bug that we just uncovered is quite important.
+
+
+38:44-38:46
+So that's why I asked for this.
+
+
+38:46-38:48
+But let's see what--
+
+
+38:48-38:54
+So there's an agent.md.
+
+
+38:54-39:11
+There's a data over you, rho phi, test dimension.
+
+
+39:11-39:18
+I mean, it's a bit verbose, but it's all right.
+
+
+39:18-39:21
+I just want to type myself, so I'm just going to leave it like this.
+
+
+39:21-39:23
+And I'm going to go back to my previous--
+
+
+39:23-39:27
+Actually, now that we have the agent.md, I can start a new session.
+
+
+39:27-39:34
+Because now, as soon as I ask anything, it's going to load the agent.md and go from there.
+
+
+39:34-39:39
+So everything that we saved there is going to be already understood by the agent.
+
+
+39:39-39:42
+So I'm going to ask--
+
+
+39:42-39:44
+Actually, let me try.
+
+
+39:44-39:45
+This is new for me.
+
+
+39:45-39:47
+I haven't seen this in open code before.
+
+
+39:47-39:48
+Can I ask a question?
+
+
+39:48-39:49
+Please.
+
+
+39:49-39:54
+Is it going to work if I use in six months a different model?
+
+
+39:54-39:56
+Like not a new model?
+
+
+39:56-39:57
+Yes.
+
+
+39:57-39:58
+Yes, there's nothing more.
+
+
+39:58-40:01
+This is like just a plain text file.
+
+
+40:01-40:02
+Okay, so we have to understand.
+
+
+40:02-40:03
+Yes.
+
+
+40:04-40:05
+And that's--
+
+
+40:05-40:09
+And actually, so agent.md is kind of the industry standard.
+
+
+40:09-40:17
+CloudCode uses Cloud.md and they refuse to use agent.md.
+
+
+40:17-40:20
+But open code would read the Cloud as well.
+
+
+40:20-40:23
+Because they are the niche player.
+
+
+40:23-40:25
+So they are kind of following.
+
+
+40:25-40:31
+But every tool understands to load this and check it.
+
+
+40:31-40:33
+So non-coding by country.
+
+
+40:33-40:37
+I'm just going to--
+
+
+40:37-40:39
+I'm still old school.
+
+
+40:39-40:40
+I'm just going to do a chat.
+
+
+40:40-40:42
+So revise non-coding.
+
+
+40:42-40:49
+Not quite sure why it's not showing up.
+
+
+40:59-41:00
+So where would we want to--
+
+
+41:00-41:00
+So where would we want to--
+
+
+41:00-41:10
+Okay, now it shows up.
+
+
+41:10-41:11
+I don't know what happened in between.
+
+
+41:11-41:14
+Non-coding by country.
+
+
+41:14-41:27
+And only keep country level rows dropping subregions.
+
+
+41:27-41:34
+I think that should be sufficient information for the agent.
+
+
+41:34-41:43
+So actually, sometimes I get like other ideas and I can interrupt the agent.
+
+
+41:43-41:54
+I think if it already had some thoughts, I think it's going to keep those thoughts and go from there.
+
+
+41:54-42:06
+So we'll save the output in.
+
+
+42:06-42:09
+So save the output in.
+
+
+42:09-42:27
+So it doesn't understand the context that's first because of the new session that it will try to apply agents immediately?
+
+
+42:27-42:30
+So it always loads the agent MD.
+
+
+42:30-42:39
+So it doesn't-- unlike the skill, in the skill, it has a portfolio of skill and wants to figure out is any of these relevant, yes or no.
+
+
+42:39-42:41
+Maybe none of them are relevant.
+
+
+42:41-42:43
+With agents MD, it's always loaded.
+
+
+42:43-42:49
+So that's why you don't want to write like a long essay on the one that eats up the context.
+
+
+42:49-42:53
+So sometimes good chunk of the agents MD might not be relevant.
+
+
+42:53-42:55
+What is the reason between agents and skills?
+
+
+42:55-43:00
+So basically this context specificity.
+
+
+43:00-43:05
+So a skill is only invoked if it's relevant for that request.
+
+
+43:05-43:08
+So that's a request specific.
+
+
+43:08-43:10
+So agents is going to be at the top.
+
+
+43:10-43:14
+So you start the conversation basically by reading the entire agents MD first.
+
+
+43:14-43:19
+And then the skill is something like, hey, do this in Stata.
+
+
+43:19-43:22
+And says, hey, Stata, I have a skill about this.
+
+
+43:22-43:26
+And then it's going to load into the-- it still doesn't know what it means.
+
+
+43:26-43:34
+It's going to load, copy the document and send it to the LLM that like, it might be relevant that you have a Stata skill.
+
+
+43:34-43:37
+Can I shift the agent as well?
+
+
+43:37-43:40
+Or can I change data?
+
+
+43:40-43:45
+As I can open different skills, can I open different agents?
+
+
+43:45-43:48
+So you could--
+
+
+43:48-43:50
+What is that in the--
+
+
+43:50-43:56
+I mean there's actually a whole bunch of-- let me show you on in the documentation.
+
+
+43:56-44:03
+The order in which these are checked.
+
+
+44:03-44:10
+So agents, models.
+
+
+44:14-44:15
+Put.
+
+
+44:15-44:17
+Put that.
+
+
+44:17-44:18
+Put that.
+
+
+44:18-44:25
+So there's a certain order in which things are loaded.
+
+
+44:25-44:29
+You can actually have a global agents MD that's specific to you.
+
+
+44:29-44:32
+Like in every project I work on, these are my preferences.
+
+
+44:32-44:41
+And so if you always use Stata, it might be helpful to put some Stata specific stuff in there, for example.
+
+
+44:41-44:44
+And then you have the project specific.
+
+
+44:44-44:51
+I'm not sure it tells us about the order in which these are loaded.
+
+
+44:51-44:58
+But so the project specific agent, which is just a file in your folder, it's going to find it there.
+
+
+44:58-45:02
+If you have both, it's actually going to load both.
+
+
+45:02-45:05
+It's not going to overwrite.
+
+
+45:05-45:11
+And actually if there's Claude.md, because ClaudeCode uses that, it's going to load.
+
+
+45:11-45:13
+Oh, here's the precedence.
+
+
+45:13-45:20
+So first it's going to load the local and then the global.
+
+
+45:20-45:22
+And then the...
+
+
+45:22-45:30
+Oh, that's interesting.
+
+
+45:30-45:31
+Okay, that I didn't know.
+
+
+45:31-45:35
+If at the same level you have Claude and agent, then actually agent wins.
+
+
+45:35-45:36
+Art means...
+
+
+45:36-45:41
+They like themselves more than the competition, which is fair.
+
+
+45:41-45:47
+Another way, but I actually...
+
+
+45:47-45:53
+I started using that and I no longer find it very useful because with these plain text files,
+
+
+45:53-45:55
+you can get everything done.
+
+
+45:55-46:03
+But for like, for example, customs permissions, it could be useful if there's like a JSON setting file
+
+
+46:03-46:07
+where you can set all kinds of settings.
+
+
+46:07-46:16
+And for example, you can have like your own instructions for certain files.
+
+
+46:16-46:24
+So this we can come...
+
+
+46:24-46:25
+I mean custom tools.
+
+
+46:25-46:33
+This we can come back to a little bit because I can show you like how my custom instructions look like.
+
+
+46:33-46:34
+I think they are stored here.
+
+
+46:34-46:36
+I think they are stored here.
+
+
+46:36-46:40
+I think they are stored here.
+
+
+46:40-46:42
+I think they are stored here.
+
+
+46:42-46:44
+I think they are stored here.
+
+
+46:44-46:44
+I think they are stored here.
+
+
+46:44-46:45
+I think they are stored here.
+
+
+46:49-46:50
+So basically one...
+
+
+46:50-47:04
+So you can have these agents, which is really...
+
+
+47:04-47:07
+very similar to a skill.
+
+
+47:07-47:09
+Very similar to a skill.
+
+
+47:09-47:11
+So you don't really...
+
+
+47:11-47:13
+I created this before skills were fashionable.
+
+
+47:13-47:15
+But it's practically a skill.
+
+
+47:15-47:17
+There is a description.
+
+
+47:17-47:20
+There is an expert academic economist that summarizes research discussions.
+
+
+47:20-47:32
+And then I have like a long text that tells you how to read the transcript of a recording and what is relevant in the summary to keep what is not.
+
+
+47:32-47:36
+And so that I use quite often, but it could be a skill.
+
+
+47:36-47:37
+And I just invoke this.
+
+
+47:37-47:41
+Hey, we did this three-hour discussion session with my co-authors.
+
+
+47:41-47:45
+Here is like thousands of words of text that we generated.
+
+
+47:45-47:48
+Totally unstructured, free-flowing discussion.
+
+
+47:48-47:51
+Just summarize this and it will read the skill.
+
+
+47:51-47:57
+And then create a fairly good summary.
+
+
+47:57-48:01
+And you can actually set which tools to allow.
+
+
+48:01-48:11
+And also I think you can set more fine-grained permissions as well for tool usage like...
+
+
+48:15-48:23
+Not only allow for certain files, certain folders, or ask the user.
+
+
+48:23-48:41
+I thought there's also a possibility to just look for particular patterns of files and not every file.
+
+
+48:44-48:45
+So let's go back to our agent.
+
+
+48:45-48:50
+Apparently it fixed the code.
+
+
+48:50-48:52
+So let's run it.
+
+
+48:52-48:56
+Hopefully it remembers how to run data.
+
+
+48:56-49:01
+Let's see.
+
+
+49:01-49:05
+I mean we have the skill, but I have not restarted my open code.
+
+
+49:05-49:11
+So it might not know about the skill, but apparently it completed.
+
+
+49:13-49:18
+So it's gonna be in output, non-coding by country.
+
+
+49:18-49:20
+And it's still very...
+
+
+49:20-49:25
+Actually it's the same.
+
+
+49:25-49:30
+I'm not sure it has been recreated because these numbers are the same.
+
+
+49:42-49:43
+So...
+
+
+49:43-50:02
+I'm just gonna check when that file was last changed because now I'm skeptical about it actually did anything.
+
+
+50:02-50:03
+Output.
+
+
+50:03-50:05
+Today at...
+
+
+50:07-50:09
+Yeah, it was just recently created.
+
+
+50:09-50:10
+Yeah, it was just recently created.
+
+
+50:14-50:17
+I'm sure this is updated.
+
+
+50:17-50:20
+So in my file, if I open it...
+
+
+50:20-50:21
+Mm-hmm.
+
+
+50:21-50:22
+It's updated, but this...
+
+
+50:22-50:24
+But here, this doesn't see.
+
+
+50:24-50:24
+This isn't...
+
+
+50:24-50:27
+So it might be a Dropbox related issue, or maybe it just doesn't...
+
+
+50:27-50:31
+Or maybe I had it open and didn't refresh.
+
+
+50:31-50:32
+That could be a buggy.
+
+
+50:32-50:36
+Let me close all of my files and then open it.
+
+
+50:36-50:38
+It's still the same numbers.
+
+
+50:38-50:40
+Well, it's very similar to what they were.
+
+
+50:40-50:43
+So what was the number for Hungary?
+
+
+50:43-50:47
+Does anyone have a number for Hungary?
+
+
+50:47-50:49
+And what will we share?
+
+
+50:49-50:53
+It's still the same numbers.
+
+
+50:53-50:55
+Well, it's very similar to what they were.
+
+
+50:55-50:57
+So what was the number for Hungary?
+
+
+50:57-51:00
+Does anyone have a number for Hungary?
+
+
+51:00-51:14
+And what will we share?
+
+
+51:14-51:17
+These, the Rob?
+
+
+51:17-51:23
+Okay.
+
+
+51:23-51:26
+Now I think what we're gonna have...
+
+
+51:26-51:29
+Ask you to submit your solution.
+
+
+51:29-51:30
+Then we will compare...
+
+
+51:30-51:31
+We are using the same model.
+
+
+51:31-51:34
+Maybe a little bit different instructions.
+
+
+51:34-51:35
+That could be a nice way of checking the...
+
+
+51:35-51:40
+You know, this is the typical re-analysis problem,
+
+
+51:40-51:43
+where we are literally trying to do the same thing
+
+
+51:43-51:45
+with the same agent.
+
+
+51:45-51:47
+So I'm curious where it goes.
+
+
+51:47-51:49
+And it's not that big a difference.
+
+
+51:49-51:53
+So at some point they decided to write the code differently.
+
+
+51:53-51:57
+So we should check it.
+
+
+51:57-52:05
+I'm gonna stop worrying about this.
+
+
+52:05-52:18
+So plot the share of non-coding requests by country in horizontal bar charts.
+
+
+52:18-52:24
+Top 20 countries only.
+
+
+52:24-52:29
+Goes to output/fig in PDF.
+
+
+52:29-52:30
+Okay.
+
+
+52:30-52:34
+My preference for figures is to put them in PDF.
+
+
+52:42-52:44
+Oh, like no.
+
+
+52:44-52:45
+Okay.
+
+
+52:45-52:48
+So that's actually...
+
+
+52:48-52:52
+But that would be a typical failure mode.
+
+
+52:52-52:57
+Like, the internet on average would not use data to plot stuff.
+
+
+52:57-53:01
+The internet on average would use Python to plot stuff.
+
+
+53:01-53:03
+Matplotlib is a Python library.
+
+
+53:03-53:05
+Seaborn is also a Python library.
+
+
+53:05-53:06
+It's like, hmm?
+
+
+53:06-53:08
+No.
+
+
+53:08-53:10
+Stick to Stata.
+
+
+53:10-53:15
+Write a code/do file.
+
+
+53:15-53:25
+So that is actually so kind of hitting escape or clicking the stop button is quite important.
+
+
+53:25-53:38
+because you want to kind of check what it's doing and correct the course if it's going wrong.
+
+
+53:38-53:41
+And we will actually experiment a little bit with different models.
+
+
+53:41-53:44
+You'll get a feel for some models are very stupid.
+
+
+53:44-53:51
+Others are very, very smart.
+
+
+53:51-53:55
+So this is actually something that...
+
+
+53:55-53:57
+So we have some research about it.
+
+
+53:57-54:01
+Like, nice macro model of AI adoption in the workplace.
+
+
+54:01-54:03
+We don't have tests and everything.
+
+
+54:03-54:09
+And one of the insights that we have is that the primary constraint for...
+
+
+54:09-54:10
+So what do you think is the primary...
+
+
+54:10-54:12
+I'm going to test the model on you.
+
+
+54:12-54:16
+What do you think is the primary constraint on AI adoption?
+
+
+54:16-54:21
+It makes failures.
+
+
+54:21-54:24
+Okay, but you can check for the failures.
+
+
+54:24-54:26
+But yes, of course, that's...
+
+
+54:26-54:32
+So it is true that like in a very, very high risk environment, people don't want to.
+
+
+54:32-54:35
+People hate to...
+
+
+54:35-54:36
+The...
+
+
+54:36-54:39
+I mean, it might be that we want to go a little bit...
+
+
+54:39-54:43
+So what's the number one cost of the AI, let me put it this way.
+
+
+54:43-54:45
+What's the number one cost of AI adoption?
+
+
+54:45-54:47
+People don't care that much.
+
+
+54:47-54:48
+So you don't have...
+
+
+54:48-54:49
+That's a longer...
+
+
+54:49-54:50
+Yeah, we have...
+
+
+54:50-54:54
+With Joffi Baran, we have another paper exactly on this.
+
+
+54:54-54:58
+The dynamic effect, but just like in a static adoption decision.
+
+
+54:58-55:00
+Like why would you not use...
+
+
+55:00-55:09
+I think it's related to the error data that it takes too much time, effort and cost to fix the errors.
+
+
+55:09-55:11
+Yeah, so...
+
+
+55:11-55:12
+So it's...
+
+
+55:12-55:15
+I mean, it's true that if it were perfect, then probably that would not come.
+
+
+55:15-55:18
+But it's basically the time of the user.
+
+
+55:18-55:22
+So we've been instructing the AI and we have to like full time pay attention.
+
+
+55:22-55:26
+Like it started loading Seaborn, like no, stop.
+
+
+55:26-55:28
+So it was basically...
+
+
+55:28-55:31
+Our time was committed to working with the AI.
+
+
+55:31-55:36
+I mean, it can be still very beneficial because it writes code much faster than I do.
+
+
+55:36-55:45
+But the number one time is not the amount of tokens that we consume, but it's like my sitting in front of the screen and paying attention.
+
+
+55:45-55:47
+And that has implications for...
+
+
+55:47-55:56
+If you have better uses of your time, you're like a CEO and you make decisions that can benefit the company or cost the company millions of dollars,
+
+
+55:56-56:04
+you're not going to like supervise AI agents, even if they code 100 times faster than you are.
+
+
+56:04-56:05
+Because why would you?
+
+
+56:05-56:07
+Your time is more valuable than that.
+
+
+56:07-56:12
+And that's what we work out in that model.
+
+
+56:12-56:15
+So apparently there is a figure.
+
+
+56:15-56:16
+And it...
+
+
+56:16-56:22
+I'm going to load it in my...
+
+
+56:22-56:27
+From here, see if we can believe it.
+
+
+56:27-56:32
+I believe it.
+
+
+56:32-56:33
+Okay.
+
+
+56:33-56:34
+Like yes.
+
+
+56:34-56:35
+But like use...
+
+
+56:35-56:49
+And then I think we'll call it a day with this.
+
+
+56:49-56:50
+And so this is where...
+
+
+56:50-57:00
+And this is of course I think hard to...
+
+
+57:00-57:02
+Like we created something.
+
+
+57:02-57:05
+Honestly, we have no idea whether this is correct or not.
+
+
+57:05-57:08
+And now we have a little bit of a better understanding.
+
+
+57:08-57:09
+And...
+
+
+57:09-57:12
+But we need to have some domain.
+
+
+57:12-57:14
+To me it still seems low.
+
+
+57:14-57:15
+Like...
+
+
+57:15-57:19
+Anthropic models are used primarily for coding.
+
+
+57:19-57:25
+But this 7% non-coding, that sounds way too low.
+
+
+57:25-57:29
+So I would keep digging until I am personally satisfied with it.
+
+
+57:29-57:32
+And it's kind of hard to like why it's low.
+
+
+57:32-57:33
+Just because I don't believe it.
+
+
+57:33-57:36
+It's my personal judgment.
+
+
+57:36-57:41
+And we could build tests around it.
+
+
+57:41-57:45
+I think if it were like 20% I'd be okay fine.
+
+
+57:45-57:50
+But the 7% is just way too low for my taste.
+
+
+57:50-57:56
+And for like a lot of countries it's just...
+
+
+57:56-57:59
+I don't believe these results.
+
+
+57:59-58:02
+But let's leave them for now.
+
+
+58:02-58:07
+But I think that also means that kind of how you work with this.
+
+
+58:07-58:09
+You basically have to write some code.
+
+
+58:09-58:11
+I guess now we have a problem.
+
+
+58:11-58:14
+We would need to debug and dig deeper into the code.
+
+
+58:14-58:16
+And figure out why it's wrong.
+
+
+58:16-58:19
+If you find the bug, teach it to the agent.
+
+
+58:19-58:22
+Like how did you mess up and learn it for next time.
+
+
+58:22-58:24
+What went wrong.
+
+
+58:24-58:27
+You know in Stata we could imagine it could be missing values.
+
+
+58:27-58:32
+Strings not formatted correctly when merging on the task ID or something.
+
+
+58:32-58:36
+A number of things can go wrong.
+
+
+58:36-58:39
+But in this case I would keep pushing further.
+
+
+58:39-58:42
+And so that's kind of a...
+
+
+58:42-58:48
+We could try to hope that a good model is gonna just do magically better.
+
+
+58:48-58:53
+And we can trust it for our $100 or $20 or $200.
+
+
+58:53-58:54
+This is not...
+
+
+58:54-58:57
+This is like a middle class model.
+
+
+58:57-58:59
+But I don't think that...
+
+
+58:59-59:01
+As scientists I don't think that...
+
+
+59:01-59:02
+We're always gonna be checking.
+
+
+59:02-59:05
+Because that's what we're paid to do.
+
+
+59:05-59:11
+So kind of pushing the boundary of smarter and smarter models.
+
+
+59:11-59:12
+I don't think that's...
+
+
+59:12-59:18
+Like get some answers, figure out, go back, check the results and then run it again.
+
+
+59:18-59:21
+So I'm going to ask one more thing and then we're done with this task.
+
+
+59:21-59:27
+And we can experiment a little bit with some crazy things.
+
+
+59:27-59:28
+Is the following.
+
+
+59:28-59:32
+And because these are the type of tasks for which LLMs are great.
+
+
+59:32-59:33
+Kind of...
+
+
+59:33-59:47
+Read me.
+
+
+59:47-59:53
+So template read me of the social...
+
+
+59:53-59:55
+For the social sciences or something.
+
+
+59:55-01:00:00
+So this is something we've been working together with fellow data editors at other...
+
+
+01:00:00-01:00:04
+I used to be the data editor at Restad.
+
+
+01:00:04-01:00:11
+Where we think about what to require from authors in terms of code and data and documentation.
+
+
+01:00:11-01:00:15
+And so this is describing what we're requiring in documentation.
+
+
+01:00:15-01:00:16
+And this is actually...
+
+
+01:00:16-01:00:19
+A lot of journals now require this exact same thing.
+
+
+01:00:19-01:00:24
+And that's the number one mistake in packages.
+
+
+01:00:24-01:00:27
+So 88% of packages go back to the author is that...
+
+
+01:00:27-01:00:31
+Read the damn documentation and do what we ask there.
+
+
+01:00:31-01:00:33
+Like cite the data, blah, blah, blah.
+
+
+01:00:33-01:00:35
+There's a bunch of...
+
+
+01:00:35-01:00:38
+And some of these can be annoying, but it's doable.
+
+
+01:00:38-01:00:40
+And actually now, these days...
+
+
+01:00:40-01:00:44
+Already like last November I was very tempted to just write to the user.
+
+
+01:00:44-01:00:47
+I'm going to pay for your chat GPT subscription.
+
+
+01:00:47-01:00:48
+Just pass it through.
+
+
+01:00:48-01:00:49
+Like...
+
+
+01:00:49-01:00:56
+So we can check how our agent can do with this.
+
+
+01:00:56-01:00:57
+So just to...
+
+
+01:00:57-01:00:58
+In terms of the content.
+
+
+01:00:58-01:01:01
+So you need to document where you get the data from.
+
+
+01:01:01-01:01:02
+You need to...
+
+
+01:01:02-01:01:03
+State...
+
+
+01:01:03-01:01:07
+Not prove, but at least state that you have rights to use the data.
+
+
+01:01:07-01:01:10
+You have to...
+
+
+01:01:10-01:01:13
+In terms of the...
+
+
+01:01:13-01:01:15
+Then it's like more...
+
+
+01:01:15-01:01:16
+You know, at the table.
+
+
+01:01:16-01:01:19
+You want to document the computational requirements.
+
+
+01:01:19-01:01:21
+What type of software you're using.
+
+
+01:01:21-01:01:23
+Which version and so forth.
+
+
+01:01:23-01:01:28
+And so I can understand the authors that, you know, this can be annoying.
+
+
+01:01:28-01:01:31
+If you're almost published and now the data editor is coming...
+
+
+01:01:31-01:01:33
+Standing in between you and the publication.
+
+
+01:01:33-01:01:37
+But it's also highly automatable.
+
+
+01:01:37-01:01:40
+So I'm going to ask our agent.
+
+
+01:01:40-01:01:46
+Actually I'm just going to start a new session for this.
+
+
+01:01:46-01:01:49
+Read what we did.
+
+
+01:01:49-01:02:00
+And create a readme document that follows this template.
+
+
+01:02:00-01:02:01
+Why didn't we start a new session?
+
+
+01:02:01-01:02:06
+So is it not better to continue in the previous one?
+
+
+01:02:06-01:02:09
+Because of the short memory thing?
+
+
+01:02:09-01:02:10
+So did...
+
+
+01:02:10-01:02:12
+Yeah, so then it would still remember the analysis.
+
+
+01:02:12-01:02:13
+But it does not remember.
+
+
+01:02:13-01:02:15
+So then I think it would like overweight.
+
+
+01:02:15-01:02:19
+It knows everything about the analysis, but forget about the data loading.
+
+
+01:02:19-01:02:22
+And says okay, let's start from a...
+
+
+01:02:22-01:02:24
+Because now it has to look...
+
+
+01:02:24-01:02:26
+There's an explorer.
+
+
+01:02:26-01:02:28
+What's this?
+
+
+01:02:28-01:02:31
+Looks good, but...
+
+
+01:02:31-01:02:38
+Oh, it's like a sub-agent or something.
+
+
+01:02:38-01:02:42
+And apparently explore is a skill or I don't know.
+
+
+01:02:42-01:02:49
+Oh, I think it wrote itself a skill.
+
+
+01:02:49-01:02:50
+That's interesting.
+
+
+01:02:50-01:02:51
+It fired up...
+
+
+01:02:51-01:02:52
+This is also new for me.
+
+
+01:02:52-01:02:55
+I think that's new open code.
+
+
+01:02:55-01:03:00
+It started another session with its own instruction.
+
+
+01:03:00-01:03:02
+The user is asking me to explore.
+
+
+01:03:02-01:03:04
+So here's your instruction.
+
+
+01:03:04-01:03:06
+I didn't ask.
+
+
+01:03:06-01:03:07
+It figured out.
+
+
+01:03:07-01:03:13
+And then once it returns, it will probably answer my question in the source place, which probably
+
+
+01:03:13-01:03:14
+already did.
+
+
+01:03:14-01:03:21
+Or this is maybe still the exploration.
+
+
+01:03:21-01:03:27
+So once that is completed, then it's going to continue.
+
+
+01:03:27-01:03:33
+And then I'm fairly certain, we'll check, but I'm fairly certain that it's going to be a top-notch
+
+
+01:03:33-01:03:36
+readme documentation because...
+
+
+01:03:36-01:03:42
+I mean, to be fair, we started with a dataset that had some documentation to begin with.
+
+
+01:03:42-01:03:46
+Because often that's where it misses, is that you have no idea where the data came from.
+
+
+01:03:46-01:03:51
+Because you downloaded it three years ago and you no longer remember.
+
+
+01:03:51-01:03:55
+So now the exploration completed.
+
+
+01:03:55-01:03:57
+I'm going to go ahead and now it's already writing.
+
+
+01:03:57-01:03:58
+And now it's already writing.
+
+
+01:04:00-01:04:05
+But why will the ability to read me a file as well?
+
+
+01:04:05-01:04:06
+Oh, let me switch.
+
+
+01:04:07-01:04:08
+Subscribe.
+
+
+01:04:08-01:04:09
+Oh.
+
+
+01:04:09-01:04:10
+Five dollars per month.
+
+
+01:04:10-01:04:11
+Oh, okay.
+
+
+01:04:11-01:04:12
+It's not super expensive.
+
+
+01:04:12-01:04:13
+That was it.
+
+
+01:04:13-01:04:14
+I'm going to start.
+
+
+01:04:14-01:04:15
+I have a...
+
+
+01:04:15-01:04:16
+Because I want a demo and then...
+
+
+01:04:16-01:04:17
+So let me...
+
+
+01:04:17-01:04:18
+I have a paid memo 2.5.
+
+
+01:04:18-01:04:19
+Which one?
+
+
+01:04:21-01:04:22
+See, that's left.
+
+
+01:04:22-01:04:23
+That's amazing.
+
+
+01:04:23-01:04:24
+So I'm going to finish it.
+
+
+01:04:24-01:04:40
+And actually we want to demonstrate the various different models.
+
+
+01:04:40-01:04:45
+So we're going to give you an API key with which you can try paid models.
+
+
+01:04:45-01:04:46
+And then we can...
+
+
+01:04:46-01:04:47
+So you said the types of the...
+
+
+01:04:47-01:04:48
+And then we can...
+
+
+01:04:49-01:04:50
+So you said the types of the...
+
+
+01:04:50-01:04:51
+And then we can...
+
+
+01:05:06-01:05:07
+You mean the MD or...
+
+
+01:05:07-01:05:09
+Oh, MD is marked down.
+
+
+01:05:09-01:05:10
+It's just...
+
+
+01:05:10-01:05:12
+It's a plain text file with some...
+
+
+01:05:12-01:05:13
+Formatting.
+
+
+01:05:13-01:05:14
+But it's a plain text file.
+
+
+01:05:14-01:05:15
+It's basically TXT.
+
+
+01:05:15-01:05:28
+So András, it looks like we're going to need an API key because we have a...
+
+
+01:05:28-01:05:29
+And a free limit.
+
+
+01:05:29-01:05:31
+But maybe they stopped the...
+
+
+01:05:31-01:05:32
+It's from...
+
+
+01:05:32-01:05:34
+From open code or...
+
+
+01:05:34-01:05:35
+Just start...
+
+
+01:05:35-01:05:37
+So can you create an open...
+
+
+01:05:37-01:05:38
+Yes.
+
+
+01:05:38-01:05:41
+Let me stop the recording for now and then...
+
+
+01:05:41-01:05:45
+Thank you.
+
