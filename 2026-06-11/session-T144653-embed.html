@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCode Replay Embed</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #09090b; }
+    .opencode-embed { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <div class="opencode-embed" id="opencode-embed"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    
+// OpenCode Session Replay Embed
+// Generated 2026-06-16T21:25:16.360Z
+(function() {
+  "use strict";
+
+  var SESSION = [{"id":"msg-0","role":"user","content":"what does this project do?","timestamp_ms":250,"tool_calls":[]},{"id":"msg-1","role":"assistant","content":"AEI project processes Anthropic Economic Index data, providing star‑schema CSVs, Stata scripts, DuckDB queries, and Python visualizations to analyze Claude AI usage across tasks, geographies, and cost metrics.","timestamp_ms":258,"tool_calls":[]},{"id":"msg-2","role":"user","content":"read the file tree and THEN say something","timestamp_ms":29432,"tool_calls":[]},{"id":"msg-3","role":"assistant","content":"","timestamp_ms":29437,"tool_calls":[{"id":"chatcmpl-tool-bfd6b828f57b1906","name":"bash","args":{"command":"ls -R","description":"Lists all files and directories"},"result":"AGENTS.md\nREADME.md\nclassify_iwa.log\ncode\ndata\noutput\ntest_geo_subset.log\n\n./code:\nclassify_iwa.do\nclassify_iwa.log\nclassify_tasks.do\nclassify_tasks.log\nnoncoding_by_country.do\nplot_noncoding_by_country.do\nstata.log\ntest.log\ntest_geo_subset.do\ntest_geo_subset.log\n\n./data:\nderived\nraw\n\n./data/derived:\niwa_coding_crosswalk.csv\nnoncoding_by_country.csv\ntask_coding_crosswalk.csv\n\n./data/raw:\nREADME.md\nbtos_success_speedup.pdf\ndata_documentation.md\ndim\nelement_success_speedup.pdf\nfct\n\n./data/raw/dim:\ndwa.csv\nelement.csv\ngeo.csv\niwa.csv\niwa_btos_crosswalk.csv\ntask.csv\ntask_unmatched.csv\n\n./data/raw/fct:\nbtos_detail.csv\nelement_detail.csv\niwa_detail.csv\nrequest_detail.csv\nrequest_geo.csv\n\n./output:\nfig\nnoncoding_by_country.csv\n\n./output/fig:\nnoncoding_by_country.pdf\n"}]},{"id":"msg-4","role":"assistant","content":"The project contains scripts (Stata, Python), data (raw CSVs and derived crosswalks), and output visualizations for analyzing the Anthropic Economic Index.","timestamp_ms":30124,"tool_calls":[]},{"id":"msg-5","role":"user","content":"are the really python files?","timestamp_ms":101632,"tool_calls":[]},{"id":"msg-6","role":"assistant","content":"","timestamp_ms":101639,"tool_calls":[{"id":"flHLbXIhs","name":"glob","args":{"pattern":"**/*.py"},"result":"No files found"}]},{"id":"msg-7","role":"assistant","content":"No.","timestamp_ms":102570,"tool_calls":[]},{"id":"msg-8","role":"user","content":"summarize the project structure in 200 words","timestamp_ms":142706,"tool_calls":[]},{"id":"msg-9","role":"assistant","content":"The AEI project analyzes Anthropic Economic Index data using a star schema. It provides:\n\n**Code:**\n- Stata `.do` files for data processing (classification, testing, plotting)\n- Bash scripts and logs tracking pipeline execution\n- Output and derived data generation\n\n**Data:**\n- Raw data in `data/raw/` (fact tables, dimension tables, documentation):\n  - `fct/`: request-level metrics (success, time, cost indices)\n  - `dim/`: O*NET/OECD hierarchies (tasks, DWAs, IWAs, elements, geo)\n- Derived data in `data/derived/` (coding task crosswalks, noncoding shares)\n\n**Output:**\n- `output/fig/`: PDF/figures (e.g., noncoding_by_country.pdf)\n- Derived CSV exports\n\n**Purpose:**\nProcesses weekly Claude AI usage data to enable economic analysis of AI's impact on task execution across occupations and geographies. The Stata pipeline cleans, classifies, rolls up, and tests data before generating visualizations and crosswalks that flag coding vs. non-coding tasks and their geographic distribution.","timestamp_ms":142726,"tool_calls":[]}];
+  var META = {"id":"ses_149475e65ffeseYex0zB89Fxtn","title":"Project overview","model":"mistralai/mistral-small-2603","provider":"openrouter·mistralai/mistral-small-2603","started_at":"2026-06-11T12:46:53.850Z","duration_ms":142726,"task_count":2};
+  var CONFIG = {"user_typing_speed":35,"assistant_typing_speed":120,"thinking_typing_speed":300,"message_pause":500,"tool_call_pause":300,"tool_speed":2,"show_thinking":false,"width":900,"height":550};
+  var SYNC = [{"audio_s":974,"message":"msg-0","label":"What does this project do?"},{"audio_s":974,"message":"msg-1","label":"Quick overview","scene":true},{"audio_s":998,"message":"msg-2","label":"Read the file tree first"},{"audio_s":998,"message":"msg-3","label":"Reading files","scene":true},{"audio_s":999,"message":"msg-4","label":"Detailed overview"},{"audio_s":1072,"message":"msg-5","label":"Are there really Python files?"},{"audio_s":1073,"message":"msg-7","label":"No.","scene":true},{"audio_s":1114,"message":"msg-8","label":"Summarize in 200 words"},{"audio_s":1114,"message":"msg-9","label":"200-word summary","scene":true}];
+  var AUDIO_SRC = "https://github.com/codedthinking/ai-workshop/releases/download/v2026-06-11/2026-06-11T143033.m4a";
+  var AUDIO_OFFSET = 974;
+
+  // ── Styles ──
+  var CSS = `
+    .oce { font-family: 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; font-size:14px; line-height:1.6; background:#09090b; color:#fafafa; display:flex; flex-direction:column; overflow:hidden; border-radius:8px; border:1px solid #1e1e22; -webkit-font-smoothing:antialiased; position:relative; }
+    .oce * { margin:0; padding:0; box-sizing:border-box; }
+    .oce-bar { background:#0c0c0e; border-bottom:1px solid #1e1e22; padding:0 14px; height:36px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+    .oce-bar-l { display:flex; align-items:center; gap:8px; }
+    .oce-bar-logo { color:#6366f1; width:14px; height:14px; }
+    .oce-bar-title { font-size:12px; color:#a1a1aa; font-weight:500; }
+    .oce-bar-sep { color:#3f3f46; font-size:12px; }
+    .oce-badge { display:inline-flex; align-items:center; gap:5px; font-size:10px; color:#52525b; background:#131316; border:1px solid #1e1e22; border-radius:100px; padding:1px 8px 1px 5px; }
+    .oce-badge-dot { width:5px; height:5px; border-radius:50%; background:#22c55e; }
+    .oce-bar-r { display:flex; align-items:center; gap:6px; }
+    .oce-btn { background:#131316; border:1px solid #27272a; border-radius:5px; width:28px; height:24px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#a1a1aa; transition:background .1s; flex-shrink:0; }
+    .oce-btn:hover { background:#1c1c20; }
+    .oce-btn svg { width:12px; height:12px; }
+    .oce-chat { flex:1; overflow-y:auto; overflow-x:hidden; }
+    .oce-chat::-webkit-scrollbar { width:4px; }
+    .oce-chat::-webkit-scrollbar-track { background:transparent; }
+    .oce-chat::-webkit-scrollbar-thumb { background:#27272a; border-radius:2px; }
+    .oce-msg { padding:14px 16px; border-bottom:1px solid #1e1e22; }
+    .oce-msg.animated { animation:oceIn .2s ease-out; }
+    .oce-msg.user { background:#0f0f12; }
+    .oce-msg.assistant { background:#09090b; }
+    .oce-role { display:flex; align-items:center; gap:6px; margin-bottom:8px; }
+    .oce-role-icon { width:18px; height:18px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:10px; flex-shrink:0; }
+    .oce-msg.user .oce-role-icon { background:rgba(99,102,241,.12); color:#6366f1; }
+    .oce-msg.assistant .oce-role-icon { background:rgba(34,197,94,.15); color:#22c55e; }
+    .oce-role-lbl { font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; }
+    .oce-msg.user .oce-role-lbl { color:#6366f1; }
+    .oce-msg.assistant .oce-role-lbl { color:#22c55e; }
+    .oce-role-time { font-size:10px; color:#3f3f46; font-family:'SF Mono','Fira Code',monospace; margin-left:auto; }
+    .oce-content { padding-left:24px; font-size:13px; line-height:1.7; color:#fafafa; white-space:pre-wrap; word-break:break-word; }
+    .oce-msg.user .oce-content { font-family:'SF Mono','Fira Code','JetBrains Mono',monospace; font-size:13px; }
+    .oce-msg.assistant .oce-content { font-family:inherit; font-size:14px; white-space:normal; }
+    .oce-tc { margin:8px 0 4px 24px; border:1px solid #1e1e22; border-radius:6px; background:#111114; overflow:hidden; }
+    .oce-tc.animated { animation:oceIn .15s ease-out; }
+    .oce-tc-h { padding:6px 10px; display:flex; align-items:center; gap:6px; font-size:11px; font-family:'SF Mono','Fira Code',monospace; color:#a1a1aa; cursor:pointer; transition:background .1s; }
+    .oce-tc-h:hover { background:#1c1c20; }
+    .oce-tc-icon { color:#f59e0b; width:12px; height:12px; flex-shrink:0; }
+    .oce-tc-name { font-weight:600; color:#fafafa; font-size:11px; }
+    .oce-tc-stats { color:#52525b; font-size:10px; margin-left:auto; white-space:nowrap; }
+    .oce-tc-chev { width:10px; height:10px; color:#3f3f46; transition:transform .15s; flex-shrink:0; }
+    .oce-tc.exp .oce-tc-chev { transform:rotate(90deg); }
+    .oce-tc-body { display:none; padding:8px 10px; font-family:'SF Mono','Fira Code',monospace; font-size:11px; line-height:1.5; color:#a1a1aa; border-top:1px solid #1e1e22; max-height:160px; overflow-y:auto; }
+    .oce-tc.exp .oce-tc-body { display:block; }
+    .oce-spinner { width:10px; height:10px; border:2px solid #27272a; border-top-color:#f59e0b; border-radius:50%; animation:oceSpin .6s linear infinite; margin-left:auto; flex-shrink:0; }
+    .oce-cursor { display:inline-block; width:2px; height:14px; background:#6366f1; animation:oceBlink 1s step-end infinite; vertical-align:text-bottom; margin-left:1px; border-radius:1px; }
+    .oce-caret { display:inline-block; width:2px; height:1em; background:#22c55e; animation:oceBlink 1s step-end infinite; vertical-align:text-bottom; margin-left:2px; border-radius:1px; }
+    .oce-think { margin:0 0 6px 24px; padding:6px 10px; background:#131316; border-radius:5px; border:1px solid #1e1e22; font-family:'SF Mono','Fira Code',monospace; font-size:10px; line-height:1.4; color:#52525b; max-height:80px; overflow:hidden; position:relative; }
+    .oce-think::after { content:''; position:absolute; bottom:0; left:0; right:0; height:24px; background:linear-gradient(transparent,#131316); pointer-events:none; }
+    .oce-think-lbl { font-size:9px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:#3f3f46; margin-bottom:3px; }
+
+    /* ── Audio bar ── */
+    .oce-audio { background:#0c0c0e; border-top:1px solid #1e1e22; padding:6px 14px 8px; flex-shrink:0; }
+    .oce-audio-row { display:flex; align-items:center; gap:8px; }
+    .oce-audio-time { font-size:10px; font-family:'SF Mono','Fira Code',monospace; color:#52525b; min-width:36px; text-align:center; }
+    .oce-timeline { flex:1; position:relative; height:20px; display:flex; align-items:center; cursor:pointer; }
+    .oce-track { width:100%; height:4px; background:#1e1e22; border-radius:2px; position:relative; overflow:visible; }
+    .oce-progress { height:100%; background:#6366f1; border-radius:2px; width:0%; transition:width 0.1s linear; }
+    .oce-scene-markers { position:absolute; top:0; left:0; right:0; height:100%; pointer-events:none; }
+    .oce-scene-dot { position:absolute; top:50%; width:8px; height:8px; background:#fafafa; border:2px solid #6366f1; border-radius:50%; transform:translate(-50%,-50%); pointer-events:all; cursor:pointer; z-index:2; transition:transform .15s; }
+    .oce-scene-dot:hover { transform:translate(-50%,-50%) scale(1.4); }
+    .oce-scene-dot.active { background:#6366f1; }
+    .oce-scene-tooltip { position:absolute; bottom:14px; left:50%; transform:translateX(-50%); background:#27272a; color:#fafafa; font-size:10px; font-family:'SF Mono','Fira Code',monospace; padding:2px 8px; border-radius:4px; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .15s; }
+    .oce-scene-dot:hover .oce-scene-tooltip { opacity:1; }
+
+    /* ── Scene list (below timeline) ── */
+    .oce-scenes { display:flex; gap:4px; margin-top:4px; flex-wrap:wrap; }
+    .oce-scene-btn { background:#131316; border:1px solid #1e1e22; border-radius:4px; padding:1px 8px; font-size:10px; font-family:'SF Mono','Fira Code',monospace; color:#52525b; cursor:pointer; transition:all .1s; white-space:nowrap; }
+    .oce-scene-btn:hover { background:#1c1c20; color:#a1a1aa; border-color:#27272a; }
+    .oce-scene-btn.active { background:rgba(99,102,241,.12); color:#6366f1; border-color:rgba(99,102,241,.3); }
+
+    /* ── Footer ── */
+    .oce-foot { background:#0c0c0e; border-top:1px solid #1e1e22; padding:0 14px; height:24px; display:flex; align-items:center; justify-content:space-between; font-size:10px; font-family:'SF Mono','Fira Code',monospace; color:#3f3f46; flex-shrink:0; }
+    .oce-foot-l,.oce-foot-r { display:flex; align-items:center; gap:10px; }
+    .oce-sdot { width:5px; height:5px; border-radius:50%; background:#22c55e; }
+    .oce-sdot.rec { background:#ef4444; animation:ocePulse 2s ease-in-out infinite; }
+
+    /* ── Markdown blocks ── */
+    .mb { margin-bottom:6px; }
+    .mb:last-child { margin-bottom:0; }
+    .mb p { margin:0 0 6px 0; }
+    .mb p:last-child { margin-bottom:0; }
+    .mb h1,.mb h2,.mb h3,.mb h4 { margin:12px 0 6px; font-weight:600; color:#fafafa; }
+    .mb h1 { font-size:1.3em; } .mb h2 { font-size:1.15em; } .mb h3 { font-size:1.02em; }
+    .mb ul,.mb ol { margin:4px 0; padding-left:18px; }
+    .mb li { margin-bottom:2px; }
+    .mb code { background:#18181b; border:1px solid #1e1e22; border-radius:3px; padding:1px 5px; font-family:'SF Mono','Fira Code',monospace; font-size:.85em; }
+    .mb pre { background:#131316; border:1px solid #1e1e22; border-radius:5px; padding:10px 12px; overflow-x:auto; margin:6px 0; }
+    .mb pre code { background:none; border:none; padding:0; font-size:11px; line-height:1.5; }
+    .mb table { border-collapse:collapse; width:100%; margin:6px 0; font-size:12px; }
+    .mb th,.mb td { border:1px solid #1e1e22; padding:4px 10px; text-align:left; }
+    .mb th { background:#131316; font-weight:600; color:#a1a1aa; }
+    .mb blockquote { border-left:2px solid #6366f1; margin:6px 0; padding:4px 12px; color:#a1a1aa; }
+    .mb hr { border:none; border-top:1px solid #1e1e22; margin:12px 0; }
+    .mb a { color:#6366f1; text-decoration:none; }
+    .mb strong { color:#fafafa; font-weight:600; }
+    @keyframes oceIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes oceBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+    @keyframes oceSpin { to { transform:rotate(360deg); } }
+    @keyframes ocePulse { 0%,100% { opacity:.4; } 50% { opacity:1; } }
+
+    /* ── Reasoning (collapsible, OpenCode-style) ── */
+    .oce-reasoning { margin:2px 0 6px 24px; }
+    .oce-reasoning-hdr { display:flex; align-items:center; gap:6px; padding:4px 6px; cursor:pointer; border-radius:4px; transition:background .1s; }
+    .oce-reasoning-hdr:hover { background:rgba(255,255,255,.03); }
+    .oce-reasoning-icon { width:14px; height:14px; color:#3f3f46; flex-shrink:0; }
+    .oce-reasoning-lbl { font-size:12px; color:#52525b; flex-shrink:0; }
+    .oce-reasoning-preview { font-size:12px; color:#3f3f46; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1; min-width:0; }
+    .oce-reasoning-body { display:none; padding:4px 8px 10px 28px; font-size:13px; line-height:1.6; color:#52525b; }
+    .oce-reasoning.exp .oce-reasoning-body { display:block; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:20; overflow:hidden; }
+    .oce-reasoning-body p { margin:0 0 8px; }
+    .oce-reasoning-body p:last-child { margin-bottom:0; }
+    .oce-reasoning-body code { font-family:'SF Mono','Fira Code',monospace; font-weight:500; color:#a1a1aa; }
+    .oce-reasoning-expand { font-size:11px; color:#52525b; cursor:pointer; padding:2px 6px; margin-left:28px; }
+    .oce-reasoning-expand:hover { color:#a1a1aa; }
+
+    /* ── Tool calls (OpenCode-style) ── */
+    .oce-tc { margin:4px 0 4px 24px; border:1px solid #1e1e22; border-radius:6px; overflow:hidden; }
+    .oce-tc.animated { animation:oceIn .15s ease-out; }
+    .oce-tc-h { padding:0; display:flex; align-items:stretch; font-size:12px; font-family:'SF Mono','Fira Code',monospace; color:#a1a1aa; cursor:pointer; transition:background .1s; min-height:28px; }
+    .oce-tc-h:hover { background:rgba(255,255,255,.02); }
+    .oce-tc-indicator { width:3px; flex-shrink:0; background:#27272a; }
+    .oce-tc.exp .oce-tc-indicator { background:#6366f1; }
+    .oce-tc-h-content { display:flex; align-items:center; gap:6px; padding:4px 10px; flex:1; min-width:0; }
+    .oce-tc-icon { color:#52525b; width:14px; height:14px; flex-shrink:0; }
+    .oce-tc-name { font-weight:500; color:#fafafa; font-size:12px; flex-shrink:0; }
+    .oce-tc-args { display:flex; gap:8px; color:#52525b; font-size:11px; overflow:hidden; flex:1; min-width:0; }
+    .oce-tc-arg { display:flex; align-items:center; gap:4px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+    .oce-tc-arg-dot { width:4px; height:4px; border-radius:50%; background:#3f3f46; flex-shrink:0; }
+    .oce-tc-arg-val { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .oce-tc-stats { color:#3f3f46; font-size:10px; margin-left:auto; padding-right:2px; white-space:nowrap; flex-shrink:0; }
+    .oce-tc-chev { width:10px; height:10px; color:#3f3f46; transition:transform .15s; flex-shrink:0; margin-left:auto; padding:0 6px 0 0; }
+    .oce-tc.exp .oce-tc-chev { transform:rotate(90deg); }
+    .oce-tc-body { display:none; font-family:'SF Mono','Fira Code',monospace; font-size:12px; line-height:1.6; color:#a1a1aa; border-top:1px solid #1e1e22; }
+    .oce-tc.exp .oce-tc-body { display:block; }
+    .oce-tc-output { padding:8px 10px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:10; overflow:hidden; white-space:pre-wrap; word-break:break-word; }
+    .oce-tc.fully-exp .oce-tc-output { display:block; -webkit-line-clamp:unset; }
+
+    /* ── Thinking indicator ── */
+    .oce-pending .oce-content { display:flex; align-items:center; gap:8px; }
+    .oce-thinking-dots { font-size:20px; font-weight:bold; color:#22c55e; letter-spacing:2px; line-height:1; }
+    .oce-dot-1,.oce-dot-2,.oce-dot-3 { animation:oceDotPulse 1.4s infinite; opacity:.2; }
+    .oce-dot-1 { animation-delay:0s; }
+    .oce-dot-2 { animation-delay:0.2s; }
+    .oce-dot-3 { animation-delay:0.4s; }
+    .oce-pending-label { font-size:12px; color:#52525b; font-style:italic; }
+    @keyframes oceDotPulse { 0%,80%,100% { opacity:.2; } 40% { opacity:1; } }
+  `;
+
+  // ── Icons ──
+  var I = {
+    user: '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+    agent: '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>',
+    tool: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+    chev: '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>',
+    check: '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>',
+    logo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>',
+    brain: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-1 7.9V21H9v-6.1A4 4 0 0 1 8 7V6a4 4 0 0 1 4-4z"/><path d="M8 6a4 4 0 0 0-4 4 4 4 0 0 0 3 3.9"/><path d="M16 6a4 4 0 0 1 4 4 4 4 0 0 1-3 3.9"/></svg>',
+    skipFwd: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>',
+    skipBack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>',
+  };
+
+  // ── Helpers ──
+  function h(tag, cls, html) {
+    var el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (html) el.innerHTML = html;
+    return el;
+  }
+
+  function renderMd(text) {
+    try { return marked.parse(text); }
+    catch(e) { return '<p>' + text.replace(/</g,'&lt;') + '</p>'; }
+  }
+
+  function parseMdBlocks(text) {
+    var lines = text.split('\n'), blocks = [], cur = [], inCode = false, codeBuf = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i];
+      if (line.trim().indexOf('\`\`\`') === 0) {
+        if (inCode) { codeBuf.push(line); var r = codeBuf.join('\n'); blocks.push({type:'code',raw:r,html:renderMd(r)}); codeBuf=[]; inCode=false; }
+        else { if(cur.length){var r2=cur.join('\n');blocks.push({type:'paragraph',raw:r2,html:renderMd(r2)});cur=[];} codeBuf.push(line); inCode=true; }
+        continue;
+      }
+      if (inCode) { codeBuf.push(line); continue; }
+      var blank=line.trim()==='', heading=/^#{1,6}\s/.test(line), hr=/^(-{3,}|_{3,}|\*{3,})$/.test(line.trim());
+      var isList=/^\s*[-*+]\s/.test(line)||/^\s*\d+\.\s/.test(line), isTable=line.trim().charAt(0)==='|', isBq=line.trim().charAt(0)==='>';
+      if (blank||heading||hr||(cur.length>0&&!isList&&!isTable&&!isBq)) {
+        if(cur.length){var r3=cur.join('\n');blocks.push({type:'paragraph',raw:r3,html:renderMd(r3)});cur=[];}
+        if(hr){blocks.push({type:'hr',raw:line,html:'<hr>'});continue;}
+        if(heading){blocks.push({type:'heading',raw:line,html:renderMd(line)});continue;}
+        if(blank) continue;
+      }
+      cur.push(line);
+    }
+    if(cur.length){var r4=cur.join('\n');blocks.push({type:'paragraph',raw:r4,html:renderMd(r4)});}
+    return blocks;
+  }
+
+  function fmtSec(sec) {
+    sec = Math.floor(sec);
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ':' + String(s).padStart(2, '0');
+  }
+
+  function fmtTime(ms) {
+    return fmtSec(ms / 1000);
+  }
+
+  // ── Player ──
+  function Player(root, messages, meta, config) {
+    this.root = root;
+    this.messages = messages;
+    this.meta = meta;
+    this.config = config;
+    this.playing = false;
+    this.looping = false;
+    this.animatingIndex = -1;  // index of message currently being animated
+    this.renderedUpTo = -1;    // index of last fully rendered (instant) message
+    this.audioEl = null;
+    this.syncCues = null;      // resolved cues: [{audio_s, msgIndex, label, scene}]
+    this.audioDriven = false;
+    this._abortController = null;
+  }
+
+  // ── Build DOM ──
+  Player.prototype.build = function() {
+    if (!document.getElementById('oce-css')) {
+      var style = document.createElement('style');
+      style.id = 'oce-css';
+      style.textContent = CSS;
+      document.head.appendChild(style);
+    }
+
+    var w = this.config.width, hh = this.config.height;
+    this.root.innerHTML = '';
+    var container = h('div','oce');
+    container.style.width = '100%';
+    container.style.height = '100%';
+
+    // Top bar
+    var bar = h('div','oce-bar');
+    var barL = h('div','oce-bar-l');
+    barL.appendChild(h('span','oce-bar-logo',I.logo));
+    barL.appendChild(h('span','oce-bar-title',this.meta.title));
+    barL.appendChild(h('span','oce-bar-sep','/'));
+    var badge = h('span','oce-badge');
+    badge.appendChild(h('span','oce-badge-dot'));
+    badge.appendChild(document.createTextNode(this.meta.model));
+    barL.appendChild(badge);
+    bar.appendChild(barL);
+
+    var barR = h('div','oce-bar-r');
+    var self = this;
+
+    if (this.audioDriven) {
+      // Skip back button
+      this.skipBackBtn = h('div','oce-btn',I.skipBack);
+      this.skipBackBtn.title = 'Previous scene';
+      this.skipBackBtn.addEventListener('click', function() { self.seekPrevScene(); });
+      barR.appendChild(this.skipBackBtn);
+    }
+
+    this.playBtn = h('div','oce-btn',I.play);
+    this.playBtn.addEventListener('click', function() {
+      if (self.playing) self.pause(); else self.play();
+    });
+    barR.appendChild(this.playBtn);
+
+    if (this.audioDriven) {
+      // Skip forward button
+      this.skipFwdBtn = h('div','oce-btn',I.skipFwd);
+      this.skipFwdBtn.title = 'Next scene';
+      this.skipFwdBtn.addEventListener('click', function() { self.seekNextScene(); });
+      barR.appendChild(this.skipFwdBtn);
+    }
+
+    bar.appendChild(barR);
+    container.appendChild(bar);
+
+    // Chat area
+    this.chat = h('div','oce-chat');
+    container.appendChild(this.chat);
+
+    // Audio bar (if audio-driven)
+    if (this.audioDriven) {
+      this._buildAudioBar(container);
+    }
+
+    // Footer
+    var foot = h('div','oce-foot');
+    var footL = h('div','oce-foot-l');
+    this.statusDot = h('span','oce-sdot');
+    footL.appendChild(this.statusDot);
+    this.statusLabel = h('span','','Ready');
+    footL.appendChild(this.statusLabel);
+    foot.appendChild(footL);
+    var footR = h('div','oce-foot-r');
+    this.elapsedEl = h('span','','0:00');
+    footR.appendChild(this.elapsedEl);
+    foot.appendChild(footR);
+    container.appendChild(foot);
+
+    this.root.appendChild(container);
+  };
+
+  // ── Audio bar with timeline and scene markers ──
+  Player.prototype._buildAudioBar = function(container) {
+    var self = this;
+    var audioBar = h('div','oce-audio');
+
+    // Row: time - timeline - time
+    var row = h('div','oce-audio-row');
+    this.audioTimeEl = h('span','oce-audio-time','0:00');
+    this.audioDurEl = h('span','oce-audio-time','0:00');
+
+    var timeline = h('div','oce-timeline');
+    var track = h('div','oce-track');
+    this.progressEl = h('div','oce-progress');
+    track.appendChild(this.progressEl);
+
+    // Scene markers on the track
+    var markers = h('div','oce-scene-markers');
+    this.sceneMarkerEls = [];
+    if (this.syncCues) {
+      for (var i = 0; i < this.syncCues.length; i++) {
+        var cue = this.syncCues[i];
+        if (!cue.scene) continue;
+        var dot = h('div','oce-scene-dot');
+        dot.dataset.cueIndex = String(i);
+        // Tooltip
+        if (cue.label) {
+          var tip = h('div','oce-scene-tooltip', cue.label);
+          dot.appendChild(tip);
+        }
+        dot.addEventListener('click', (function(c) {
+          return function(e) {
+            e.stopPropagation();
+            self.seekToAudioTime(c.audio_s);
+          };
+        })(cue));
+        markers.appendChild(dot);
+        this.sceneMarkerEls.push({ dot: dot, cue: cue });
+      }
+    }
+    track.appendChild(markers);
+    timeline.appendChild(track);
+
+    // Click on timeline to seek
+    timeline.addEventListener('click', function(e) {
+      var rect = track.getBoundingClientRect();
+      var frac = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      // Map fraction to cue-space: offset + frac * sessionDuration
+      self.seekToAudioTime(self.audioOffset + frac * self.totalDuration);
+    });
+
+    row.appendChild(this.audioTimeEl);
+    row.appendChild(timeline);
+    row.appendChild(this.audioDurEl);
+    audioBar.appendChild(row);
+
+    // Scene buttons row
+    if (this.syncCues) {
+      var scenes = this.syncCues.filter(function(c) { return c.scene; });
+      if (scenes.length > 0) {
+        var scenesRow = h('div','oce-scenes');
+        this.sceneBtnEls = [];
+        for (var si = 0; si < scenes.length; si++) {
+          var sc = scenes[si];
+          var btn = h('div','oce-scene-btn', (sc.label || 'Scene ' + (si+1)));
+          btn.addEventListener('click', (function(c) {
+            return function() { self.seekToAudioTime(c.audio_s); };
+          })(sc));
+          scenesRow.appendChild(btn);
+          this.sceneBtnEls.push({ btn: btn, cue: sc });
+        }
+        audioBar.appendChild(scenesRow);
+      }
+    }
+
+    container.appendChild(audioBar);
+
+    // Create audio element
+    this.audioEl = document.createElement('audio');
+    this.audioEl.preload = 'metadata';
+    this.audioLoaded = false;
+    this.simTime = 0;  // simulated clock (seconds) for when audio can't load
+
+    // Compute total duration from last cue (fallback if no audio)
+    this.totalDuration = 0;
+    this.audioOffset = AUDIO_OFFSET || 0;
+    if (this.syncCues && this.syncCues.length > 0) {
+      this.totalDuration = this.syncCues[this.syncCues.length - 1].audio_s - this.audioOffset + 10;
+    }
+
+    if (AUDIO_SRC) {
+      this.audioEl.src = AUDIO_SRC;
+    }
+
+    // Audio events
+    this.audioEl.addEventListener('loadedmetadata', function() {
+      if (isFinite(self.audioEl.duration) && self.audioEl.duration > 0) {
+        self.audioLoaded = true;
+        // Use session span, not full file duration
+        if (self.audioOffset > 0) {
+          // totalDuration stays as computed from cues
+        } else {
+          self.totalDuration = self.audioEl.duration;
+        }
+        self.audioDurEl.textContent = fmtSec(self.totalDuration);
+        self._positionSceneMarkers();
+        console.log('[oce] audio loadedmetadata, duration=' + self.audioEl.duration + ', offset=' + self.audioOffset + ', sessionDuration=' + self.totalDuration);
+      }
+    });
+
+    this.audioEl.addEventListener('seeked', function() {
+      console.log('[oce] audio seeked to ' + self.audioEl.currentTime.toFixed(1));
+    });
+
+    this.audioEl.addEventListener('timeupdate', function() {
+      self._onAudioTimeUpdate();
+    });
+
+    this.audioEl.addEventListener('ended', function() {
+      if (self.looping) {
+        self.audioEl.currentTime = self.audioOffset;
+        self.audioEl.play();
+      } else {
+        self.pause();
+        self.statusLabel.textContent = 'Done';
+      }
+    });
+
+    this.audioEl.addEventListener('error', function(e) {
+      // Audio failed to load — use simulated clock
+      console.error('[oce] audio error:', self.audioEl.error ? self.audioEl.error.message : 'unknown', self.audioEl.error);
+      self.audioLoaded = false;
+      self.audioDurEl.textContent = fmtSec(self.totalDuration);
+      self._positionSceneMarkers();
+    });
+
+    // Position markers even if audio never loads (use cue-derived duration)
+    setTimeout(function() {
+      if (!self.audioLoaded) {
+        self.audioDurEl.textContent = fmtSec(self.totalDuration);
+        self._positionSceneMarkers();
+      }
+    }, 500);
+  };
+
+  // ── Position scene dots on the track ──
+  Player.prototype._positionSceneMarkers = function() {
+    var dur = this.totalDuration || 1;
+    for (var i = 0; i < this.sceneMarkerEls.length; i++) {
+      var m = this.sceneMarkerEls[i];
+      var pct = ((m.cue.audio_s - this.audioOffset) / dur) * 100;
+      m.dot.style.left = pct + '%';
+    }
+  };
+
+  // ── Get current playback time (audio or simulated) ──
+  // Returns time in cue-space (i.e. absolute audio_s values from sync manifest)
+  Player.prototype._currentTime = function() {
+    if (this.audioLoaded && this.audioEl && isFinite(this.audioEl.duration)) return this.audioEl.currentTime;
+    return this.simTime;
+  };
+
+  // Returns time relative to session start (for display and progress bar)
+  Player.prototype._sessionTime = function() {
+    return this._currentTime() - this.audioOffset;
+  };
+
+  // ── Audio timeupdate handler — drives the replay ──
+  Player.prototype._debugCount = 0;
+  Player.prototype._onAudioTimeUpdate = function() {
+    var t = this._currentTime();
+    var st = this._sessionTime();
+    var dur = this.totalDuration || 1;
+    if (this._debugCount++ < 20 || this._debugCount % 50 === 0) {
+      console.log('[oce] timeupdate: t=' + t.toFixed(1) + ' st=' + st.toFixed(1) + ' rendered=' + this.renderedUpTo);
+    }
+
+    // Stop at end of session window
+    if (st > dur && this.audioOffset > 0) {
+      this.audioEl.pause();
+      this.pause();
+      this.statusLabel.textContent = 'Done';
+      return;
+    }
+
+    // Update progress bar (session-relative)
+    this.progressEl.style.width = ((Math.max(0, st) / dur) * 100) + '%';
+    this.audioTimeEl.textContent = fmtSec(Math.max(0, st));
+    this.elapsedEl.textContent = fmtSec(Math.max(0, st));
+
+    // Find which message should be visible at this audio time
+    if (!this.syncCues || this.syncCues.length === 0) return;
+
+    // Find the last cue whose audio_s <= current time
+    var targetMsgIndex = -1;
+    var activeCueIndex = -1;
+    var nextCue = null;
+    for (var i = this.syncCues.length - 1; i >= 0; i--) {
+      if (this.syncCues[i].audio_s <= t) {
+        targetMsgIndex = this.syncCues[i].msgIndex;
+        activeCueIndex = i;
+        if (i + 1 < this.syncCues.length) nextCue = this.syncCues[i + 1];
+        break;
+      }
+    }
+
+    // Update active scene markers
+    this._updateActiveScene(activeCueIndex);
+
+    // Progressive rendering between cues:
+    // Messages at or before the active cue render instantly.
+    // Messages between the active cue and the next cue render progressively
+    // based on time fraction, so user prompts and agent responses scroll in naturally.
+    var activeMsgIndex = targetMsgIndex;
+    var progressMsgIndex = activeMsgIndex; // how far to actually render
+
+    if (nextCue && activeCueIndex >= 0) {
+      var cueStart = this.syncCues[activeCueIndex].audio_s;
+      var cueEnd = nextCue.audio_s;
+      var nextMsgIndex = nextCue.msgIndex;
+      var span = nextMsgIndex - activeMsgIndex;
+      if (span > 1 && cueEnd > cueStart) {
+        var frac = (t - cueStart) / (cueEnd - cueStart);
+        frac = Math.max(0, Math.min(1, frac));
+        // Reveal intermediate messages proportionally
+        progressMsgIndex = activeMsgIndex + Math.floor(frac * span);
+        if (progressMsgIndex >= nextMsgIndex) progressMsgIndex = nextMsgIndex - 1;
+      }
+    }
+
+    if (progressMsgIndex > this.renderedUpTo) {
+      this._removePendingIndicator();
+      this._renderInstantUpTo(progressMsgIndex);
+    }
+
+    // Show "thinking..." indicator if we've caught up and next message is agent
+    if (nextCue && progressMsgIndex >= 0 && progressMsgIndex === this.renderedUpTo) {
+      var effectiveNext = progressMsgIndex + 1;
+      if (effectiveNext < this.messages.length) {
+        var nextMsg = this.messages[effectiveNext];
+        if (nextMsg && nextMsg.role === 'assistant' && !this._pendingEl) {
+          this._showPendingIndicator(nextCue.label);
+        }
+      }
+    }
+  };
+
+  // ── Pending / thinking indicator ──
+  Player.prototype._showPendingIndicator = function(label) {
+    this._pendingEl = h('div','oce-msg assistant oce-pending animated');
+    var role = h('div','oce-role');
+    role.appendChild(h('div','oce-role-icon', I.agent));
+    role.appendChild(h('span','oce-role-lbl', 'Agent'));
+    this._pendingEl.appendChild(role);
+    var content = h('div','oce-content');
+    var dots = h('span','oce-thinking-dots');
+    dots.innerHTML = '<span class="oce-dot-1">.</span><span class="oce-dot-2">.</span><span class="oce-dot-3">.</span>';
+    content.appendChild(dots);
+    if (label) {
+      var lbl = h('span','oce-pending-label', label);
+      content.appendChild(lbl);
+    }
+    this._pendingEl.appendChild(content);
+    this.chat.appendChild(this._pendingEl);
+    this._scroll();
+  };
+
+  Player.prototype._removePendingIndicator = function() {
+    if (this._pendingEl) {
+      this._pendingEl.remove();
+      this._pendingEl = null;
+    }
+  };
+
+  // ── Update which scene button/dot is active ──
+  Player.prototype._updateActiveScene = function(activeCueIndex) {
+    // Scene dots
+    if (this.sceneMarkerEls) {
+      for (var i = 0; i < this.sceneMarkerEls.length; i++) {
+        var ci = parseInt(this.sceneMarkerEls[i].dot.dataset.cueIndex);
+        this.sceneMarkerEls[i].dot.classList.toggle('active', ci <= activeCueIndex);
+      }
+    }
+    // Scene buttons
+    if (this.sceneBtnEls) {
+      var sceneIdx = 0;
+      for (var j = 0; j < this.sceneBtnEls.length; j++) {
+        var isBefore = this.sceneBtnEls[j].cue.audio_s <= this._currentTime();
+        this.sceneBtnEls[j].btn.classList.toggle('active', isBefore);
+      }
+    }
+  };
+
+  // ── Render messages 0..N instantly (no animation) ──
+  Player.prototype._renderInstantUpTo = function(msgIndex) {
+    // Only render messages we haven't rendered yet
+    var start = this.renderedUpTo + 1;
+    for (var i = start; i <= msgIndex && i < this.messages.length; i++) {
+      var msg = this.messages[i];
+      var el = this._createMsgInstant(msg);
+      this.chat.appendChild(el);
+    }
+    this.renderedUpTo = msgIndex;
+    this._scroll();
+  };
+
+  // ── Create a fully rendered message element (no animation) ──
+  Player.prototype._createMsgInstant = function(msg) {
+    var el = h('div','oce-msg ' + msg.role);
+
+    var role = h('div','oce-role');
+    role.appendChild(h('div','oce-role-icon', msg.role==='user' ? I.user : I.agent));
+    role.appendChild(h('span','oce-role-lbl', msg.role==='user' ? 'You' : 'Agent'));
+    role.appendChild(h('span','oce-role-time', fmtTime(msg.timestamp_ms)));
+    el.appendChild(role);
+
+    // Reasoning (collapsible, OpenCode-style)
+    if (this.config.show_thinking && msg.thinking) {
+      el.appendChild(this._createReasoningInstant(msg.thinking));
+    }
+
+    // Tool calls (between reasoning and content)
+    if (msg.tool_calls && msg.tool_calls.length > 0) {
+      for (var ti = 0; ti < msg.tool_calls.length; ti++) {
+        el.appendChild(this._createToolCallInstant(msg.tool_calls[ti]));
+      }
+    }
+
+    // Content
+    if (msg.content) {
+      var content = h('div','oce-content');
+      if (msg.role === 'user') {
+        content.textContent = msg.content;
+      } else {
+        content.innerHTML = renderMd(msg.content);
+      }
+      el.appendChild(content);
+    }
+
+    return el;
+  };
+
+  // ── Create reasoning block (collapsible, OpenCode-style) ──
+  Player.prototype._createReasoningInstant = function(thinking) {
+    var el = h('div','oce-reasoning');
+    var hdr = h('div','oce-reasoning-hdr');
+    hdr.appendChild(h('span','oce-reasoning-icon', I.brain));
+    hdr.appendChild(h('span','oce-reasoning-lbl', 'thinking'));
+    var preview = thinking.substring(0, 100).replace(/\n/g, ' ');
+    if (thinking.length > 100) preview += '...';
+    hdr.appendChild(h('span','oce-reasoning-preview', preview));
+    el.appendChild(hdr);
+    var body = h('div','oce-reasoning-body');
+    body.innerHTML = renderMd(thinking);
+    el.appendChild(body);
+    hdr.addEventListener('click', function() { el.classList.toggle('exp'); });
+    return el;
+  };
+
+  // ── Create a fully rendered tool call (OpenCode-style) ──
+  Player.prototype._createToolCallInstant = function(tc) {
+    var el = h('div','oce-tc');
+    var hdr = h('div','oce-tc-h');
+
+    // Left indicator bar
+    var indicator = h('div','oce-tc-indicator');
+    hdr.appendChild(indicator);
+
+    var hdrContent = h('div','oce-tc-h-content');
+
+    // Tool icon
+    hdrContent.appendChild(h('span','oce-tc-icon',I.tool));
+
+    // Tool name
+    hdrContent.appendChild(h('span','oce-tc-name',tc.name));
+
+    // Args preview (dots + values like OpenCode)
+    var argsEl = h('div','oce-tc-args');
+    var argEntries = this._formatToolArgs(tc);
+    for (var ai = 0; ai < argEntries.length && ai < 3; ai++) {
+      var argEl = h('span','oce-tc-arg');
+      argEl.appendChild(h('span','oce-tc-arg-dot'));
+      argEl.appendChild(h('span','oce-tc-arg-val', argEntries[ai]));
+      argsEl.appendChild(argEl);
+    }
+    hdrContent.appendChild(argsEl);
+
+    // Duration
+    if (tc.duration_ms && tc.duration_ms > 2000) {
+      hdrContent.appendChild(h('span','oce-tc-stats', (tc.duration_ms/1000).toFixed(1)+'s'));
+    }
+
+    hdr.appendChild(hdrContent);
+
+    // Body (output, line-clamped)
+    var body = h('div','oce-tc-body');
+    var output = h('div','oce-tc-output');
+    if (tc.result) {
+      output.textContent = tc.result;
+    } else {
+      output.textContent = '(no output)';
+    }
+    body.appendChild(output);
+
+    el.appendChild(hdr);
+    el.appendChild(body);
+
+    // Click to expand/collapse
+    hdr.addEventListener('click', function() {
+      el.classList.toggle('exp');
+    });
+    // Double-click to fully expand (remove line-clamp)
+    output.addEventListener('click', function(e) {
+      e.stopPropagation();
+      el.classList.toggle('fully-exp');
+    });
+
+    return el;
+  };
+
+  // ── Format tool args for display ──
+  Player.prototype._formatToolArgs = function(tc) {
+    var args = [];
+    if (tc.args) {
+      if (tc.args.pattern) args.push(String(tc.args.pattern));
+      if (tc.args.path) {
+        var p = String(tc.args.path);
+        // Strip common prefixes for readability
+        p = p.replace(/^\/Users\/[^/]+\//, '~/');
+        args.push(p);
+      }
+      if (tc.args.command) {
+        var cmd = String(tc.args.command);
+        args.push(cmd.length > 60 ? cmd.substring(0,60) + '...' : cmd);
+      }
+      if (tc.args.file_path) {
+        var fp = String(tc.args.file_path);
+        fp = fp.replace(/^\/Users\/[^/]+\//, '~/');
+        args.push(fp);
+      }
+      if (tc.args.content && args.length === 0) args.push('(content)');
+    }
+    return args;
+  };
+
+  // ── Seek to a specific audio time (sec is in cue-space, i.e. absolute) ──
+  Player.prototype.seekToAudioTime = function(sec) {
+    this._removePendingIndicator();
+    // Set time on real audio or simulated clock
+    if (this.audioLoaded && this.audioEl) {
+      this.audioEl.currentTime = sec;
+    }
+    this.simTime = sec;
+    if (this.playing && !this.audioLoaded) {
+      this._simWallStart = Date.now() - (sec * 1000);
+    }
+
+    // Clear chat and re-render up to the right message
+    this.chat.innerHTML = '';
+    this.renderedUpTo = -1;
+
+    // Find target message
+    if (this.syncCues) {
+      var targetMsgIndex = -1;
+      for (var i = this.syncCues.length - 1; i >= 0; i--) {
+        if (this.syncCues[i].audio_s <= sec) {
+          targetMsgIndex = this.syncCues[i].msgIndex;
+          break;
+        }
+      }
+      if (targetMsgIndex >= 0) {
+        this._renderInstantUpTo(targetMsgIndex);
+      }
+    }
+
+    // Update UI immediately
+    this._onAudioTimeUpdate();
+
+    // If we were playing with real audio, keep playing
+    if (this.playing && this.audioLoaded && this.audioEl) {
+      this.audioEl.play();
+    }
+  };
+
+  // ── Scene navigation ──
+  Player.prototype.seekNextScene = function() {
+    if (!this.syncCues) return;
+    var t = this._currentTime();
+    var scenes = this.syncCues.filter(function(c) { return c.scene; });
+    for (var i = 0; i < scenes.length; i++) {
+      if (scenes[i].audio_s > t + 0.5) {
+        this.seekToAudioTime(scenes[i].audio_s);
+        return;
+      }
+    }
+  };
+
+  Player.prototype.seekPrevScene = function() {
+    if (!this.syncCues) return;
+    var t = this._currentTime();
+    var scenes = this.syncCues.filter(function(c) { return c.scene; });
+    for (var i = scenes.length - 1; i >= 0; i--) {
+      if (scenes[i].audio_s < t - 1.5) {
+        this.seekToAudioTime(scenes[i].audio_s);
+        return;
+      }
+    }
+    this.seekToAudioTime(this.audioOffset);
+  };
+
+  // ── Simulated clock (for when audio can't load) ──
+  Player.prototype._startSimClock = function() {
+    var self = this;
+    if (this.simTime < this.audioOffset) this.simTime = this.audioOffset;
+    this._simWallStart = Date.now() - (this.simTime * 1000);
+    var logCount = 0;
+    (function tick() {
+      if (!self.playing) return;
+      self.simTime = (Date.now() - self._simWallStart) / 1000;
+      if (logCount++ < 5) console.log('[oce] simClock tick: t=' + self.simTime.toFixed(1) + ', renderedUpTo=' + self.renderedUpTo);
+      self._onAudioTimeUpdate();
+      if (self.simTime - self.audioOffset >= self.totalDuration) {
+        if (self.looping) {
+          self.simTime = self.audioOffset;
+          self._simWallStart = Date.now() - (self.audioOffset * 1000);
+          self.chat.innerHTML = '';
+          self.renderedUpTo = -1;
+        } else {
+          self.pause();
+          self.statusLabel.textContent = 'Done';
+          return;
+        }
+      }
+      requestAnimationFrame(tick);
+    })();
+  };
+
+  // ── Play / Pause ──
+  Player.prototype.play = function() {
+    if (this.playing) return;
+    this.playing = true;
+    this.playBtn.innerHTML = I.pause;
+    this.statusLabel.textContent = 'Playing';
+    this.statusDot.className = 'oce-sdot rec';
+
+    if (this.audioDriven) {
+      console.log('[oce] play: audioDriven=true, audioLoaded=' + this.audioLoaded + ', syncCues=' + (this.syncCues ? this.syncCues.length : 0));
+      if (this.audioLoaded) {
+        // If audio is before session start, seek to offset
+        if (this.audioEl.currentTime < this.audioOffset) {
+          console.log('[oce] seeking to offset ' + this.audioOffset + ' (was ' + this.audioEl.currentTime + ')');
+          this.audioEl.currentTime = this.audioOffset;
+        }
+        var p = this.audioEl.play();
+        if (p && p.catch) p.catch(function(e) { console.error('[oce] play() rejected:', e); });
+      } else {
+        console.log('[oce] starting sim clock, totalDuration=' + this.totalDuration);
+        this._startSimClock();
+      }
+    } else {
+      // Non-audio mode: animated playback
+      this.chat.innerHTML = '';
+      this.renderedUpTo = -1;
+      this.startWall = Date.now();
+      this._updateElapsed();
+      this._runAnimated();
+    }
+  };
+
+  Player.prototype.pause = function() {
+    this.playing = false;
+    this.playBtn.innerHTML = I.play;
+    this.statusLabel.textContent = 'Paused';
+    this.statusDot.className = 'oce-sdot';
+
+    if (this.audioDriven && this.audioEl) {
+      this.audioEl.pause();
+    }
+  };
+
+  Player.prototype.stop = function() {
+    this.pause();
+    if (this.audioDriven && this.audioEl) {
+      this.audioEl.currentTime = this.audioOffset;
+    }
+    this.simTime = this.audioOffset;
+    this.chat.innerHTML = '';
+    this.renderedUpTo = -1;
+    this.statusLabel.textContent = 'Ready';
+  };
+
+  // ── Non-audio animated playback (original mode) ──
+  Player.prototype._updateElapsed = function() {
+    var self = this;
+    (function tick() {
+      if (!self.playing) return;
+      self.elapsedEl.textContent = fmtSec((Date.now() - self.startWall) / 1000);
+      requestAnimationFrame(tick);
+    })();
+  };
+
+  Player.prototype._runAnimated = async function() {
+    do {
+      for (var mi = 0; mi < this.messages.length; mi++) {
+        if (!this.playing) return;
+        var msg = this.messages[mi];
+        var el = this._createMsg(msg);
+        this.chat.appendChild(el);
+        this._scroll();
+
+        if (this.config.show_thinking && msg.thinking) {
+          var thEl = this._createThinking();
+          el.insertBefore(thEl, el.querySelector('.oce-content'));
+          var thC = thEl.querySelector('.oce-think-c');
+          await this._streamMd(thC, msg.thinking, this.config.thinking_typing_speed / 10);
+        }
+
+        var cEl = el.querySelector('.oce-content');
+        if (cEl && msg.content) {
+          if (msg.role === 'assistant') {
+            await this._streamMd(cEl, msg.content, this.config.assistant_typing_speed / 20);
+          } else {
+            await this._typeHuman(cEl, msg.content);
+          }
+        }
+
+        if (msg.tool_calls) {
+          for (var ti = 0; ti < msg.tool_calls.length; ti++) {
+            if (!this.playing) return;
+            await this._animateToolCall(el, msg.tool_calls[ti]);
+          }
+        }
+
+        this.renderedUpTo = mi;
+        await this._delay(this.config.message_pause);
+      }
+    } while (this.looping && this.playing);
+
+    this.playing = false;
+    this.playBtn.innerHTML = I.play;
+    this.statusLabel.textContent = 'Done';
+    this.statusDot.className = 'oce-sdot';
+  };
+
+  // ── Animated message creation ──
+  Player.prototype._createMsg = function(msg) {
+    var el = h('div','oce-msg animated ' + msg.role);
+    var role = h('div','oce-role');
+    role.appendChild(h('div','oce-role-icon', msg.role==='user' ? I.user : I.agent));
+    role.appendChild(h('span','oce-role-lbl', msg.role==='user' ? 'You' : 'Agent'));
+    role.appendChild(h('span','oce-role-time', fmtTime(msg.timestamp_ms)));
+    el.appendChild(role);
+    el.appendChild(h('div','oce-content'));
+    return el;
+  };
+
+  Player.prototype._createThinking = function() {
+    var c = h('div','oce-think');
+    c.appendChild(h('div','oce-think-lbl','Thinking'));
+    c.appendChild(h('div','oce-think-c'));
+    return c;
+  };
+
+  Player.prototype._typeHuman = async function(el, text) {
+    var base = 1000 / this.config.user_typing_speed;
+    var cursor = h('span','oce-cursor');
+    el.appendChild(cursor);
+    var words = text.split(/(?=\s)|(?<=\s)/);
+    for (var wi = 0; wi < words.length; wi++) {
+      if (!this.playing) break;
+      var word = words[wi];
+      if (word.trim().length > 0 && Math.random() < 0.15) {
+        await this._delay(base * (8 + Math.random() * 15));
+      }
+      for (var ci = 0; ci < word.length; ci++) {
+        if (!this.playing) break;
+        var ch = word[ci];
+        if (ch === '\n') el.insertBefore(document.createElement('br'), cursor);
+        else el.insertBefore(document.createTextNode(ch), cursor);
+        var d = base;
+        if (ch===' ') d *= 0.5 + Math.random();
+        else if ('.!?'.indexOf(ch) >= 0) d *= 2 + Math.random() * 3;
+        else if (',;:'.indexOf(ch) >= 0) d *= 1.2 + Math.random() * 1.5;
+        else d *= 0.6 + Math.random() * 0.8;
+        this._scroll();
+        await this._delay(d);
+      }
+    }
+    await this._delay(200 + Math.random() * 300);
+    cursor.remove();
+  };
+
+  Player.prototype._streamMd = async function(container, text, speed) {
+    var blocks = parseMdBlocks(text);
+    var lineDelay = 1000 / speed;
+    var caret = h('span','oce-caret');
+    container.appendChild(caret);
+    for (var bi = 0; bi < blocks.length; bi++) {
+      if (!this.playing) break;
+      var block = blocks[bi];
+      var bEl = h('div','mb');
+      container.insertBefore(bEl, caret);
+      var blines = block.raw.split('\n');
+      for (var li = 0; li < blines.length; li++) {
+        if (!this.playing) break;
+        bEl.innerHTML = renderMd(blines.slice(0, li + 1).join('\n'));
+        container.appendChild(caret);
+        this._scroll();
+        await this._delay(lineDelay);
+      }
+      bEl.innerHTML = block.html;
+    }
+    caret.remove();
+  };
+
+  Player.prototype._animateToolCall = async function(parentEl, tc) {
+    await this._delay(this.config.tool_call_pause);
+    var el = h('div','oce-tc animated');
+    var hdr = h('div','oce-tc-h');
+    hdr.appendChild(h('span','oce-tc-chev',I.chev));
+    hdr.appendChild(h('span','oce-tc-icon',I.tool));
+    hdr.appendChild(h('span','oce-tc-name',tc.name));
+    var spinner = h('div','oce-spinner');
+    hdr.appendChild(spinner);
+    var body = h('div','oce-tc-body');
+    el.appendChild(hdr); el.appendChild(body);
+    parentEl.appendChild(el);
+    this._scroll();
+
+    var execTime = tc.duration_ms ? Math.min(tc.duration_ms / this.config.tool_speed, 2000) : 400 + Math.random() * 600;
+    await this._delay(execTime);
+
+    spinner.remove();
+    var parts = [];
+    if (tc.args && tc.args.path) parts.push(tc.args.path);
+    if (tc.args && tc.args.command) { var cmd = tc.args.command; parts.push(cmd.length > 50 ? cmd.substring(0,50)+'...' : cmd); }
+    if (tc.duration_ms) parts.push((tc.duration_ms/1000).toFixed(1)+'s');
+    hdr.appendChild(h('span','oce-tc-stats',parts.join(' · ') || 'done'));
+    var ck = h('span','',I.check); ck.style.color='#22c55e'; ck.style.marginLeft='6px'; ck.style.flexShrink='0';
+    hdr.appendChild(ck);
+    el.classList.add('exp');
+    body.innerHTML = tc.result ? renderMd(tc.result) : '(no output)';
+    hdr.addEventListener('click', function() { el.classList.toggle('exp'); });
+    this._scroll();
+  };
+
+  Player.prototype._scroll = function() {
+    this.chat.scrollTop = this.chat.scrollHeight;
+  };
+
+  Player.prototype._delay = function(ms) {
+    return new Promise(function(resolve) { setTimeout(resolve, ms); });
+  };
+
+  // ── Resolve sync cues: map message IDs to indices ──
+  function resolveCues(cues, messages) {
+    var idMap = {};
+    for (var i = 0; i < messages.length; i++) {
+      idMap[messages[i].id] = i;
+    }
+    return cues.map(function(c) {
+      return {
+        audio_s: c.audio_s,
+        msgIndex: idMap[c.message] != null ? idMap[c.message] : -1,
+        label: c.label || '',
+        scene: !!c.scene,
+      };
+    }).filter(function(c) { return c.msgIndex >= 0; })
+      .sort(function(a, b) { return a.audio_s - b.audio_s; });
+  }
+
+  // ── Public API ──
+  window.OpenCodeEmbed = {
+    mount: function(el, opts) {
+      opts = opts || {};
+      var audioSrc = opts.audio || AUDIO_SRC;
+      var syncData = opts.sync || SYNC;
+      var player = new Player(el, SESSION, META, CONFIG);
+      player.looping = !!opts.loop;
+
+      if (audioSrc && syncData && syncData.length > 0) {
+        player.audioDriven = true;
+        AUDIO_SRC = audioSrc;
+        player.syncCues = resolveCues(syncData, SESSION);
+      }
+
+      player.build();
+
+      if (opts.autoplay !== false && !player.audioDriven) {
+        setTimeout(function() { player.play(); }, 300);
+      }
+
+      return player;
+    }
+  };
+})();
+
+    OpenCodeEmbed.mount(document.getElementById('opencode-embed'), {
+      beginTime: 0,
+      endTime: Infinity,
+      loop: false,
+      autoplay: true,
+    });
+  </script>
+</body>
+</html>

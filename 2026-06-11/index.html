@@ -262,20 +262,53 @@
       <div class="replay-container"><iframe allow="autoplay" src="session-T121510-embed.html" loading="lazy"></iframe></div>
     </div>
 
-    <!-- ===== 3. Merged: 22 tasks + .do revision ===== -->
+    <!-- ===== 3. 22 tasks in HU ===== -->
     <div class="session-block">
-      <h3>3. Data exploration and Stata analysis</h3>
+      <h3>3. O*NET task data exploration</h3>
       <div class="session-meta">
         <span class="badge completed">Completed</span>
-        <span>13:44 CEST · 2 sessions · 105 messages · ~34 min · MiMo V2.5</span>
+        <span>13:44 CEST · 64 messages · 57 tool calls · ~16 min · MiMo V2.5</span>
       </div>
-      <p class="session-desc">Two back-to-back afternoon sessions. <strong>First:</strong> "what 22 tasks are requested in HU?" — explores the star schema, verifies the Hungary/Budapest subset, writes test <code>.do</code> files with rounding tolerance, and creates <code>AGENTS.md</code>. <strong>Second:</strong> "revise <code>noncoding_by_country.do</code>, only keep country-level rows" — demonstrates the <strong>escape–enter loop</strong> when the agent defaults to Python for plotting instead of Stata.</p>
-      <div class="replay-container"><iframe allow="autoplay" src="session-merged-embed.html" loading="lazy"></iframe></div>
+      <p class="session-desc"><strong>Prompt:</strong> "what 22 tasks are requested in HU?" — Agent explored the AEI star-schema across <code>request_geo.csv</code>, <code>task.csv</code>, and <code>geo.csv</code>, found 15 country-level + 7 Budapest-level rows, wrote test <code>.do</code> files with rounding tolerance (France!), and produced <code>AGENTS.md</code>.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T134408-embed.html" loading="lazy"></iframe></div>
     </div>
 
-    <!-- ===== 4. Haiku project structure ===== -->
+    <!-- ===== 4. Stata .do revision ===== -->
     <div class="session-block">
-      <h3>4. Project overview with Claude Haiku</h3>
+      <h3>4. Stata .do file revision</h3>
+      <div class="session-meta">
+        <span class="badge interrupted">Interrupted</span>
+        <span>14:01 CEST · 41 messages · 29 tool calls · ~18 min · MiMo V2.5</span>
+      </div>
+      <p class="session-desc"><strong>Prompt:</strong> "revise <code>noncoding_by_country.do</code> and only keep country-level rows, dropping subregions." Demonstrates the <strong>escape–enter loop</strong> — agent tried Python/matplotlib for the chart before being corrected to Stata.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T140143-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 5. README generation ===== -->
+    <div class="session-block">
+      <h3>5. README generation</h3>
+      <div class="session-meta">
+        <span class="badge interrupted">Interrupted</span>
+        <span>14:22 CEST · 7 messages · ~4 min · MiMo V2.5</span>
+      </div>
+      <p class="session-desc"><strong>Prompt:</strong> "read what we did and create a README document that follows this <a href="https://social-science-data-editors.github.io/template_README/template-README.html" target="_blank" rel="noopener">template</a>." Started in a fresh session to avoid context pollution from the analysis sessions. The write operation failed — verification matters.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T142215-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 6. Mistral project overview ===== -->
+    <div class="session-block">
+      <h3>6. Project overview with Mistral Small</h3>
+      <div class="session-meta">
+        <span class="badge completed">Completed</span>
+        <span>14:46 CEST · 10 messages · ~2 min · Mistral Small</span>
+      </div>
+      <p class="session-desc"><strong>Prompt:</strong> "what does this project do?" — A quick, shallow answer without reading any files. Then: "read the file tree and THEN say something" — correcting the agent to look before speaking. Compared immediately after with Haiku on the same task.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T144653-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 7. Haiku project structure ===== -->
+    <div class="session-block">
+      <h3>7. Project overview with Claude Haiku</h3>
       <div class="session-meta">
         <span class="badge completed">Completed</span>
         <span>14:53 CEST · 11 messages · ~14 min · Claude Haiku</span>
