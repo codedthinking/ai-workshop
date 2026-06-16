@@ -2,593 +2,452 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic AI for Researchers — Workshop</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-<link rel="stylesheet" href="../assets/css/theme-9x.css" id="theme">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session Replays — June 11, 2026</title>
+<meta name="description" content="Interactive replays of live OpenCode coding sessions from the Agentic AI for Researchers workshop, synced to audio narration.">
+<link rel="icon" href="../assets/logos/bead-favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/9x/icon-180.png">
+<meta name="theme-color" content="#1D1D40">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<style>
+  .session-block {
+    margin-bottom: 48px;
+  }
+  .session-block h3 {
+    font-family: var(--ct-font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .session-meta {
+    font-family: var(--ct-font-mono);
+    font-size: 13px;
+    color: var(--x9-text-2);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .session-meta .badge {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 3px 10px;
+    border: 1px solid transparent;
+    border-radius: var(--cut-chip);
+    white-space: nowrap;
+  }
+  .badge.completed { background: rgba(120,205,120,0.10); color: #9FE0A0; border-color: rgba(120,205,120,0.30); }
+  .badge.interrupted { background: rgba(212,151,86,0.12); color: #E3B271; border-color: rgba(212,151,86,0.32); }
+  .session-desc {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--x9-text-2);
+    margin-bottom: 16px;
+  }
+  .session-desc code {
+    font-family: var(--ct-font-mono);
+    font-size: 13px;
+    color: var(--x9-cyan);
+    background: var(--x9-code);
+    border: 1px solid var(--x9-border);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  .replay-container {
+    background: var(--x9-bg-raise);
+    border: 1px solid var(--x9-border);
+    border-radius: var(--cut-card);
+    overflow: hidden;
+  }
+  .replay-container iframe {
+    width: 100%;
+    height: 580px;
+    border: none;
+    display: block;
+  }
+  .kicker { text-transform: none; }
+
+  /* Quote cards */
+  .quote-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .quote-card {
+    position: relative;
+    background: var(--x9-bg-raise);
+    border: 1px solid var(--x9-border);
+    border-left: 3px solid var(--x9-accent);
+    border-radius: var(--cut-card2);
+    padding: 30px 34px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .quote-card blockquote {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--x9-text);
+    margin: 0;
+    flex: 1;
+  }
+  .quote-context {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--x9-text-2);
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--x9-border);
+  }
+  .quote-card.featured {
+    grid-column: 1 / -1;
+    border-left-width: 4px;
+    padding: 36px 40px 32px;
+  }
+  .quote-card.featured blockquote {
+    font-size: 20px;
+  }
+  .quote-card.learner {
+    border-left-color: var(--x9-cyan, #67e8f9);
+  }
+
+  /* Whiteboard */
+  .wb-embed {
+    background: var(--x9-bg-raise);
+    border: 1px solid var(--x9-border);
+    border-radius: var(--cut-card);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .wb-embed iframe {
+    width: 100%;
+    height: 480px;
+    border: none;
+    display: block;
+  }
+
+  /* Key concepts */
+  .tool-section { margin-bottom: 48px; }
+  .tool-section h2 {
+    font-family: var(--ct-font-display);
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .section-intro {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--x9-text-2);
+    margin-bottom: 20px;
+  }
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .tcard {
+    background: var(--x9-bg-raise);
+    border: 1px solid var(--x9-border);
+    border-radius: var(--cut-card);
+    padding: 24px 26px;
+  }
+  .tcard h3 {
+    font-family: var(--ct-font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .tcard p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--x9-text-2);
+  }
+  .tcard-icon {
+    font-size: 22px;
+    color: var(--x9-accent);
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .quote-grid, .tool-grid { grid-template-columns: 1fr; }
+    .quote-card.featured { grid-column: auto; }
+    .wb-embed iframe { height: 360px; }
+  }
+</style>
 </head>
 <body>
 
-<div class="reveal">
-<div class="slides">
-
-  <!-- ============ TITLE ============ -->
-  <section class="title-slide" data-background-color="#1D1D40">
-    <img class="x9-logo" src="../assets/9x/9x-logo.svg" alt="The 9x Academic">
-    <h1>Agentic AI for Researchers</h1>
-    <p class="subtitle">A one-day workshop for economists &amp; social scientists</p>
-    <p class="author">Miklós Koren</p>
-    <p class="date">June 11, 2026</p>
-    <aside class="notes">
-      Welcome. ~25 participants, 9:00–16:10. Three acts: how LLMs work, working with agents, and the reproducibility risk.
-    </aside>
-  </section>
-
-  <!-- ============ THESIS ============ -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">The arc of the day</h2>
-    <p class="kicker"><span class="accent">three claims</span></p>
-  </section>
-
-  <section>
-    <h2>Three claims</h2>
-    <ol>
-      <li><strong>Intelligence is becoming a commodity</strong> — understand the stack, then pick tools instead of brands.</li>
-      <li><strong>Agents work only on top of good structure</strong> — Day-1 practices are the prerequisite.</li>
-      <li><strong>Agents create a new reproducibility risk</strong> — pin models, save prompts, and review carefully.</li>
-    </ol>
-  </section>
-
-  <!-- ================================================================== -->
-  <!-- ACT 1: How LLMs actually work                                      -->
-  <!-- ================================================================== -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Act 1</h2>
-    <p class="kicker"><span class="accent">01</span> · How LLMs actually work</p>
-  </section>
-
-  <!-- --- Everything is a chat completion --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Everything is a chat completion</h2>
-    <p class="kicker"><span class="accent">01a</span> · The technical core without the hype</p>
-  </section>
-
-  <section>
-    <h2>A model is a next-token predictor</h2>
-    <figure>
-      <img src="../assets/9x/diagrams/transformer-next-token.svg" alt="Transformer architecture and next-token prediction" style="max-height: 520px;">
-      <figcaption>Decoder-only transformer: embeddings → attention → softmax → next token</figcaption>
-    </figure>
-  </section>
-
-  <section>
-    <h2>Text enters the model as tokens</h2>
-    <ul>
-      <li>The model never sees raw text — only <strong>tokens</strong></li>
-      <li>A token is roughly three-quarters of a word: "economics" → <code>["econ", "omics"]</code></li>
-      <li>The vocabulary is fixed and learned from data</li>
-      <li>Each token is an integer: <code>"econ" → 42317</code>, <code>"omics" → 7891</code></li>
-    </ul>
-    <p style="margin-top: 1em;"><em>Code, math, and prose all enter the model in these pieces.</em></p>
-    <aside class="notes">
-      This is why pricing is per token, not per word. Also why models struggle with character-level tasks like counting letters — they don't see individual characters.
-    </aside>
-  </section>
-
-  <section>
-    <h2>Tokens become vectors</h2>
-    <ul>
-      <li>Each token is mapped to a vector in $\mathbb{R}^d$ (typically $d = 4096$)</li>
-      <li>Similar meanings → nearby vectors (cosine similarity)</li>
-      <li>"king" − "man" + "woman" ≈ "queen" — linear algebra on meaning</li>
-      <li>The model's "knowledge" lives in these vectors and the matrices that transform them</li>
-    </ul>
-    <p style="margin-top: 1em;">A 70 billion parameter model is just 70 billion numbers defining these transformations.</p>
-    <aside class="notes">
-      Economists already think in vectors — a commodity bundle, a portfolio, a vector of covariates. An embedding is the same idea: each word is a point in high-dimensional space, and the geometry encodes meaning.
-    </aside>
-  </section>
-
-  <section>
-    <h2>Training is fixed cost; inference is marginal cost</h2>
-    <table>
-      <thead>
-        <tr><th>Stage</th><th>What happens</th><th>Cost structure</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Training</strong></td><td>Learn language from trillions of tokens</td><td>Fixed cost: $10M–1B+, paid once</td></tr>
-        <tr><td><strong>Fine-tuning</strong></td><td>Adapt to a domain or task with curated data</td><td>Fixed cost: $100–100K, paid per adaptation</td></tr>
-        <tr><td><strong>Quantization</strong></td><td>Round the vectors to use less memory</td><td>Fixed cost: minutes of compute, trades precision for size</td></tr>
-        <tr><td><strong>Inference</strong></td><td>Generate tokens from a prompt</td><td>Variable cost: pay per token, every call</td></tr>
-      </tbody>
-    </table>
-    <aside class="notes">
-      Economists get this immediately: training is the sunk cost that creates the asset, fine-tuning is customization capex, quantization is compression for deployment, inference is the marginal cost of use. The entire industry trend is: fixed costs rising, variable costs falling fast.
-    </aside>
-  </section>
-
-  <section>
-    <h2>Training is the sunk cost</h2>
-    <ul>
-      <li>Pre-training on internet-scale text: books, code, papers, web</li>
-      <li>Produces general-purpose "foundation" weights</li>
-      <li>GPT-4 class: estimated \$100M+; Llama 3: ~\$30M in compute</li>
-      <li>You never pay this — it's amortized across all users</li>
-    </ul>
-    <p style="margin-top: 1em;"><em>Think of it as R&amp;D capex — you consume the output, not the process.</em></p>
-  </section>
-
-  <section>
-    <h2>Most researchers do not need fine-tuning</h2>
-    <ul>
-      <li><strong>Supervised fine-tuning (SFT):</strong> train on (prompt, ideal response) pairs</li>
-      <li><strong>RLHF / DPO:</strong> align with human preferences — "be helpful, don't be harmful"</li>
-      <li><strong>LoRA:</strong> update only a small adapter (~1–5% of parameters), keep base frozen</li>
-    </ul>
-    <div class="callout tip">
-      <strong>For researchers:</strong> Fine-tuning is rarely worth it. Prompting + skills covers 95% of use cases. Fine-tune only when you have domain-specific data the base model truly lacks.
+  <header class="site-header">
+    <div class="container">
+      <a href="../" class="logo-link" aria-label="the9x.ai home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.44 115.01">
+          <path fill="#e61e25" d="M20.37,61.13v8.77c0,.79.63,1.42,1.42,1.42h7.35c.79,0,1.42-.63,1.42-1.42v-7.35c0-.79-.63-1.42-1.42-1.42,0,0-8.77,0-8.77,0Z"/>
+          <path fill="#9795b5" d="M20.37,40.75H1.42c-.79,0-1.42.63-1.42,1.42v17.54c0,.79.63,1.42,1.42,1.42h18.96v-20.38h-.01Z"/>
+          <path fill="#9795b5" d="M20.37,1.42v39.33h39.33c.79,0,1.42-.63,1.42-1.42V1.42c0-.79-.63-1.42-1.42-1.42H21.79c-.79,0-1.42.63-1.42,1.42Z"/>
+          <g>
+            <path fill="#d4d2e3" d="M41.78,70.23v-3.48h3.64v-6.13h4.5v6.13h4.57v3.48h-4.57v11.37h4.57v3.5h-9.07v-14.87h-3.64Z"/>
+            <path fill="#d4d2e3" d="M58.78,85.1v-24.49h4.5v8.79c.55-.98,1.27-1.75,2.15-2.29s1.98-.81,3.28-.81c2.06,0,3.58.6,4.55,1.8s1.46,2.86,1.46,4.97v12.02h-4.5v-11.71c0-1.08-.23-1.92-.69-2.51s-1.22-.9-2.3-.9c-1.24,0-2.21.41-2.91,1.24s-1.05,1.91-1.05,3.26v10.62h-4.5Z"/>
+            <path fill="#d4d2e3" d="M79.17,75.89c0-1.44.2-2.75.6-3.93.4-1.18.96-2.19,1.68-3.02.72-.84,1.59-1.49,2.61-1.94s2.15-.69,3.39-.69,2.37.22,3.39.67c1.01.45,1.88,1.06,2.6,1.84.72.78,1.27,1.71,1.65,2.79.38,1.08.57,2.24.57,3.5v2.27h-11.81v1.21c0,1.1.36,1.95,1.08,2.56.72.6,1.58.91,2.56.91s1.79-.26,2.41-.77.99-1.24,1.11-2.18h4.5c-.29,2.04-1.15,3.62-2.58,4.75s-3.26,1.7-5.5,1.7c-1.3,0-2.46-.23-3.49-.7s-1.89-1.12-2.6-1.97c-.71-.84-1.25-1.86-1.62-3.04-.37-1.18-.56-2.5-.56-3.94ZM83.85,73.87h7.21v-.65c0-1.01-.34-1.83-1.02-2.46-.68-.63-1.54-.95-2.59-.95s-1.89.32-2.57.95c-.68.63-1.02,1.45-1.02,2.46v.65Z"/>
+            <path fill="#e61e25" d="M98.96,68.68c0-1.12.19-2.2.56-3.24s.93-1.95,1.68-2.74,1.68-1.42,2.8-1.9,2.46-.72,3.99-.72c3.19,0,5.52,1.01,6.97,3.04,1.46,2.03,2.18,5.1,2.18,9.22,0,1.92-.16,3.7-.48,5.33-.32,1.63-.85,3.03-1.58,4.21-.73,1.18-1.69,2.1-2.87,2.76-1.18.66-2.62.99-4.32.99-2.47,0-4.43-.58-5.87-1.73s-2.26-2.79-2.44-4.9h4.57c.12,1.03.51,1.78,1.17,2.25s1.53.7,2.61.7c1.37,0,2.44-.46,3.21-1.37s1.15-2.1,1.15-3.56v-2.69c-.6.76-1.32,1.33-2.18,1.72-.86.38-1.9.58-3.15.58s-2.29-.19-3.28-.58-1.83-.92-2.52-1.62c-.69-.69-1.23-1.53-1.62-2.5-.39-.97-.58-2.06-.58-3.26ZM103.83,69.59c0,1.13.35,1.98,1.05,2.54.7.56,1.74.84,3.11.84s2.43-.28,3.17-.83c.74-.56,1.12-1.41,1.12-2.55v-2.05c0-1.13-.37-2.05-1.12-2.74-.74-.69-1.8-1.04-3.17-1.04s-2.41.34-3.11,1.03c-.7.69-1.05,1.6-1.05,2.75v2.05Z"/>
+            <path fill="#e61e25" d="M119.69,85.1l6.33-9.65-5.82-8.7h4.96l3.39,5.4,3.38-5.4h4.87l-5.77,8.7,6.42,9.65h-4.9l-3.99-6.26-3.92,6.26h-4.94Z"/>
+          </g>
+          <g>
+            <path fill="#d4d2e3" d="M49.41,114.57v-5.19h5.22v5.19h-5.22Z"/>
+            <path fill="#d4d2e3" d="M58.8,109.35c0-1.49.52-2.77,1.55-3.85,1.03-1.08,2.52-1.7,4.46-1.88l5.08-.42v-1.2c0-.96-.26-1.66-.77-2.08s-1.22-.64-2.11-.64-1.66.22-2.23.66-.86,1.08-.86,1.92h-4.5c.02-1.01.24-1.89.65-2.65s.96-1.39,1.63-1.89,1.49-.89,2.43-1.15,1.96-.4,3.06-.4c2.2,0,3.94.53,5.22,1.6s1.92,2.63,1.92,4.69v9h3.09v3.5h-7.08l-.04-2.85h-.16c-.53,1.01-1.23,1.81-2.1,2.4s-2.02.89-3.44.89c-.84,0-1.61-.14-2.31-.42s-1.31-.67-1.84-1.18-.93-1.1-1.22-1.78-.43-1.44-.43-2.29ZM63.47,109.86c0,.55.25.96.76,1.24s1.15.41,1.95.41c1.15,0,2.05-.41,2.72-1.22.66-.81.99-1.8.99-2.95v-.72l-5.4.47c-.67.07-1.01.47-1.02,1.19v1.58Z"/>
+            <path fill="#d4d2e3" d="M79.59,105.5c0-1.51.19-2.87.58-4.07.39-1.2.94-2.22,1.66-3.06.72-.84,1.58-1.48,2.59-1.92s2.14-.67,3.41-.67c.96,0,1.88.13,2.76.38s1.67.65,2.38,1.19,1.28,1.23,1.72,2.07c.44.84.71,1.84.82,3h-4.5c-.12-1.17-.48-1.99-1.08-2.44s-1.37-.69-2.28-.69-1.71.29-2.38.88c-.67.59-1,1.49-1,2.71v5.04c0,1.12.32,2.01.95,2.65.63.64,1.46.96,2.47.96s1.81-.24,2.39-.72.94-1.33,1.08-2.55h4.5c-.12,1.15-.39,2.14-.83,2.98-.43.84-1,1.54-1.7,2.1s-1.49.98-2.38,1.27c-.89.28-1.83.42-2.84.42-1.37,0-2.57-.23-3.6-.7s-1.9-1.12-2.61-1.95c-.71-.83-1.24-1.83-1.59-2.99-.35-1.16-.53-2.45-.53-3.87Z"/>
+          </g>
+        </svg>
+      </a>
+      <nav>
+        <a href="../">Schedule</a>
+        <a href="../prerequisites">Prerequisites</a>
+        <a href="../tools">Tools</a>
+        <a href="../performance">Performance</a>
+        <a href="../links">Links</a>
+        <a href="./" class="active">Recap</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section>
-    <h2>Quantization makes local models practical</h2>
-    <ul>
-      <li>Each of those 70 billion numbers is stored as a decimal (32 bits → 8 significant digits)</li>
-      <li>Quantization rounds them to fewer digits (4 bits → ~1 significant digit)</li>
-      <li>Memory drops 8×: a 70B model goes from ~280 GB to ~35 GB</li>
-      <li>Quality loss is surprisingly small — like rounding coefficients to 2 decimal places</li>
-    </ul>
-    <p style="margin-top: 1em;"><em>This is what makes it possible to run serious models on a laptop.</em></p>
-    <aside class="notes">
-      Economists can think of this as discretizing a continuous variable. You lose some precision, but the qualitative results are the same. The reason it works: the model is massively over-parameterized, so most of the precision is redundant.
-    </aside>
-  </section>
+  <main>
 
-  <section>
-    <h2>Inference is the marginal cost of intelligence</h2>
-    <ul>
-      <li>Every API call = forward pass through the network = tokens in, tokens out</li>
-      <li>Priced per million tokens: \$0.10 (cheap) to \$15 (frontier)</li>
-      <li>Cost is falling ~10× per year at the same quality level</li>
-      <li><strong>Local inference:</strong> variable cost → zero after hardware purchase</li>
-    </ul>
-    <div class="callout info">
-      <strong>The economics:</strong> Cloud API = low fixed cost, positive marginal cost. Local = high fixed cost (hardware), zero marginal cost. Classic make-or-buy.
-    </div>
-  </section>
+<section class="page-hero">
+  <div class="container">
+    <div class="kicker"><span class="p">~</span> june 11, 2026 · budapest</div>
+    <h1>Session replays</h1>
+    <p class="subtitle">Interactive replays of live OpenCode sessions from the workshop, synced to classroom audio. All sessions use the Anthropic Economic Index dataset.</p>
+  </div>
+</section>
 
-  <section>
-    <h2>The model has no memory across sessions</h2>
-    <figure>
-      <img src="../assets/9x/memento-tattoos.jpg" alt="Leonard's tattoos in Memento" style="max-height: 400px;">
-      <figcaption>Like Leonard in <em>Memento</em>: everything you want it to remember, you have to write down. &mdash; Sony Pictures</figcaption>
-    </figure>
-    <aside class="notes">
-      This is the single most important thing to understand about LLMs. They have no persistent memory between sessions. The context window IS their memory. CLAUDE.md, project files, your conversation — everything the model knows is tattooed onto the context window fresh each time.
-    </aside>
-  </section>
+<section class="page-content">
+  <div class="container">
 
-  <section>
-    <h2>Context window = working memory</h2>
-    <ul>
-      <li>The model sees <strong>only</strong> what is inside the context window</li>
-      <li>Everything outside it is <strong>gone</strong> — no persistent memory</li>
-      <li>The full transcript is re-sent on <strong>every</strong> API call</li>
-      <li>Context filling causes failure — the fix is a fresh session, not more prompting</li>
-    </ul>
-    <aside class="notes">
-      Key point: LLMs are stateless. Each call gets the whole conversation. When the context fills up, quality degrades. Starting fresh is often better than adding more instructions.
-    </aside>
-  </section>
-
-  <section>
-    <h2>System, user, assistant</h2>
-    <figure>
-      <img src="../assets/9x/diagrams/chat-roles.svg" alt="Chat roles inside the context window" style="max-height: 520px;">
-      <figcaption>A conversation is a list of role-tagged messages</figcaption>
-    </figure>
-  </section>
-
-  <section>
-    <h2>Attention decides what matters</h2>
-    <ul>
-      <li>Each token attends to <strong>all previous tokens</strong> — decides which ones are relevant</li>
-      <li>Like reading a paper: you don't weigh every sentence equally, you focus on what matters for the current paragraph</li>
-      <li>Multiple attention heads in parallel — different heads notice different patterns</li>
-      <li>This is why <strong>position in context matters</strong> — instructions at the top get more attention</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Tool use is just structured output in a loop</h2>
-    <div class="columns">
-      <div class="col">
-        <h3>Without tools</h3>
-        <pre><code class="language-json" data-trim>
-{
-  "role": "assistant",
-  "content": "The answer is 42."
-}
-        </code></pre>
+    <!-- ===== 0. Slide deck ===== -->
+    <div class="session-block">
+      <h3>0. Slide deck with narration</h3>
+      <div class="session-meta">
+        <span class="badge completed">Completed</span>
+        <span>09:44 CEST · 48 slides · ~85 min · Morning session</span>
       </div>
-      <div class="col">
-        <h3>With tools</h3>
-        <pre><code class="language-json" data-trim>
-{
-  "role": "assistant",
-  "tool_calls": [{
-    "name": "read_file",
-    "arguments": {"path": "data.csv"}
-  }]
-}
-        </code></pre>
+      <p class="session-desc">The full slide presentation covering three acts: how LLMs work (tokens, training, inference, memory), the ecosystem (stack layers, models, harnesses, skills), and the reproducibility argument. Audio synced to slide transitions.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="slides-replay-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 1. Download & explore AEI ===== -->
+    <div class="session-block">
+      <h3>1. Download and explore the AEI dataset</h3>
+      <div class="session-meta">
+        <span class="badge completed">Completed</span>
+        <span>11:42 CEST · 123 messages · 93 tool calls · ~55 min · MiMo V2.5</span>
+      </div>
+      <p class="session-desc">The main demo session, running throughout the morning. Downloads the AEI zip, unpacks it into a star schema, reads the README, explores <code>request_geo.csv</code>, classifies IWA tasks as coding/noncoding using the BTOS crosswalk, creates a <code>stata-aei</code> skill, computes noncoding shares by country, and plots the results. Also demonstrates the <strong>"data/raw is immutable"</strong> lesson and skill updating.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T114241-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 2. Skill before/after ===== -->
+    <div class="session-block">
+      <h3>2. Skills: before and after</h3>
+      <div class="session-meta">
+        <span class="badge completed">Completed</span>
+        <span>12:13 CEST · 2 sessions · 30 sec total · MiMo V2.5</span>
+      </div>
+      <p class="session-desc">Same prompt — <em>"how should I go about analyzing anthropic data with Stata?"</em> — asked twice. <strong>Without the skill:</strong> a generic Stata workflow, no project context. <strong>With the skill:</strong> the agent loads <code>stata-aei</code> and gives a project-specific answer referencing the star schema, <code>dim/</code> and <code>fct/</code> tables, and the coding classification.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T121325-embed.html" loading="lazy"></iframe></div>
+      <p class="session-desc" style="margin-top: 16px;"><strong>With skill loaded:</strong></p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T121510-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 3. Merged: 22 tasks + .do revision ===== -->
+    <div class="session-block">
+      <h3>3. Data exploration and Stata analysis</h3>
+      <div class="session-meta">
+        <span class="badge completed">Completed</span>
+        <span>13:44 CEST · 2 sessions · 105 messages · ~34 min · MiMo V2.5</span>
+      </div>
+      <p class="session-desc">Two back-to-back afternoon sessions. <strong>First:</strong> "what 22 tasks are requested in HU?" — explores the star schema, verifies the Hungary/Budapest subset, writes test <code>.do</code> files with rounding tolerance, and creates <code>AGENTS.md</code>. <strong>Second:</strong> "revise <code>noncoding_by_country.do</code>, only keep country-level rows" — demonstrates the <strong>escape–enter loop</strong> when the agent defaults to Python for plotting instead of Stata.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-merged-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+    <!-- ===== 4. Haiku project structure ===== -->
+    <div class="session-block">
+      <h3>4. Project overview with Claude Haiku</h3>
+      <div class="session-meta">
+        <span class="badge completed">Completed</span>
+        <span>14:53 CEST · 11 messages · ~14 min · Claude Haiku</span>
+      </div>
+      <p class="session-desc"><strong>Prompt:</strong> "summarize the project structure in 200 words." Using Haiku to show that a cheap, fast model can explore a codebase effectively. Also includes a Hungarian-language summary and repeated prompts to test session continuity.</p>
+      <div class="replay-container"><iframe allow="autoplay" src="session-T145328-embed.html" loading="lazy"></iframe></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ RECAP ============ -->
+<section class="page-content" style="padding-top: 0;">
+  <div class="container">
+
+    <!-- ============ QUOTES FROM THE DAY ============ -->
+    <div class="tool-section">
+      <h2>Quotes from the day</h2>
+      <p class="section-intro">The most memorable lines from the instructor.</p>
+
+      <div class="quote-grid">
+
+        <div class="quote-card featured">
+          <blockquote>"I'm waiting for fall 2026, the period of AI hangover. All the scientists who started using agentic tools in December during winter break, and they're going to revise papers for journals nine months later, and they realize they don't understand what their machine did. And then they will panic."</blockquote>
+          <div class="quote-context">On the reproducibility risk</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"Leonard has a memory span of five minutes. And that, I think, is a very apt analogy for LLMs."</blockquote>
+          <div class="quote-context">The Memento analogy — on context windows</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"There's really no electricity contract that says: sign up with MVM and our electrons are really, really smart."</blockquote>
+          <div class="quote-context">On intelligence as a commodity</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"They're not intelligent. They don't understand anything. They just generate next tokens."</blockquote>
+          <div class="quote-context">On what LLMs actually are</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"This is stuff that the agent tattoos on their body."</blockquote>
+          <div class="quote-context">On AGENTS.md — project config that persists across sessions</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"The internet on average would use Python to plot stuff. Stick to Stata. Write a code/do file."</blockquote>
+          <div class="quote-context">On escaping when the agent defaults to the wrong tool</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"Hitting escape or clicking the stop button is quite important because you want to check what it's doing and correct the course if it's going wrong."</blockquote>
+          <div class="quote-context">On the escape–enter loop</div>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>"They didn't see the actual answer. They actually read the wrong answer, confidently reported it back to us, and our proxy turned it back into the right answer."</blockquote>
+          <div class="quote-context">On the PII filtering proxy</div>
+        </div>
+
       </div>
     </div>
-    <p>The harness runs the tool, appends the result, and calls the model again.</p>
-  </section>
 
-  <!-- ================================================================== -->
-  <!-- ACT 2: The ecosystem — and working with agents                     -->
-  <!-- ================================================================== -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Act 2</h2>
-    <p class="kicker"><span class="accent">02</span> · The ecosystem — and working with agents</p>
-  </section>
+    <!-- ============ LEARNER FEEDBACK ============ -->
+    <div class="tool-section">
+      <h2>What participants said</h2>
+      <p class="section-intro">Selected feedback from the end-of-day survey and post-workshop emails.</p>
 
-  <!-- --- The ecosystem and unbundling --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">The ecosystem — and the unbundling argument</h2>
-    <p class="kicker"><span class="accent">02a</span> · Four separable layers</p>
-  </section>
+      <div class="quote-grid">
 
-  <section>
-    <h2>The stack has five separable layers</h2>
-    <table>
-      <thead>
-        <tr><th>Layer</th><th>What it is</th><th>Examples</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Model</strong></td><td>The neural network</td><td>GPT, Claude, Gemma, Qwen, DeepSeek</td></tr>
-        <tr><td><strong>Harness</strong></td><td>The program that runs the loop</td><td>OpenCode, Claude Code, Cursor, Zed</td></tr>
-        <tr><td><strong>Tool</strong></td><td>Built-in actions the harness provides</td><td>Read, Write, Bash, WebFetch</td></tr>
-        <tr><td><strong>MCP</strong></td><td>External tools plugged in at runtime</td><td>Filesystem, web search, database</td></tr>
-        <tr><td><strong>Skill</strong></td><td>Plain-text instructions in your repo</td><td>CLAUDE.md, domain skills</td></tr>
-      </tbody>
-    </table>
-    <aside class="notes">
-      These five layers are separable. You can swap any one without touching the others. This is the unbundling. Tools are what the harness ships with — Read, Write, Bash, WebFetch. MCP extends that with external servers you plug in.
-    </aside>
-  </section>
+        <div class="quote-card learner featured">
+          <blockquote>"The whole OpenCode infrastructure and the possibilities it holds. It will be a big step forward compared to the GPT-based code I've been using."</blockquote>
+          <div class="quote-context">On switching from ChatGPT to agentic tools</div>
+        </div>
 
-  <section>
-    <h2>Choosing a model: cost vs capability</h2>
-    <figure>
-      <img src="../assets/9x/diagrams/tradeoff-scatter.svg" alt="Scatter plot: ECI score vs cost per million tokens" style="max-height: 520px;">
-      <figcaption>OpenRouter Intelligence Index vs input cost. Open-weight models (cyan) compete at lower prices.</figcaption>
-    </figure>
-    <aside class="notes">
-      Practical guidance: use a cheap/fast model (Haiku, Gemini Flash, Qwen 14B) for boilerplate, reformatting, simple edits. Use a frontier model (Opus, GPT-5) for novel code generation, complex reasoning. The cost difference is 100×, so this matters at scale. Circle size = usage on OpenRouter.
-    </aside>
-  </section>
+        <div class="quote-card learner">
+          <blockquote>"Now at least I have some idea of what I don't know about modern AI tools."</blockquote>
+          <div class="quote-context">On awareness gaps</div>
+        </div>
 
-  <section>
-    <h2>Match the model to the task</h2>
-    <table>
-      <thead>
-        <tr><th>Task</th><th>Needs</th><th>Model tier</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Reformat a table</td><td>Speed, low cost</td><td>Small</td></tr>
-        <tr><td>Write a Stata .do file</td><td>Accuracy, domain knowledge</td><td>Mid</td></tr>
-        <tr><td>Design a research pipeline</td><td>Reasoning, large context</td><td>Frontier</td></tr>
-        <tr><td>Review a 50-page paper</td><td>Long context window</td><td>Frontier, 128K+</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top: 1em;"><em>Using Opus to reformat a CSV is like hiring a professor to do data entry.</em></p>
-  </section>
+        <div class="quote-card learner">
+          <blockquote>"I understand better what an Agent is and what it's for. For quick analysis or a pilot program, I'd use it more boldly now. I can see I could use AI for the crappier parts of research. Especially short writing, READMEs."</blockquote>
+          <div class="quote-context">On practical applications</div>
+        </div>
 
-  <section>
-    <h2>Intelligence is commoditizing fast</h2>
-    <figure>
-      <img src="../assets/9x/diagrams/openrouter-token-share.svg" alt="Weekly token consumption on OpenRouter by model origin" style="max-height: 520px;">
-      <figcaption>Chinese open-weight models now drive the majority of usage on OpenRouter</figcaption>
-    </figure>
-  </section>
+        <div class="quote-card learner">
+          <blockquote>"The fewer vs. more skills distinctions were great, and that cheap models can work just as well. But in practice I saw that there are dangers in letting the agent loose on your machine."</blockquote>
+          <div class="quote-context">On model selection and safety</div>
+        </div>
 
-  <section>
-    <h2>The open–closed gap stays small</h2>
-    <figure>
-      <img src="../assets/9x/diagrams/open-closed-eci-gap.svg" alt="Epoch Capabilities Index gap" style="max-height: 520px;">
-      <figcaption>Epoch AI Capabilities Index: open-weight models trail by ~4 months</figcaption>
-    </figure>
-  </section>
+        <div class="quote-card learner">
+          <blockquote>"I just had it generate data citations for an article that uses a ton of databases — it neatly looked up the BibTeX citation on every website and wrote the LaTeX code. Saved me a huge amount of time."</blockquote>
+          <div class="quote-context">Post-workshop email — first real use case</div>
+        </div>
 
-  <section>
-    <h2>Consumer hardware already runs useful local models</h2>
-    <table>
-      <thead>
-        <tr><th>Hardware</th><th>VRAM / RAM</th><th>What fits</th><th>Approximate cost</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>MacBook Air M3</td><td>24 GB unified</td><td>14B models (Qwen 2.5, Llama 3)</td><td>~&#36;1,800</td></tr>
-        <tr><td>Mac Studio M4 Ultra</td><td>192 GB unified</td><td>70B+ models at full quality</td><td>~&#36;6,000</td></tr>
-        <tr><td>Gaming PC + RTX 4090</td><td>24 GB VRAM</td><td>14B models, 70B quantized (slow)</td><td>~&#36;2,500</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top: 0.5em;">Tools: <strong>Ollama</strong>, <strong>llama.cpp</strong>, <strong>LM Studio</strong> — all free.</p>
-    <aside class="notes">
-      Key point: a 14B quantized model on a laptop is good enough for coding assistance, writing feedback, and data wrangling. You don't need frontier models for every task. The fixed cost is the hardware you already own; the variable cost is electricity.
-    </aside>
-  </section>
+        <div class="quote-card learner">
+          <blockquote>"I just had to make a README file for a paper's code. It's pretty tedious work, so on Miklos's suggestion I went at it with OpenCode. The result was far from perfect, but it still saved me a lot of time and hassle."</blockquote>
+          <div class="quote-context">Post-workshop email — README generation in practice</div>
+        </div>
 
-  <section>
-    <h2>Cloud vs local is a make-or-buy decision</h2>
-    <div class="columns">
-      <div class="col">
-        <h3>Cloud API</h3>
-        <ul>
-          <li>Low fixed cost (subscription or free tier)</li>
-          <li>Positive marginal cost per token</li>
-          <li>Always frontier quality</li>
-          <li>Data leaves your machine</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h3>Local inference</h3>
-        <ul>
-          <li>High fixed cost (hardware)</li>
-          <li>Zero marginal cost</li>
-          <li>Slightly lower quality (quantized)</li>
-          <li>Data never leaves your machine</li>
-        </ul>
       </div>
     </div>
-    <p style="margin-top: 1em;"><em>For restricted data (DUA, IRB), local may be the only compliant option.</em></p>
-  </section>
 
-  <section>
-    <h2>The prescription</h2>
-    <ul>
-      <li><strong>Pick one harness</strong> you are comfortable in</li>
-      <li><strong>Swap models freely</strong> for each task</li>
-      <li><strong>Keep good structure</strong> in your work</li>
-      <li><strong>Your own skills matter more than ever</strong></li>
-    </ul>
-    <p style="margin-top: 1em;"><em>Lock-in is the risk; model loyalty is a mistake.</em></p>
-  </section>
+    <!-- ============ KEY CONCEPTS ============ -->
+    <div class="tool-section">
+      <h2>Key concepts from the day</h2>
+      <p class="section-intro">The ideas participants found most useful, distilled from the talk and the live demos.</p>
 
-  <section>
-    <h2>Harness, tools, and the model</h2>
-    <figure>
-      <img src="../assets/9x/diagrams/harness-tools-llm.svg" alt="Harness and tools run locally; the LLM is remote" style="max-height: 520px;">
-      <figcaption>Harness + tools run on your machine; the LLM lives behind an API</figcaption>
-    </figure>
-  </section>
-
-  <!-- --- The escape–enter loop in practice --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">The escape–enter loop in practice</h2>
-    <p class="kicker"><span class="accent">02b</span> · Live demo</p>
-  </section>
-
-  <section>
-    <h2>Use natural language in, structured output out</h2>
-    <div class="columns">
-      <div class="col">
-        <h3>Natural language in</h3>
-        <p>You describe what you want in plain English. The agent interprets, plans, and acts.</p>
-      </div>
-      <div class="col">
-        <h3>Structured output out</h3>
-        <p>Diffs, file edits, shell commands — all reviewable. <strong>You review diffs, not code.</strong></p>
+      <div class="tool-grid">
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-movie"></i></div>
+          <h3>The Memento analogy</h3>
+          <p>LLMs have no memory across sessions. Like Leonard in <em>Memento</em>, everything they need to know must be "tattooed" into the context window. When context fills up, the model confidently contradicts what you discussed 30 minutes ago. The fix: kill the old session, start a new one.</p>
+        </div>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-bolt"></i></div>
+          <h3>Intelligence as electricity</h3>
+          <p>Training is a sunk cost (billions). Inference is the marginal cost (cents per million tokens, falling 10x per year). The competitive fringe is real — open-weight models trail by ~4 months. Pick models by task, not by brand. Lock-in is the risk.</p>
+        </div>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-arrows-left-right"></i></div>
+          <h3>The escape–enter loop</h3>
+          <p>The core workflow: give an instruction, watch the agent work, hit <strong>Escape</strong> when it goes wrong, course-correct, hit <strong>Enter</strong> again. Never let a toxic context linger — start fresh. Never let the same session verify its own work.</p>
+        </div>
+        <div class="tcard">
+          <div class="tcard-icon"><i class="ti ti-layers-subtract"></i></div>
+          <h3>Unbundle the stack</h3>
+          <p>Five separable layers: model, harness, tools, MCP, skills. You can swap any one without touching the others. The harness is a commodity. The model is a commodity. <strong>Your structure and your skills are the durable investment.</strong></p>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section>
-    <h2>Hit Escape when the session turns toxic</h2>
-    <ul>
-      <li>The agent is going in the wrong direction</li>
-      <li>It's making changes you didn't ask for</li>
-      <li>Context is getting polluted with errors</li>
-      <li><strong>"Toxic context"</strong> — when a mistake poisons all subsequent reasoning</li>
-    </ul>
-    <p style="margin-top: 1em;">The fix: <strong>start a fresh session</strong>, not more prompting.</p>
-  </section>
-
-  <section>
-    <h2>CLAUDE.md is project config for agents</h2>
-    <ul>
-      <li><strong>What goes in:</strong> data assumptions, naming rules, niche tools, what the agent should never do</li>
-      <li><strong>What does NOT belong:</strong> everything else — irrelevant instructions actively hurt</li>
-      <li>Start with 3–5 rules. Add one each time you correct the agent twice.</li>
-    </ul>
-    <div class="callout tip">
-      <strong>Tip:</strong> If you can't write it in one sentence, you don't understand it yet.
-    </div>
-  </section>
-
-  <!-- --- Skills and project configuration --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Skills and project configuration</h2>
-    <p class="kicker"><span class="accent">02c</span> · Two kinds of plain text that make agents smarter</p>
-  </section>
-
-  <section>
-    <h2>Skills are reusable task templates</h2>
-    <ul>
-      <li>A skill = a markdown file with a fixed output location, commit convention, and stopping rules</li>
-      <li>Domain-specific, not generic</li>
-      <li>The agent reads the skill and follows it like a recipe</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>One giant instruction file makes the agent worse</h2>
-    <div class="columns">
-      <div class="col">
-        <h3>❌ One giant file</h3>
-        <ul>
-          <li>Context window fills up</li>
-          <li>Conflicting instructions</li>
-          <li>Agent ignores most of it</li>
-          <li>Actively degrades performance</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h3>✅ Separated skills</h3>
-        <ul>
-          <li>Each skill is focused</li>
-          <li>Agent loads only what's needed</li>
-          <li>Easy to test and iterate</li>
-          <li>Reusable across projects</li>
-        </ul>
+    <!-- ============ WHITEBOARD ============ -->
+    <div class="tool-section">
+      <h2>Whiteboard</h2>
+      <p class="section-intro">What participants and the instructor drew during the day.</p>
+      <div class="wb-embed">
+        <iframe src="https://www.tldraw.com/f/m8APcqZOFEC-IkLEW0KJb?d=v268.-250.1128.876.gYZi6UaKFHygkVCPrhcYc" loading="lazy" allow="clipboard-read; clipboard-write"></iframe>
       </div>
     </div>
-  </section>
 
-  <!-- --- Opinionated takes --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Strong opinions, loosely held</h2>
-    <p class="kicker"><span class="accent">02d</span> · How to actually choose your tools</p>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>You rarely need the frontier model</h2>
-    <ul>
-      <li>The frontier is 100× more expensive than mid-tier — for ~10% better reasoning</li>
-      <li>A fast, cheap, mid-capability model lets you <strong>iterate faster</strong></li>
-      <li>Your thinking time is now the bottleneck, not the model's — AI executes, you direct</li>
-      <li>Waiting 60 seconds for a frontier model to think wastes <strong>your</strong> attention</li>
-    </ul>
-    <div class="callout info">
-      <strong>The real tradeoff:</strong> your supervision time × model cost × iteration speed. Optimize for the product, not any one factor.
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="../" class="logo-link" aria-label="the9x.ai">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.44 115.01">
+          <path fill="#e61e25" d="M20.37,61.13v8.77c0,.79.63,1.42,1.42,1.42h7.35c.79,0,1.42-.63,1.42-1.42v-7.35c0-.79-.63-1.42-1.42-1.42,0,0-8.77,0-8.77,0Z"/>
+          <path fill="#9795b5" d="M20.37,40.75H1.42c-.79,0-1.42.63-1.42,1.42v17.54c0,.79.63,1.42,1.42,1.42h18.96v-20.38h-.01Z"/>
+          <path fill="#9795b5" d="M20.37,1.42v39.33h39.33c.79,0,1.42-.63,1.42-1.42V1.42c0-.79-.63-1.42-1.42-1.42H21.79c-.79,0-1.42.63-1.42,1.42Z"/>
+          <g>
+            <path fill="#d4d2e3" d="M41.78,70.23v-3.48h3.64v-6.13h4.5v6.13h4.57v3.48h-4.57v11.37h4.57v3.5h-9.07v-14.87h-3.64Z"/>
+            <path fill="#d4d2e3" d="M58.78,85.1v-24.49h4.5v8.79c.55-.98,1.27-1.75,2.15-2.29s1.98-.81,3.28-.81c2.06,0,3.58.6,4.55,1.8s1.46,2.86,1.46,4.97v12.02h-4.5v-11.71c0-1.08-.23-1.92-.69-2.51s-1.22-.9-2.3-.9c-1.24,0-2.21.41-2.91,1.24s-1.05,1.91-1.05,3.26v10.62h-4.5Z"/>
+            <path fill="#d4d2e3" d="M79.17,75.89c0-1.44.2-2.75.6-3.93.4-1.18.96-2.19,1.68-3.02.72-.84,1.59-1.49,2.61-1.94s2.15-.69,3.39-.69,2.37.22,3.39.67c1.01.45,1.88,1.06,2.6,1.84.72.78,1.27,1.71,1.65,2.79.38,1.08.57,2.24.57,3.5v2.27h-11.81v1.21c0,1.1.36,1.95,1.08,2.56.72.6,1.58.91,2.56.91s1.79-.26,2.41-.77.99-1.24,1.11-2.18h4.5c-.29,2.04-1.15,3.62-2.58,4.75s-3.26,1.7-5.5,1.7c-1.3,0-2.46-.23-3.49-.7s-1.89-1.12-2.6-1.97c-.71-.84-1.25-1.86-1.62-3.04-.37-1.18-.56-2.5-.56-3.94ZM83.85,73.87h7.21v-.65c0-1.01-.34-1.83-1.02-2.46-.68-.63-1.54-.95-2.59-.95s-1.89.32-2.57.95c-.68.63-1.02,1.45-1.02,2.46v.65Z"/>
+            <path fill="#e61e25" d="M98.96,68.68c0-1.12.19-2.2.56-3.24s.93-1.95,1.68-2.74,1.68-1.42,2.8-1.9,2.46-.72,3.99-.72c3.19,0,5.52,1.01,6.97,3.04,1.46,2.03,2.18,5.1,2.18,9.22,0,1.92-.16,3.7-.48,5.33-.32,1.63-.85,3.03-1.58,4.21-.73,1.18-1.69,2.1-2.87,2.76-1.18.66-2.62.99-4.32.99-2.47,0-4.43-.58-5.87-1.73s-2.26-2.79-2.44-4.9h4.57c.12,1.03.51,1.78,1.17,2.25s1.53.7,2.61.7c1.37,0,2.44-.46,3.21-1.37s1.15-2.1,1.15-3.56v-2.69c-.6.76-1.32,1.33-2.18,1.72-.86.38-1.9.58-3.15.58s-2.29-.19-3.28-.58-1.83-.92-2.52-1.62c-.69-.69-1.23-1.53-1.62-2.5-.39-.97-.58-2.06-.58-3.26ZM103.83,69.59c0,1.13.35,1.98,1.05,2.54.7.56,1.74.84,3.11.84s2.43-.28,3.17-.83c.74-.56,1.12-1.41,1.12-2.55v-2.05c0-1.13-.37-2.05-1.12-2.74-.74-.69-1.8-1.04-3.17-1.04s-2.41.34-3.11,1.03c-.7.69-1.05,1.6-1.05,2.75v2.05Z"/>
+            <path fill="#e61e25" d="M119.69,85.1l6.33-9.65-5.82-8.7h4.96l3.39,5.4,3.38-5.4h4.87l-5.77,8.7,6.42,9.65h-4.9l-3.99-6.26-3.92,6.26h-4.94Z"/>
+          </g>
+          <g>
+            <path fill="#d4d2e3" d="M49.41,114.57v-5.19h5.22v5.19h-5.22Z"/>
+            <path fill="#d4d2e3" d="M58.8,109.35c0-1.49.52-2.77,1.55-3.85,1.03-1.08,2.52-1.7,4.46-1.88l5.08-.42v-1.2c0-.96-.26-1.66-.77-2.08s-1.22-.64-2.11-.64-1.66.22-2.23.66-.86,1.08-.86,1.92h-4.5c.02-1.01.24-1.89.65-2.65s.96-1.39,1.63-1.89,1.49-.89,2.43-1.15,1.96-.4,3.06-.4c2.2,0,3.94.53,5.22,1.6s1.92,2.63,1.92,4.69v9h3.09v3.5h-7.08l-.04-2.85h-.16c-.53,1.01-1.23,1.81-2.1,2.4s-2.02.89-3.44.89c-.84,0-1.61-.14-2.31-.42s-1.31-.67-1.84-1.18-.93-1.1-1.22-1.78-.43-1.44-.43-2.29ZM63.47,109.86c0,.55.25.96.76,1.24s1.15.41,1.95.41c1.15,0,2.05-.41,2.72-1.22.66-.81.99-1.8.99-2.95v-.72l-5.4.47c-.67.07-1.01.47-1.02,1.19v1.58Z"/>
+            <path fill="#d4d2e3" d="M79.59,105.5c0-1.51.19-2.87.58-4.07.39-1.2.94-2.22,1.66-3.06.72-.84,1.58-1.48,2.59-1.92s2.14-.67,3.41-.67c.96,0,1.88.13,2.76.38s1.67.65,2.38,1.19,1.28,1.23,1.72,2.07c.44.84.71,1.84.82,3h-4.5c-.12-1.17-.48-1.99-1.08-2.44s-1.37-.69-2.28-.69-1.71.29-2.38.88c-.67.59-1,1.49-1,2.71v5.04c0,1.12.32,2.01.95,2.65.63.64,1.46.96,2.47.96s1.81-.24,2.39-.72.94-1.33,1.08-2.55h4.5c-.12,1.15-.39,2.14-.83,2.98-.43.84-1,1.54-1.7,2.1s-1.49.98-2.38,1.27c-.89.28-1.83.42-2.84.42-1.37,0-2.57-.23-3.6-.7s-1.9-1.12-2.61-1.95c-.71-.83-1.24-1.83-1.59-2.99-.35-1.16-.53-2.45-.53-3.87Z"/>
+          </g>
+        </svg>
+      </a>
+      <span class="copyright">A <a href="https://the9x.ac">The 9x Academic</a> product by <a href="https://codedthinking.com">Coded Thinking</a> · &copy; 2025–2026</span>
     </div>
-  </section>
+  </footer>
 
-  <section>
-    <h2>Monthly subscriptions are not the long-run equilibrium</h2>
-    <ul>
-      <li>Intelligence will be priced by the million token — like electricity, like bandwidth</li>
-      <li>Subscriptions bundle a model, a harness, and a margin — you pay for all three</li>
-      <li>Per-token pricing lets you <strong>swap models freely</strong> and pay only for what you use</li>
-      <li>Pick a harness that lets you choose any model via API</li>
-    </ul>
-    <p style="margin-top: 1em;"><em>Would you sign a contract with one electricity provider who also chose your appliances?</em></p>
-  </section>
-
-  <section>
-    <h2>opencode &gt; Claude Code</h2>
-    <ul>
-      <li>Faster and more flexible — you can select <strong>any model</strong> from any provider</li>
-      <li>Open source — you can read the harness, modify it, and decide how much to trust it</li>
-      <li>The best harness is the one that gets out of your way</li>
-    </ul>
-    <div class="callout tip">
-      <strong>The principle:</strong> never let the harness vendor lock you into their model. The harness is a commodity; treat it like one.
-    </div>
-    <aside class="notes">
-      Full disclosure: I'm saying this inside a presentation made with Claude Code using Claude Opus. The tool is excellent. The lock-in risk is real.
-    </aside>
-  </section>
-
-  <section>
-    <h2>CLAUDE.md and skills are just words</h2>
-    <ul>
-      <li>There is no special pool of "skills" — a skill is a sentence you write in plain language</li>
-      <li>How would you tell a coworker what to do? <strong>Write that.</strong></li>
-      <li>CLAUDE.md: keep it very short, only for things truly specific to your project</li>
-      <li>Better: just follow industry standards so even a cheap model understands you</li>
-    </ul>
-    <div class="callout warning">
-      <strong>Anti-pattern:</strong> a 500-line CLAUDE.md full of generic instructions. The model ignores most of it, and the useful parts get lost.
-    </div>
-  </section>
-
-  <section>
-    <h2>Your workflow skills are the durable advantage</h2>
-    <blockquote>
-      <p>The more control you have over your own workflow — your shell, your editor, your data modeling, your version control — the better your experience with AI. Even for &#36;0.</p>
-    </blockquote>
-    <ul>
-      <li>AI amplifies what you already know how to do</li>
-      <li>If you can't express a task clearly to a coworker, you can't express it to a model</li>
-      <li>Knowing your tools (shell, Stata, your editor) means you can verify what the model produces</li>
-      <li>Best practices are not overhead — they are what makes your project <strong>legible to an agent</strong></li>
-    </ul>
-  </section>
-
-  <!-- ================================================================== -->
-  <!-- ACT 3: Structure, reproducibility, and the agentic risk            -->
-  <!-- ================================================================== -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Act 3</h2>
-    <p class="kicker"><span class="accent">03</span> · Build a project from scratch</p>
-  </section>
-
-  <!-- --- Empty folder to working project --- -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Empty folder to working project</h2>
-    <p class="kicker"><span class="accent">03b</span> · Live demo</p>
-  </section>
-
-  <section>
-    <h2>Empty folder to working project</h2>
-    <ol>
-      <li>Start from an <strong>empty folder</strong></li>
-      <li>Use <strong>bead</strong> to download the Anthropic Economic Index data</li>
-      <li>Set up the project structure</li>
-      <li>Use <strong>OpenCode</strong> to figure out how to run Stata from the command line</li>
-      <li>Write the first prompts: load, explore, analyze</li>
-    </ol>
-    <p style="margin-top: 1em;">Watch what happens when the agent writes Python instead of Stata — and how your CLAUDE.md prevents it.</p>
-  </section>
-
-  <!-- ================================================================== -->
-  <!-- CLOSING                                                             -->
-  <!-- ================================================================== -->
-  <section data-background-color="#24244D">
-    <h2 class="section-title">Closing</h2>
-    <p class="kicker"><span class="accent">04</span> · What comes next</p>
-  </section>
-
-  <section>
-    <h2>The durable investment</h2>
-    <blockquote>
-      <p>Day-1 structure was already right. Project config makes it agent-legible. Review makes it auditable. The models will keep getting cheaper; <strong>the structure is the durable investment</strong>.</p>
-    </blockquote>
-  </section>
-
-  <!-- ============ CLOSING SLIDE ============ -->
-  <section class="title-slide" data-background-color="#1D1D40">
-    <img class="x9-logo" src="../assets/9x/9x-logo.svg" alt="The 9x Academic">
-    <h2>Thank you</h2>
-    <p class="contact">koren@codedthinking.com · <a href="https://the9x.ai/2026-06-11/">the9x.ai/2026-06-11</a> · <a href="recap.html">Recap</a></p>
-  </section>
-
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/math/math.js"></script>
-<script>
-  Reveal.initialize({
-    hash: true,
-    slideNumber: 'c/t',
-    showSlideNumber: 'all',
-    transition: 'none',
-    backgroundTransition: 'none',
-    center: true,
-    width: 1200,
-    height: 700,
-    margin: 0.08,
-    plugins: [RevealNotes, RevealMarkdown, RevealHighlight, RevealMath.KaTeX]
-  });
-</script>
 </body>
 </html>

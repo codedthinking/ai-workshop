@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenCode Replay Embed</title>
   <style>
-    body { margin: 0; padding: 0; background: #09090b; }
-    .opencode-embed { width: 900px; height: 550px; }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #09090b; }
+    .opencode-embed { width: 100%; height: 100%; }
   </style>
 </head>
 <body>
@@ -15,7 +15,7 @@
   <script>
     
 // OpenCode Session Replay Embed
-// Generated 2026-06-16T15:03:26.238Z
+// Generated 2026-06-16T15:20:05.631Z
 (function() {
   "use strict";
 
@@ -266,8 +266,8 @@
     var w = this.config.width, hh = this.config.height;
     this.root.innerHTML = '';
     var container = h('div','oce');
-    container.style.width = w + 'px';
-    container.style.height = hh + 'px';
+    container.style.width = '100%';
+    container.style.height = '100%';
 
     // Top bar
     var bar = h('div','oce-bar');
